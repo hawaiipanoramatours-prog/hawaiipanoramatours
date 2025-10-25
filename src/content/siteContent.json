@@ -1,0 +1,317 @@
+{
+  "brand": {
+    "siteName": "Hawaii Panorama Tours",
+    "tagEmoji": "🌺",
+    "colors": {
+      "primary": "#59C3C3",
+      "secondary": "#BEEAEC",
+      "accent": "#F8E9D2"
+    },
+    "social": {
+      "instagram": "https://instagram.com/hawaiipanoramatours",
+      "facebook": "https://facebook.com/hawaiipanoramatours",
+      "email": "info@hawaiipanoramatours.com",
+      "phone": "+1 (808) XXX-XXXX",
+      "place": "Hawaii, USA",
+      "calendly": "https://calendly.com/hawaiipanoramatours"
+    }
+  },
+  "i18n": {
+    "default": "de",
+    "languages": [
+      "de",
+      "en"
+    ],
+    "useGoogleTranslate": true
+  },
+  "header": {
+    "nav": [
+      {
+        "name": {
+          "de": "Home",
+          "en": "Home"
+        },
+        "path": "/"
+      },
+      {
+        "name": {
+          "de": "Dienstleistungen",
+          "en": "Services"
+        },
+        "path": "/services"
+      },
+      {
+        "name": {
+          "de": "Über mich",
+          "en": "About"
+        },
+        "path": "/about"
+      },
+      {
+        "name": {
+          "de": "Kontakt",
+          "en": "Contact"
+        },
+        "path": "/contact"
+      }
+    ],
+    "googleTranslate": {
+      "enabled": true
+    }
+  },
+  "hero": {
+    "bg": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=2070&q=80",
+    "title": {
+      "de": "Entdeckt Hawaii mit",
+      "en": "Discover Hawai‘i with"
+    },
+    "highlight": {
+      "de": "Hawaii Panorama Tours!",
+      "en": "Hawaii Panorama Tours!"
+    },
+    "subtitle": {
+      "de": "Erleben Sie Hawaii authentisch, individuell und stressfrei mit persönlicher Betreuung und Insider-Tipps",
+      "en": "Experience Hawai‘i authentically, tailor‑made and stress‑free with personal guidance and insider tips"
+    },
+    "ctaPlan": {
+      "label": {
+        "de": "Traumreise planen",
+        "en": "Plan dream trip"
+      }
+    },
+    "ctaServices": {
+      "label": {
+        "de": "Meine Concierge-Dienste",
+        "en": "My concierge services"
+      }
+    }
+  },
+  "how": {
+    "title": {
+      "de": "Wie es funktioniert",
+      "en": "How it works"
+    },
+    "subtitle": {
+      "de": "In nur drei einfachen Schritten zu Ihrer perfekten Hawaii-Reise",
+      "en": "Three simple steps to your perfect Hawai‘i trip"
+    },
+    "steps": [
+      {
+        "icon": "FiUser",
+        "step": "01",
+        "title": {
+          "de": "Persönliches Kennenlernen",
+          "en": "Personal intro"
+        },
+        "desc": {
+          "de": "Wir lernen uns kennen…",
+          "en": "We get to know each other and your wishes…"
+        }
+      },
+      {
+        "icon": "FiMap",
+        "step": "02",
+        "title": {
+          "de": "Individuelle Planung",
+          "en": "Custom planning"
+        },
+        "desc": {
+          "de": "Maßgeschneiderte Route…",
+          "en": "Tailored itinerary with insider tips"
+        }
+      },
+      {
+        "icon": "FiHeart",
+        "step": "03",
+        "title": {
+          "de": "Betreuung vor Ort",
+          "en": "On‑site support"
+        },
+        "desc": {
+          "de": "Ich bin für Sie da…",
+          "en": "I’m there for you during the trip"
+        }
+      }
+    ]
+  },
+  "services": [
+    {
+      "icon": "FiCompass",
+      "title": {
+        "de": "Orientierung & Tagesplanung",
+        "en": "Orientation & day planning"
+      },
+      "desc": {
+        "de": "Perfekte Tagesrouten…",
+        "en": "Perfect day routes…"
+      },
+      "price": "ab 99 $/Tag",
+      "features": [
+        "Detaillierte Tagesplanung",
+        "Orientierung vor Ort",
+        "Insider-Tipps",
+        "Flexible Anpassungen"
+      ]
+    },
+    {
+      "icon": "FiUsers",
+      "title": {
+        "de": "Concierge & Begleitung",
+        "en": "Concierge & escort"
+      },
+      "desc": {
+        "de": "Persönliche Begleitung…",
+        "en": "Personal escort & concierge"
+      },
+      "price": "ab 299 $/Tag",
+      "features": [
+        "Reisebegleitung",
+        "Übersetzung",
+        "Aktivitätenbuchung",
+        "24/7 Betreuung"
+      ]
+    },
+    {
+      "icon": "FiStar",
+      "title": {
+        "de": "Luxus‑VIP‑Paket",
+        "en": "Luxury VIP"
+      },
+      "desc": {
+        "de": "Exklusives VIP‑Erlebnis…",
+        "en": "Exclusive VIP experience"
+      },
+      "price": "ab 499 $/Tag",
+      "features": [
+        "Private Begleitung",
+        "Exklusive Spots",
+        "Fotoshootings",
+        "VIP‑Zugang"
+      ]
+    }
+  ],
+  "offerings": [
+    {
+      "icon": "FiMapPin",
+      "title": {
+        "de": "Tagesplanung & Orientierung",
+        "en": "Planning & orientation"
+      },
+      "desc": {
+        "de": "Stressfrei erkunden",
+        "en": "Explore stress‑free"
+      }
+    },
+    {
+      "icon": "FiGlobe",
+      "title": {
+        "de": "Übersetzung & Begleitung",
+        "en": "Translation & escort"
+      },
+      "desc": {
+        "de": "Brücken bauen",
+        "en": "Bridge cultures"
+      }
+    },
+    {
+      "icon": "FiCar",
+      "title": {
+        "de": "Mietwagen & Aktivitäten",
+        "en": "Car & activities"
+      },
+      "desc": {
+        "de": "Alles aus einer Hand",
+        "en": "All in one place"
+      }
+    },
+    {
+      "icon": "FiEye",
+      "title": {
+        "de": "Insider‑Tipps",
+        "en": "Insider tips"
+      },
+      "desc": {
+        "de": "Versteckte Perlen",
+        "en": "Hidden gems"
+      }
+    },
+    {
+      "icon": "FiMountain",
+      "title": {
+        "de": "Wanderungsempfehlungen",
+        "en": "Hiking"
+      },
+      "desc": {
+        "de": "Sichere Spots",
+        "en": "Safe scenic spots"
+      }
+    },
+    {
+      "icon": "FiCamera",
+      "title": {
+        "de": "Fotoshootings",
+        "en": "Photoshoots"
+      },
+      "desc": {
+        "de": "Traumorte",
+        "en": "Dream locations"
+      }
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Sarah & Michael Weber",
+      "location": "München, Deutschland",
+      "text": "Nasia hat unsere Hawaii‑Reise zu einem unvergesslichen Erlebnis gemacht. Ihre Insider‑Tipps und die persönliche Betreuung waren fantastisch!",
+      "rating": 5
+    },
+    {
+      "name": "Jennifer Thompson",
+      "location": "London, UK",
+      "text": "The most authentic Hawaii experience we could have asked for. Hidden gems and local vibes. Absolutely recommended!",
+      "rating": 5
+    }
+  ],
+  "about": {
+    "photo": "https://i.ibb.co/8Y4Bq2g/nasia-hawaii.jpg",
+    "headline": {
+      "de": "Aloha! Ich bin Nasia 🌺",
+      "en": "Aloha! I’m Nasia 🌺"
+    },
+    "paras": [
+      {
+        "de": "Seit Jahren bin ich auf Hawaii zuhause und liebe es, Gästen die authentische Seite der Inseln zu zeigen.",
+        "en": "I’ve called Hawai‘i home for years and love sharing its authentic side."
+      },
+      {
+        "de": "Ich bin persönlich für Sie da – vor, während und nach Ihrer Reise. Mit lokalen Kontakten sorge ich für besondere Erlebnisse.",
+        "en": "I’m personally there for you with local connections and tailored experiences."
+      }
+    ]
+  },
+  "contact": {
+    "title": {
+      "de": "Kontakt",
+      "en": "Contact"
+    },
+    "lead": {
+      "de": "Lassen Sie uns Ihre Traumreise planen",
+      "en": "Let’s plan your dream trip"
+    }
+  },
+  "cta": {
+    "bg": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2073&q=80",
+    "title": {
+      "de": "Bereit für Ihr Hawaii‑Abenteuer?",
+      "en": "Ready for your Hawai‘i adventure?"
+    },
+    "desc": {
+      "de": "Kostenloses Beratungsgespräch",
+      "en": "Free consultation"
+    }
+  },
+  "legal": {
+    "impressumPath": "/impressum",
+    "privacyPath": "/datenschutz"
+  }
+}
