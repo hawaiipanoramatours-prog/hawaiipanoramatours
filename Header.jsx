@@ -17,10 +17,28 @@ export default function Header({ content }){
   }, [])
   const changeLang = (l) => {
     setLang(l)
+    setTimeout(() => {
     const select = document.querySelector('.goog-te-combo')
-    if (select){ select.value = l; select.dispatchEvent(new Event('change')) }
-  }
+    if (select) {
+      select.value = l
+      select.dispatchEvent(new Event('change'))
+    }
+  }, 500) 
+}
 
+  useEffect(() => {
+  const observer = new MutationObserver(() => {
+    const select = document.querySelector('.goog-te-combo')
+    if (select && lang) {
+      select.value = lang
+      select.dispatchEvent(new Event('change'))
+    }
+  })
+
+  observer.observe(document.body, { childList: true, subtree: true })
+  return () => observer.disconnect()
+}, [lang])
+  
   return (
     <motion.header className={
       `fixed top-0 left-0 right-0 z-50 transition-all ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow' : 'bg-transparent'}`
@@ -38,7 +56,7 @@ export default function Header({ content }){
           ))}
         </nav>
         <div className="flex items-center gap-3">
-          <div id="google_translate_element" className="hidden" />
+          <div id="google_translate_element" style={{ display: 'none' }} />
           <div className="flex items-center gap-2 bg-white/10 rounded-full p-1">
             {content.i18n.languages.map(l => (
               <button key={l} onClick={()=>changeLang(l)} className={`px-3 py-1 rounded-full text-sm ${lang===l ? 'bg-white text-turquoise' : (isScrolled ? 'text-gray-700' : 'text-white')}`}>{l.toUpperCase()}</button>
