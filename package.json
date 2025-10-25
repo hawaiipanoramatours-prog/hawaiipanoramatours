@@ -6,12 +6,10 @@
   "private": true,
   "engines": {
   "node": "18.x"
-}
+},
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-   "lint": "eslint || true"
-    "lint:error": "eslint . --quiet",
     "preview": "vite preview"
   },
   "dependencies": {
