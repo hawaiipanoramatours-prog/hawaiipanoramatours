@@ -24,7 +24,6 @@ function GoogleTranslateInit({ defaultLang = 'de', languages = ['de','en'] }) {
     }
   }, [])
 
-  // Das unsichtbare div ist nötig, damit Google Translate den Container findet
   return <div id="google_translate_element" style={{ display: 'none' }} />
 }
 
@@ -47,7 +46,6 @@ export default function App() {
   return (
     <div className="min-h-screen">
       <ScrollToTop />
-      {/* 👇 Hier wird das Script einmal global eingebunden */}
       <GoogleTranslateInit defaultLang="de" languages={['de','en','fr']} />
       <Header content={content} />
       <Outlet context={{ content }} />
