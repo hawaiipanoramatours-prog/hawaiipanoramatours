@@ -15,27 +15,6 @@ export default function Header({ content }) {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  useEffect(() => {
-    if (!content.header?.googleTranslate?.enabled) return
-    const id = 'google-translate-script'
-    if (!document.getElementById(id)) {
-      const s = document.createElement('script')
-      s.id = id
-      s.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
-      document.body.appendChild(s)
-    }
-
-    window.googleTranslateElementInit = function () {
-      if (!window.google || !window.google.translate) return
-      new window.google.translate.TranslateElement({
-        pageLanguage: content.i18n?.default || 'de',
-        includedLanguages: content.i18n?.languages?.join(',') || 'de,en',
-        layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
-      }, 'google_translate_element')
-    }
-  }, [content])
-
   const changeLang = (l) => {
     setLang(l)
     setTimeout(() => {
