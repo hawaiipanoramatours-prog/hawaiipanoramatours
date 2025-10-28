@@ -16,8 +16,8 @@ export default function Header({ content }) {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // ✅ Google Translate einbetten – für alle Besucher
   useEffect(() => {
-    // Google Translate Script laden (wenn nicht schon vorhanden)
     const id = 'google-translate-script'
     if (!document.getElementById(id)) {
       const s = document.createElement('script')
@@ -26,17 +26,22 @@ export default function Header({ content }) {
       document.body.appendChild(s)
     }
 
-    // Initialisierung der Google Translate Funktion
     window.googleTranslateElementInit = function () {
       if (window.google && window.google.translate) {
         new window.google.translate.TranslateElement({
           pageLanguage: content.i18n?.default || 'de',
-          includedLanguages: content.i18n?.languages?.join(',') || 'de,en,fr,es',
+          includedLanguages: 'de,en,fr,es,it,pt',
           layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
-          autoDisplay: true
+          autoDisplay: false
         }, 'google_translate_element')
       }
     }
+
+    // Verhindere Chrome-Auto-Übersetzungsleiste
+    const meta = document.createElement('meta')
+    meta.name = 'google'
+    meta.content = 'notranslate'
+    document.head.appendChild(meta)
   }, [content])
 
   return (
@@ -49,25 +54,19 @@ export default function Header({ content }) {
       transition={{ duration: 0.6 }}
     >
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo & Brand */}
+        {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
           <div className="w-10 h-10 bg-gradient-to-r from-turquoise to-light-blue rounded-full grid place-items-center">
-            <span className="text-white font-bold text-lg">
-              {content.brand.tagEmoji}
-            </span>
+            <span className="text-white font-bold text-lg">{content.brand.tagEmoji}</span>
           </div>
-          <span
-            className={`font-playfair font-bold text-xl ${
-              isScrolled ? 'text-gray-800' : 'text-white'
-            }`}
-          >
+          <span className={`font-playfair font-bold text-xl ${isScrolled ? 'text-gray-800' : 'text-white'}`}>
             {content.brand.siteName}
           </span>
         </Link>
 
         {/* Navigation Desktop */}
         <nav className="hidden md:flex items-center gap-8">
-          {content.header.nav.map(n => (
+          {content.header.nav.map((n) => (
             <Link
               key={n.path}
               to={n.path}
@@ -84,15 +83,15 @@ export default function Header({ content }) {
           ))}
         </nav>
 
-        {/* Rechte Seite: Google Translate + Menü */}
+        {/* Rechte Seite */}
         <div className="flex items-center gap-3">
-          {/* Google Translate sichtbar */}
+          {/* ✅ Sichtbarer Google Translate Dropdown */}
           <div id="google_translate_element" className="block" />
 
-          {/* Eigene Sprach-Buttons vorübergehend deaktiviert */}
+          {/* 🚫 Eigene Sprach-Buttons ausgeblendet */}
           {/*
           <div className="flex items-center gap-2 bg-white/10 rounded-full p-1">
-            {content.i18n.languages.map(l => (
+            {content.i18n.languages.map((l) => (
               <button
                 key={l}
                 onClick={() => changeLang(l)}
@@ -110,18 +109,12 @@ export default function Header({ content }) {
           </div>
           */}
 
-          {/* Mobile Menü Button */}
+          {/* Mobile Menü */}
           <button
-            onClick={() => setIsMobile(s => !s)}
-            className={`${
-              isScrolled ? 'text-gray-700' : 'text-white'
-            } md:hidden p-2`}
+            onClick={() => setIsMobile((s) => !s)}
+            className={`${isScrolled ? 'text-gray-700' : 'text-white'} md:hidden p-2`}
           >
-            {isMobile ? (
-              <Fi.FiX className="w-6 h-6" />
-            ) : (
-              <Fi.FiMenu className="w-6 h-6" />
-            )}
+            {isMobile ? <Fi.FiX className="w-6 h-6" /> : <Fi.FiMenu className="w-6 h-6" />}
           </button>
         </div>
       </div>
@@ -130,7 +123,7 @@ export default function Header({ content }) {
       {isMobile && (
         <div className="md:hidden mx-6 mb-4 bg-white rounded-lg shadow p-4">
           <nav className="flex flex-col gap-2">
-            {content.header.nav.map(n => (
+            {content.header.nav.map((n) => (
               <Link
                 key={n.path}
                 to={n.path}
