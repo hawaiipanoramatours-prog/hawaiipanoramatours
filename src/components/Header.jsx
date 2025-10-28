@@ -17,32 +17,27 @@ export default function Header({ content }) {
   }, [])
 
   useEffect(() => {
-    if (!content.header?.googleTranslate?.enabled) return
+    // Google Translate Script laden (wenn nicht schon vorhanden)
     const id = 'google-translate-script'
     if (!document.getElementById(id)) {
       const s = document.createElement('script')
       s.id = id
-      s.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
+      s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
       document.body.appendChild(s)
     }
+
+    // Initialisierung der Google Translate Funktion
     window.googleTranslateElementInit = function () {
-      new window.google.translate.TranslateElement({
-        pageLanguage: content.i18n?.default || 'de',
-        includedLanguages: content.i18n?.languages?.join(',') || 'de,en',
-        layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
-      }, 'google_translate_element')
+      if (window.google && window.google.translate) {
+        new window.google.translate.TranslateElement({
+          pageLanguage: content.i18n?.default || 'de',
+          includedLanguages: content.i18n?.languages?.join(',') || 'de,en,fr,es',
+          layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+          autoDisplay: true
+        }, 'google_translate_element')
+      }
     }
   }, [content])
-
-  const changeLang = (l) => {
-    setLang(l)
-    const select = document.querySelector('.goog-te-combo')
-    if (select) { 
-      select.value = l
-      select.dispatchEvent(new Event('change')) 
-    }
-  }
 
   return (
     <motion.header
@@ -54,6 +49,7 @@ export default function Header({ content }) {
       transition={{ duration: 0.6 }}
     >
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+        {/* Logo & Brand */}
         <Link to="/" className="flex items-center gap-2">
           <div className="w-10 h-10 bg-gradient-to-r from-turquoise to-light-blue rounded-full grid place-items-center">
             <span className="text-white font-bold text-lg">
@@ -69,6 +65,7 @@ export default function Header({ content }) {
           </span>
         </Link>
 
+        {/* Navigation Desktop */}
         <nav className="hidden md:flex items-center gap-8">
           {content.header.nav.map(n => (
             <Link
@@ -87,12 +84,33 @@ export default function Header({ content }) {
           ))}
         </nav>
 
+        {/* Rechte Seite: Google Translate + Menü */}
         <div className="flex items-center gap-3">
-          <div id="google_translate_element" />
+          {/* Google Translate sichtbar */}
+          <div id="google_translate_element" className="block" />
 
-          {/* Sprach-Buttons vorübergehend ausgeblendet */}
-          <div className="hidden"></div>
+          {/* Eigene Sprach-Buttons vorübergehend deaktiviert */}
+          {/*
+          <div className="flex items-center gap-2 bg-white/10 rounded-full p-1">
+            {content.i18n.languages.map(l => (
+              <button
+                key={l}
+                onClick={() => changeLang(l)}
+                className={`px-3 py-1 rounded-full text-sm ${
+                  lang === l
+                    ? 'bg-white text-turquoise'
+                    : isScrolled
+                    ? 'text-gray-700'
+                    : 'text-white'
+                }`}
+              >
+                {l.toUpperCase()}
+              </button>
+            ))}
+          </div>
+          */}
 
+          {/* Mobile Menü Button */}
           <button
             onClick={() => setIsMobile(s => !s)}
             className={`${
@@ -108,6 +126,7 @@ export default function Header({ content }) {
         </div>
       </div>
 
+      {/* Navigation Mobile */}
       {isMobile && (
         <div className="md:hidden mx-6 mb-4 bg-white rounded-lg shadow p-4">
           <nav className="flex flex-col gap-2">
