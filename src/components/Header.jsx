@@ -2,12 +2,10 @@ import { Link, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import * as Fi from 'react-icons/fi'
-import SafeIcon from './SafeIcon'
 
 export default function Header({ content }) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
-  const [lang, setLang] = useState(content.i18n?.default || 'de')
   const location = useLocation()
 
   useEffect(() => {
@@ -16,7 +14,7 @@ export default function Header({ content }) {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // ✅ Google Translate einbetten – für alle Besucher
+  // ✅ Google Translate Script einfügen
   useEffect(() => {
     const id = 'google-translate-script'
     if (!document.getElementById(id)) {
@@ -36,13 +34,13 @@ export default function Header({ content }) {
         }, 'google_translate_element')
       }
     }
-
-    // Verhindere Chrome-Auto-Übersetzungsleiste
-    const meta = document.createElement('meta')
-    meta.name = 'google'
-    meta.content = 'notranslate'
-    document.head.appendChild(meta)
   }, [content])
+
+  // 💎 Klick auf unseren Button öffnet das echte Dropdown
+  const handleTranslateClick = () => {
+    const select = document.querySelector('.goog-te-combo')
+    if (select) select.style.display = select.style.display === 'block' ? 'none' : 'block'
+  }
 
   return (
     <motion.header
@@ -59,7 +57,11 @@ export default function Header({ content }) {
           <div className="w-10 h-10 bg-gradient-to-r from-turquoise to-light-blue rounded-full grid place-items-center">
             <span className="text-white font-bold text-lg">{content.brand.tagEmoji}</span>
           </div>
-          <span className={`font-playfair font-bold text-xl ${isScrolled ? 'text-gray-800' : 'text-white'}`}>
+          <span
+            className={`font-playfair font-bold text-xl ${
+              isScrolled ? 'text-gray-800' : 'text-white'
+            }`}
+          >
             {content.brand.siteName}
           </span>
         </Link>
@@ -78,38 +80,38 @@ export default function Header({ content }) {
                   : 'text-white hover:text-light-blue'
               }`}
             >
-              {n.name[lang] || n.name.de}
+              {n.name.de}
             </Link>
           ))}
         </nav>
 
         {/* Rechte Seite */}
         <div className="flex items-center gap-3">
-          {/* ✅ Sichtbarer Google Translate Dropdown */}
-          <div id="google_translate_element" className="block" />
+          {/* ✅ Unser schöner Button */}
+          <button
+            onClick={handleTranslateClick}
+            className="px-3 py-1 rounded-full bg-white/20 text-white text-sm hover:bg-white/40 transition"
+          >
+            🌐 Sprache wählen
+          </button>
 
-          {/* 🚫 Eigene Sprach-Buttons ausgeblendet */}
-          {/*
-          <div className="flex items-center gap-2 bg-white/10 rounded-full p-1">
-            {content.i18n.languages.map((l) => (
-              <button
-                key={l}
-                onClick={() => changeLang(l)}
-                className={`px-3 py-1 rounded-full text-sm ${
-                  lang === l
-                    ? 'bg-white text-turquoise'
-                    : isScrolled
-                    ? 'text-gray-700'
-                    : 'text-white'
-                }`}
-              >
-                {l.toUpperCase()}
-              </button>
-            ))}
-          </div>
-          */}
+          {/* 🧩 Das echte Google-Element (versteckt, aber funktionsfähig) */}
+          <div
+            id="google_translate_element"
+            style={{
+              position: 'absolute',
+              right: '1rem',
+              top: '4rem',
+              zIndex: 1000,
+              background: 'white',
+              borderRadius: '0.5rem',
+              padding: '0.5rem',
+              boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
+              display: 'none'
+            }}
+          />
 
-          {/* Mobile Menü */}
+          {/* Menü Button für Mobile */}
           <button
             onClick={() => setIsMobile((s) => !s)}
             className={`${isScrolled ? 'text-gray-700' : 'text-white'} md:hidden p-2`}
@@ -134,7 +136,7 @@ export default function Header({ content }) {
                     : 'text-gray-700 hover:bg-gray-50'
                 }`}
               >
-                {n.name[lang] || n.name.de}
+                {n.name.de}
               </Link>
             ))}
           </nav>
