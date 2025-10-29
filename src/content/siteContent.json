@@ -75,7 +75,7 @@
     "ctaPlan": {
       "label": {
         "de": "Traumreise planen",
-        "en": "Plan dream trip"
+        "en": "Plan your dream trip"
       }
     },
     "ctaServices": {
@@ -128,7 +128,7 @@
         },
         "desc": {
           "de": "Ich bin für Sie da…",
-          "en": "I’m there for you during the trip"
+          "en": "I’m there for you during your trip"
         }
       }
     ]
@@ -156,11 +156,11 @@
       "icon": "FiUsers",
       "title": {
         "de": "Concierge & Begleitung",
-        "en": "Concierge & escort"
+        "en": "Concierge & guide"
       },
       "desc": {
         "de": "Persönliche Begleitung…",
-        "en": "Personal escort & concierge"
+        "en": "Personal guide & concierge"
       },
       "price": "ab 299 $/Tag",
       "features": [
@@ -174,7 +174,7 @@
       "icon": "FiStar",
       "title": {
         "de": "Luxus‑VIP‑Paket",
-        "en": "Luxury VIP"
+        "en": "Luxurious VIP Package"
       },
       "desc": {
         "de": "Exklusives VIP‑Erlebnis…",
@@ -205,7 +205,7 @@
       "icon": "FiGlobe",
       "title": {
         "de": "Übersetzung & Begleitung",
-        "en": "Translation & escort"
+        "en": "Translation & guide"
       },
       "desc": {
         "de": "Brücken bauen",
@@ -216,7 +216,7 @@
       "icon": "FiCar",
       "title": {
         "de": "Mietwagen & Aktivitäten",
-        "en": "Car & activities"
+        "en": "Car rental & activities"
       },
       "desc": {
         "de": "Alles aus einer Hand",
