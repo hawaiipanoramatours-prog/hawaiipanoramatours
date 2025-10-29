@@ -6,6 +6,8 @@ import * as Fi from 'react-icons/fi'
 export default function Header({ content }) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+  const [gtReady, setGtReady] = useState(false)
+  const [gtOpen, setGtOpen] = useState(false)
   const location = useLocation()
 
   useEffect(() => {
@@ -14,45 +16,60 @@ export default function Header({ content }) {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // ✅ Google Translate einbinden
+  // helper: wait for an element to exist
+  const waitFor = (selector, timeout = 10000) =>
+    new Promise((resolve, reject) => {
+      const start = Date.now()
+      const tick = () => {
+        const el = document.querySelector(selector)
+        if (el) return resolve(el)
+        if (Date.now() - start > timeout) return reject(new Error('timeout'))
+        requestAnimationFrame(tick)
+      }
+      tick()
+    })
+
+  // load and init Google Translate
   useEffect(() => {
     const id = 'google-translate-script'
     if (!document.getElementById(id)) {
       const s = document.createElement('script')
       s.id = id
-      s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
+      s.src =
+        'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
       document.body.appendChild(s)
     }
 
     window.googleTranslateElementInit = function () {
-      if (window.google && window.google.translate) {
-        new window.google.translate.TranslateElement({
-          pageLanguage: content.i18n?.default || 'de',
+      if (!window.google || !window.google.translate) return
+      new window.google.translate.TranslateElement(
+        {
+          pageLanguage: content?.i18n?.default || 'de',
           includedLanguages: 'de,en,es',
           layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
           autoDisplay: false
-        }, 'google_translate_element')
-      }
+        },
+        'google_translate_element'
+      )
+      // when the combo exists, mark ready
+      waitFor('.goog-te-combo')
+        .then(() => setGtReady(true))
+        .catch(() => setGtReady(false))
     }
 
-    // Falls das Script später lädt → regelmäßig prüfen
-    const interval = setInterval(() => {
-      if (window.google && window.google.translate && !document.querySelector('.goog-te-combo')) {
-        window.googleTranslateElementInit()
-      }
-    }, 1000)
-    return () => clearInterval(interval)
+    // safety: if script already loaded before we mounted
+    if (window.google && window.google.translate) {
+      window.googleTranslateElementInit()
+    }
   }, [content])
 
-  // ✅ Klick-Funktion mit Sicherheitsabfrage
-  const handleTranslateClick = () => {
+  const toggleTranslate = () => {
+    if (!gtReady) return
     const container = document.getElementById('google_translate_element')
-    const select = document.querySelector('.goog-te-combo')
-    if (!select) {
-      alert('Bitte einen Moment warten — Übersetzer lädt noch...')
-      return
-    }
-    container.style.display = container.style.display === 'block' ? 'none' : 'block'
+    if (!container) return
+    const next = !gtOpen
+    setGtOpen(next)
+    container.style.display = next ? 'block' : 'none'
   }
 
   return (
@@ -68,7 +85,9 @@ export default function Header({ content }) {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
           <div className="w-10 h-10 bg-gradient-to-r from-turquoise to-light-blue rounded-full grid place-items-center">
-            <span className="text-white font-bold text-lg">{content.brand.tagEmoji}</span>
+            <span className="text-white font-bold text-lg">
+              {content.brand.tagEmoji}
+            </span>
           </div>
           <span
             className={`font-playfair font-bold text-xl ${
@@ -79,7 +98,7 @@ export default function Header({ content }) {
           </span>
         </Link>
 
-        {/* Navigation Desktop */}
+        {/* Desktop-Navigation */}
         <nav className="hidden md:flex items-center gap-8">
           {content.header.nav.map((n) => (
             <Link
@@ -98,17 +117,22 @@ export default function Header({ content }) {
           ))}
         </nav>
 
-        {/* Rechte Seite */}
+        {/* Right side: pretty button + hidden GT container */}
         <div className="flex items-center gap-3 relative">
-          {/* 🌐 Sprache wählen Button */}
           <button
-            onClick={handleTranslateClick}
-            className="px-3 py-1 rounded-full bg-white/20 text-white text-sm hover:bg-white/40 transition"
+            onClick={toggleTranslate}
+            disabled={!gtReady}
+            className={`px-3 py-1 rounded-full text-sm transition ${
+              gtReady
+                ? 'bg-white/20 text-white hover:bg-white/40'
+                : 'bg-gray-300 text-gray-600 cursor-not-allowed'
+            }`}
+            title={gtReady ? 'Sprache wählen' : 'Lädt…'}
           >
             🌐 Sprache wählen
           </button>
 
-          {/* Google Translate Dropdown (anfangs unsichtbar) */}
+          {/* Hidden container for Google widget (we control visibility) */}
           <div
             id="google_translate_element"
             style={{
@@ -119,12 +143,12 @@ export default function Header({ content }) {
               background: 'white',
               borderRadius: '0.5rem',
               padding: '0.5rem',
-              boxShadow: '0 4px 8px rgba(0,0,0,0.15)',
+              boxShadow: '0 4px 10px rgba(0,0,0,0.15)',
               display: 'none'
             }}
           />
 
-          {/* Menü-Button für Mobile */}
+          {/* Mobile menu button */}
           <button
             onClick={() => setIsMobile((s) => !s)}
             className={`${isScrolled ? 'text-gray-700' : 'text-white'} md:hidden p-2`}
@@ -134,7 +158,7 @@ export default function Header({ content }) {
         </div>
       </div>
 
-      {/* Navigation Mobile */}
+      {/* Mobile nav */}
       {isMobile && (
         <div className="md:hidden mx-6 mb-4 bg-white rounded-lg shadow p-4">
           <nav className="flex flex-col gap-2">
