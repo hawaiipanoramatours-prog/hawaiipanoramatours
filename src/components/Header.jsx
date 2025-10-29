@@ -14,7 +14,7 @@ export default function Header({ content }) {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // ✅ Google Translate Script einfügen
+  // ✅ Google Translate einbinden
   useEffect(() => {
     const id = 'google-translate-script'
     if (!document.getElementById(id)) {
@@ -28,18 +28,31 @@ export default function Header({ content }) {
       if (window.google && window.google.translate) {
         new window.google.translate.TranslateElement({
           pageLanguage: content.i18n?.default || 'de',
-          includedLanguages: 'de,en,fr,es,it,pt',
+          includedLanguages: 'de,en,es',
           layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
           autoDisplay: false
         }, 'google_translate_element')
       }
     }
+
+    // Falls das Script später lädt → regelmäßig prüfen
+    const interval = setInterval(() => {
+      if (window.google && window.google.translate && !document.querySelector('.goog-te-combo')) {
+        window.googleTranslateElementInit()
+      }
+    }, 1000)
+    return () => clearInterval(interval)
   }, [content])
 
-  // 💎 Klick auf unseren Button öffnet das echte Dropdown
+  // ✅ Klick-Funktion mit Sicherheitsabfrage
   const handleTranslateClick = () => {
+    const container = document.getElementById('google_translate_element')
     const select = document.querySelector('.goog-te-combo')
-    if (select) select.style.display = select.style.display === 'block' ? 'none' : 'block'
+    if (!select) {
+      alert('Bitte einen Moment warten — Übersetzer lädt noch...')
+      return
+    }
+    container.style.display = container.style.display === 'block' ? 'none' : 'block'
   }
 
   return (
@@ -86,8 +99,8 @@ export default function Header({ content }) {
         </nav>
 
         {/* Rechte Seite */}
-        <div className="flex items-center gap-3">
-          {/* ✅ Unser schöner Button */}
+        <div className="flex items-center gap-3 relative">
+          {/* 🌐 Sprache wählen Button */}
           <button
             onClick={handleTranslateClick}
             className="px-3 py-1 rounded-full bg-white/20 text-white text-sm hover:bg-white/40 transition"
@@ -95,23 +108,23 @@ export default function Header({ content }) {
             🌐 Sprache wählen
           </button>
 
-          {/* 🧩 Das echte Google-Element (versteckt, aber funktionsfähig) */}
+          {/* Google Translate Dropdown (anfangs unsichtbar) */}
           <div
             id="google_translate_element"
             style={{
               position: 'absolute',
-              right: '1rem',
-              top: '4rem',
+              right: 0,
+              top: '3rem',
               zIndex: 1000,
               background: 'white',
               borderRadius: '0.5rem',
               padding: '0.5rem',
-              boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
+              boxShadow: '0 4px 8px rgba(0,0,0,0.15)',
               display: 'none'
             }}
           />
 
-          {/* Menü Button für Mobile */}
+          {/* Menü-Button für Mobile */}
           <button
             onClick={() => setIsMobile((s) => !s)}
             className={`${isScrolled ? 'text-gray-700' : 'text-white'} md:hidden p-2`}
