@@ -122,7 +122,6 @@ export function Testimonials({ content }){
       <div className="container mx-auto px-6">
         <motion.div className="text-center mb-16" initial={{opacity:0,y:30}} whileInView={{opacity:1,y:0}} transition={{duration:.6}} viewport={{once:true}}>
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-800 mb-4">Was meine Gäste sagen</h2>
-          <p className="font-poppins text-xl text-gray-600 max-w-2xl mx-auto">Authentische Bewertungen</p>
         </motion.div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {list.map((t,i)=> (
