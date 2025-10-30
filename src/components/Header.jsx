@@ -4,15 +4,8 @@ import { motion } from 'framer-motion'
 import * as Fi from 'react-icons/fi'
 
 export default function Header({ content }) {
-  const [isScrolled, setIsScrolled] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
   const location = useLocation()
-
-  useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 50)
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
 
   // ✅ Google Translate automatisch laden
   useEffect(() => {
@@ -40,9 +33,7 @@ export default function Header({ content }) {
 
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all ${
-        isScrolled ? 'bg-white/95 backdrop-blur-md shadow' : 'bg-transparent'
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
@@ -55,11 +46,7 @@ export default function Header({ content }) {
             alt="Hawaii Panorama Tours Logo"
             className="h-10 w-auto object-contain"
           />
-          <span
-            className={`font-playfair font-bold text-xl ${
-              isScrolled ? 'text-gray-800' : 'text-white'
-            }`}
-          >
+          <span className="font-playfair font-bold text-xl text-turquoise">
             {content.brand.siteName}
           </span>
         </Link>
@@ -70,12 +57,8 @@ export default function Header({ content }) {
             <Link
               key={n.path}
               to={n.path}
-              className={`font-poppins ${
-                location.pathname === n.path
-                  ? 'text-turquoise'
-                  : isScrolled
-                  ? 'text-gray-700 hover:text-turquoise'
-                  : 'text-white hover:text-light-blue'
+              className={`font-poppins text-turquoise hover:text-light-blue transition ${
+                location.pathname === n.path ? 'font-semibold underline underline-offset-4' : ''
               }`}
             >
               {n.name.de}
@@ -89,7 +72,7 @@ export default function Header({ content }) {
         {/* 🔹 Mobile Menü Button */}
         <button
           onClick={() => setIsMobile((s) => !s)}
-          className={`${isScrolled ? 'text-gray-700' : 'text-white'} md:hidden p-2`}
+          className="text-turquoise md:hidden p-2"
         >
           {isMobile ? <Fi.FiX className="w-6 h-6" /> : <Fi.FiMenu className="w-6 h-6" />}
         </button>
@@ -104,10 +87,10 @@ export default function Header({ content }) {
                 key={n.path}
                 to={n.path}
                 onClick={() => setIsMobile(false)}
-                className={`font-poppins py-2 px-3 rounded ${
+                className={`font-poppins py-2 px-3 rounded text-turquoise hover:text-light-blue ${
                   location.pathname === n.path
-                    ? 'text-turquoise bg-turquoise/10'
-                    : 'text-gray-700 hover:bg-gray-50'
+                    ? 'font-semibold bg-turquoise/10'
+                    : ''
                 }`}
               >
                 {n.name.de}
