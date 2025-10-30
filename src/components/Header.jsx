@@ -14,7 +14,7 @@ export default function Header({ content }) {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // ✅ Google Translate automatisch laden und anzeigen
+  // ✅ Google Translate automatisch laden
   useEffect(() => {
     const id = 'google-translate-script'
     if (!document.getElementById(id)) {
@@ -48,11 +48,13 @@ export default function Header({ content }) {
       transition={{ duration: 0.6 }}
     >
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-gradient-to-r from-turquoise to-light-blue rounded-full grid place-items-center">
-            <span className="text-white font-bold text-lg">{content.brand.tagEmoji}</span>
-          </div>
+        {/* 🔹 Logo + Website-Name */}
+        <Link to="/" className="flex items-center gap-3">
+          <img
+            src="/githup%20upload%20Hawaii%20Panorama%20Tours.png"
+            alt="Hawaii Panorama Tours Logo"
+            className="h-10 w-auto object-contain"
+          />
           <span
             className={`font-playfair font-bold text-xl ${
               isScrolled ? 'text-gray-800' : 'text-white'
@@ -62,7 +64,7 @@ export default function Header({ content }) {
           </span>
         </Link>
 
-        {/* Navigation Desktop */}
+        {/* 🔹 Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
           {content.header.nav.map((n) => (
             <Link
@@ -81,10 +83,10 @@ export default function Header({ content }) {
           ))}
         </nav>
 
-        {/* Google Translate wird automatisch sichtbar */}
-        <div id="google_translate_element"></div>
+        {/* 🔹 Google Translate Dropdown */}
+        <div id="google_translate_element" className="text-sm" />
 
-        {/* Mobile Menü Button */}
+        {/* 🔹 Mobile Menü Button */}
         <button
           onClick={() => setIsMobile((s) => !s)}
           className={`${isScrolled ? 'text-gray-700' : 'text-white'} md:hidden p-2`}
@@ -93,7 +95,7 @@ export default function Header({ content }) {
         </button>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* 🔹 Mobile Navigation */}
       {isMobile && (
         <div className="md:hidden mx-6 mb-4 bg-white rounded-lg shadow p-4">
           <nav className="flex flex-col gap-2">
