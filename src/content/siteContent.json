@@ -17,46 +17,29 @@
   },
   "i18n": {
     "default": "de",
-    "languages": [
-      "de",
-      "en"
-    ],
+    "languages": ["de", "en"],
     "useGoogleTranslate": true
   },
   "header": {
     "nav": [
       {
-        "name": {
-          "de": "Home",
-          "en": "Home"
-        },
+        "name": { "de": "Home", "en": "Home" },
         "path": "/"
       },
       {
-        "name": {
-          "de": "Dienstleistungen",
-          "en": "Services"
-        },
+        "name": { "de": "Dienstleistungen", "en": "Services" },
         "path": "/services"
       },
       {
-        "name": {
-          "de": "Über mich",
-          "en": "About"
-        },
+        "name": { "de": "Über mich", "en": "About" },
         "path": "/about"
       },
       {
-        "name": {
-          "de": "Kontakt",
-          "en": "Contact"
-        },
+        "name": { "de": "Kontakt", "en": "Contact" },
         "path": "/contact"
       }
     ],
-    "googleTranslate": {
-      "enabled": true
-    }
+    "googleTranslate": { "enabled": true }
   },
   "hero": {
     "bg": "pexels-troy-squillaci-1303476-2521619-min.jpg",
@@ -70,19 +53,13 @@
     },
     "subtitle": {
       "de": "Erleben Sie Hawaii authentisch, individuell und stressfrei mit persönlicher Betreuung und Insider-Tipps",
-      "en": "Experience Hawai‘i authentically, tailor‑made and stress‑free with personal guidance and insider tips"
+      "en": "Experience Hawai‘i authentically, tailor-made and stress-free with personal guidance and insider tips"
     },
     "ctaPlan": {
-      "label": {
-        "de": "Traumreise planen",
-        "en": "Plan your dream trip"
-      }
+      "label": { "de": "Traumreise planen", "en": "Plan your dream trip" }
     },
     "ctaServices": {
-      "label": {
-        "de": "Meine Concierge-Dienste",
-        "en": "My concierge services"
-      }
+      "label": { "de": "Meine Concierge-Dienste", "en": "My concierge services" }
     }
   },
   "how": {
@@ -124,7 +101,7 @@
         "step": "03",
         "title": {
           "de": "Betreuung vor Ort",
-          "en": "On‑site support"
+          "en": "On-site support"
         },
         "desc": {
           "de": "Ich bin für Sie da…",
@@ -173,11 +150,11 @@
     {
       "icon": "FiStar",
       "title": {
-        "de": "Luxus‑VIP‑Paket",
+        "de": "Luxus-VIP-Paket",
         "en": "Luxurious VIP Package"
       },
       "desc": {
-        "de": "Exklusives VIP‑Erlebnis…",
+        "de": "Exklusives VIP-Erlebnis…",
         "en": "Exclusive VIP experience"
       },
       "price": "ab 499 $/Tag",
@@ -185,83 +162,47 @@
         "Private Begleitung",
         "Exklusive Spots",
         "Fotoshootings",
-        "VIP‑Zugang"
+        "VIP-Zugang"
       ]
     }
   ],
   "offerings": [
     {
       "icon": "FiMapPin",
-      "title": {
-        "de": "Tagesplanung & Orientierung",
-        "en": "Planning & orientation"
-      },
-      "desc": {
-        "de": "Stressfrei erkunden",
-        "en": "Explore stress‑free"
-      }
+      "title": { "de": "Tagesplanung & Orientierung", "en": "Planning & orientation" },
+      "desc": { "de": "Stressfrei erkunden", "en": "Explore stress-free" }
     },
     {
       "icon": "FiGlobe",
-      "title": {
-        "de": "Übersetzung & Begleitung",
-        "en": "Translation & guide"
-      },
-      "desc": {
-        "de": "Brücken bauen",
-        "en": "Bridge cultures"
-      }
+      "title": { "de": "Übersetzung & Begleitung", "en": "Translation & guide" },
+      "desc": { "de": "Brücken bauen", "en": "Bridge cultures" }
     },
     {
       "icon": "FiCar",
-      "title": {
-        "de": "Mietwagen & Aktivitäten",
-        "en": "Car rental & activities"
-      },
-      "desc": {
-        "de": "Alles aus einer Hand",
-        "en": "All in one place"
-      }
+      "title": { "de": "Mietwagen & Aktivitäten", "en": "Car rental & activities" },
+      "desc": { "de": "Alles aus einer Hand", "en": "All in one place" }
     },
     {
       "icon": "FiEye",
-      "title": {
-        "de": "Insider‑Tipps",
-        "en": "Insider tips"
-      },
-      "desc": {
-        "de": "Versteckte Perlen",
-        "en": "Hidden gems"
-      }
+      "title": { "de": "Insider-Tipps", "en": "Insider tips" },
+      "desc": { "de": "Versteckte Perlen", "en": "Hidden gems" }
     },
     {
       "icon": "FiMountain",
-      "title": {
-        "de": "Wanderungsempfehlungen",
-        "en": "Hiking"
-      },
-      "desc": {
-        "de": "Sichere Spots",
-        "en": "Safe scenic spots"
-      }
+      "title": { "de": "Wanderungsempfehlungen", "en": "Hiking" },
+      "desc": { "de": "Sichere Spots", "en": "Safe scenic spots" }
     },
     {
       "icon": "FiCamera",
-      "title": {
-        "de": "Fotoshootings",
-        "en": "Photoshoots"
-      },
-      "desc": {
-        "de": "Traumorte",
-        "en": "Dream locations"
-      }
+      "title": { "de": "Fotoshootings", "en": "Photoshoots" },
+      "desc": { "de": "Traumorte", "en": "Dream locations" }
     }
   ],
   "testimonials": [
     {
       "name": "Sarah & Michael Weber",
       "location": "München, Deutschland",
-      "text": "Nasia hat unsere Hawaii‑Reise zu einem unvergesslichen Erlebnis gemacht. Ihre Insider‑Tipps und die persönliche Betreuung waren fantastisch!",
+      "text": "Nasia hat unsere Hawaii-Reise zu einem unvergesslichen Erlebnis gemacht. Ihre Insider-Tipps und die persönliche Betreuung waren fantastisch!",
       "rating": 5
     },
     {
@@ -269,16 +210,16 @@
       "location": "London, UK",
       "text": "The most authentic Hawaii experience we could have asked for. Hidden gems and local vibes. Absolutely recommended!",
       "rating": 5
-       {
-      "name": "Sarah & Michael Weber",
-      "location": "München, Deutschland",
-      "text": "Nasia hat unsere Hawaii‑Reise zu einem unvergesslichen Erlebnis gemacht. Ihre Insider‑Tipps und die persönliche Betreuung waren fantastisch!",
-      "rating": 5
     },
+    {
+      "name": "Claudia Schmitz",
+      "location": "Köln, Deutschland",
+      "text": "Nasia hat unsere Traumreise perfekt geplant. Ihre Erfahrung und Leidenschaft für Hawaii machen den Unterschied!",
+      "rating": 5
     }
   ],
   "about": {
-    "photo": "https://i.ibb.co/8Y4Bq2g/nasia-hawaii.jpg",
+    "photo": "About%20me%20pic.jpg",
     "headline": {
       "de": "Aloha! Ich bin Nasia 🌺",
       "en": "Aloha! I’m Nasia 🌺"
@@ -295,25 +236,16 @@
     ]
   },
   "contact": {
-    "title": {
-      "de": "Kontakt",
-      "en": "Contact"
-    },
-    "lead": {
-      "de": "Lassen Sie uns Ihre Traumreise planen",
-      "en": "Let’s plan your dream trip"
-    }
+    "title": { "de": "Kontakt", "en": "Contact" },
+    "lead": { "de": "Lassen Sie uns Ihre Traumreise planen", "en": "Let’s plan your dream trip" }
   },
   "cta": {
     "bg": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2073&q=80",
     "title": {
-      "de": "Bereit für Ihr Hawaii‑Abenteuer?",
+      "de": "Bereit für Ihr Hawaii-Abenteuer?",
       "en": "Ready for your Hawai‘i adventure?"
     },
-    "desc": {
-      "de": "Kostenloses Beratungsgespräch",
-      "en": "Free consultation"
-    }
+    "desc": { "de": "Kostenloses Beratungsgespräch", "en": "Free consultation" }
   },
   "legal": {
     "impressumPath": "/impressum",
