@@ -169,9 +169,13 @@ export function Footer({ content }){
         <div className="grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-r from-turquoise to-light-blue rounded-full grid place-items-center">
-                <span className="text-white font-bold text-lg">{content.brand.tagEmoji}</span>
-              </div>
+<div className="w-12 h-12 rounded-full overflow-hidden">
+  <img
+    src="/githup%20upload%20Hawaii%20Panorama%20Tours.png"
+    alt="Hawaii Panorama Tours Logo"
+    className="w-full h-full object-contain"
+  />
+</div>
               <span className="font-playfair font-bold text-xl">{content.brand.siteName}</span>
             </div>
             <p className="font-poppins text-gray-300 mb-4">Authentische Hawaii‑Erlebnisse mit persönlicher Betreuung.</p>
