@@ -185,7 +185,7 @@
     {
       "icon": "FiEye",
       "title": { "de": "Insider-Tipps", "en": "Insider tips" },
-      "desc": { "de": "Versteckte Perlen", "en": "Hidden gems" }
+      "desc": { "de": "Versteckte Paradiese", "en": "Hidden gems" }
     },
     {
       "icon": "FiMountain",
@@ -200,20 +200,20 @@
   ],
   "testimonials": [
     {
-      "name": "Sarah & Michael Weber",
-      "location": "München, Deutschland",
-      "text": "Nasia hat unsere Hawaii-Reise zu einem unvergesslichen Erlebnis gemacht. Ihre Insider-Tipps und die persönliche Betreuung waren fantastisch!",
+      "name": "Tanja & Andree Schubert",
+      "location": "Deutschland",
+      "text": "Alles Top gelaufen mit Nasia, pünktlich und mega nett. Hat uns alles super erklärt und viele Tipps gegeben.",
       "rating": 5
     },
     {
       "name": "Jennifer Thompson",
-      "location": "London, UK",
-      "text": "The most authentic Hawaii experience we could have asked for. Hidden gems and local vibes. Absolutely recommended!",
+      "location": "UK",
+      "text": "The most authentic Hawaii experience we could have asked for. Absolutely recommended!",
       "rating": 5
     },
     {
       "name": "Claudia Schmitz",
-      "location": "Köln, Deutschland",
+      "location": "Deutschland",
       "text": "Nasia hat unsere Traumreise perfekt geplant. Ihre Erfahrung und Leidenschaft für Hawaii machen den Unterschied!",
       "rating": 5
     }
