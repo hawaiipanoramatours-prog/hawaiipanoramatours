@@ -2,7 +2,7 @@ import { useOutletContext } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import React from 'react'
 
-const FORM_ENDPOINT = 'https://formspree.io/f/mwpapqeq' // <-- ggf. deine eigene Formspree-URL einsetzen
+const FORM_ENDPOINT = 'https://formspree.io/f/mwpapqeq' // 
 
 export function Contact() {
   const { content } = useOutletContext()
@@ -111,9 +111,9 @@ export function Contact() {
                   Vielen Dank!
                 </h3>
                 <p className="font-poppins text-gray-700 max-w-md">
-                  Deine Nachricht wurde erfolgreich gesendet.
+                  Ihre Nachricht wurde erfolgreich gesendet.
                   <br />
-                  Ich melde mich so schnell wie möglich bei dir.
+                  Ich melde mich so schnell wie möglich bei Ihnen.
                 </p>
                 <button
                   type="button"
@@ -191,8 +191,8 @@ export function Contact() {
 
                 {status === 'error' && (
                   <p className="text-sm text-red-500 font-poppins">
-                    Ups, etwas ist schiefgelaufen. Bitte versuche es später noch einmal
-                    oder schreibe direkt an {content.brand.social.email}.
+                    Ups, etwas ist schiefgelaufen. Bitte versuchen Sie es später noch einmal
+                    oder schreiben Sie direkt an {content.brand.social.email}.
                   </p>
                 )}
 
