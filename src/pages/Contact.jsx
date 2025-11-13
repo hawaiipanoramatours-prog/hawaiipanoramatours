@@ -48,7 +48,7 @@ export function Contact() {
 
           {/* Rechte Seite: Formular (Formspree) */}
           <form
-            action=https://formspree.io/f/mwpapqeq
+            action="https://formspree.io/f/mwpapqeq"
             method="POST"
             className="bg-gradient-to-br from-sand/30 to-light-blue/20 rounded-2xl p-8 space-y-6"
           >
