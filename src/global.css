@@ -49,3 +49,28 @@ iframe.goog-te-banner-frame {
 body {
   top: 0 !important;
 }
+/* ==== Google Translate im Header hübsch machen ==== */
+
+.google-translate-header .goog-te-gadget {
+  font-size: 0; /* Standard-Text "Select Language" ausblenden */
+}
+
+.google-translate-header .goog-te-gadget span,
+.google-translate-header .goog-te-gadget img {
+  display: none !important; /* Google-Logo und Text weg */
+}
+
+.google-translate-header .goog-te-combo {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(89, 195, 195, 0.7);
+  background-color: #ffffff;
+  color: #374151;
+  outline: none;
+  cursor: pointer;
+}
+
+.google-translate-header .goog-te-combo:focus {
+  box-shadow: 0 0 0 2px rgba(89, 195, 195, 0.25);
+}
