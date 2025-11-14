@@ -74,3 +74,36 @@ body {
 .google-translate-header .goog-te-combo:focus {
   box-shadow: 0 0 0 2px rgba(89, 195, 195, 0.25);
 }
+/* ==== Google Translate Styling ==== */
+
+/* Container im Header */
+.google-translate-custom {
+  display: inline-block;
+}
+
+/* Das Standard-Label "Select Language" ausblenden */
+.google-translate-custom .goog-te-gadget {
+  font-size: 0;
+}
+
+/* Den Text neben dem Dropdown entfernen */
+.google-translate-custom .goog-te-gadget span {
+  display: none;
+}
+
+/* Das eigentliche <select> hübsch machen */
+.google-translate-custom .goog-te-combo {
+  font-size: 0.75rem;
+  padding: 0.25rem 1.75rem 0.25rem 0.75rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(89, 195, 195, 0.7);
+  background-color: #ffffff;
+  color: #374151;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Kleiner Pfeil fürs Dropdown (Browser-Standard beibehalten) */
+.google-translate-custom .goog-te-combo:focus {
+  box-shadow: 0 0 0 2px rgba(89, 195, 195, 0.25);
+}
