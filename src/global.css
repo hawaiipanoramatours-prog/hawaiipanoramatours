@@ -7,3 +7,47 @@ html, body {
   font-family: 'Poppins', sans-serif;
 }
 
+/* === Google Translate: nur kleines G-Icon + Dropdown === */
+
+/* Basis: Text verstecken, damit nicht "Select Language" usw. steht */
+.google-translate-minimal .goog-te-gadget {
+  font-size: 0 !important;
+}
+
+/* Hintergrund vom Standard-Widget transparent machen */
+.google-translate-minimal .goog-te-gadget-simple {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+/* Text im Widget ausblenden, aber das Icon sichtbar lassen */
+.google-translate-minimal .goog-te-gadget-simple span {
+  color: transparent !important;
+}
+
+/* Manche Browser haben mehrere Span-Elemente – sicherheitshalber ausblenden */
+.google-translate-minimal .goog-te-gadget-simple span:nth-child(2),
+.google-translate-minimal .goog-te-gadget-simple span:nth-child(3) {
+  display: none !important;
+}
+
+/* Google G-Icon sichtbar lassen */
+.google-translate-minimal img {
+  display: inline-block !important;
+}
+
+/* Link/Container klickbar machen */
+.google-translate-minimal a {
+  cursor: pointer;
+}
+
+/* Falls Google die obere Banner-Leiste einblendet – ausblenden */
+.goog-te-banner-frame.skiptranslate,
+iframe.goog-te-banner-frame {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
