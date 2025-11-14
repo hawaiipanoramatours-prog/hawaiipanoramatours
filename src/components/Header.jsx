@@ -15,11 +15,11 @@ export default function Header({ content }) {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // ✅ Google Translate normal einbinden
+  // ✅ Google Translate Script laden & Widget einbinden
   useEffect(() => {
     const id = 'google-translate-script'
 
-    // globale Callback-Funktion
+    // Callback MUSS global sein
     window.googleTranslateElementInit = function () {
       if (!window.google || !window.google.translate) return
       new window.google.translate.TranslateElement(
@@ -68,7 +68,7 @@ export default function Header({ content }) {
           </span>
         </Link>
 
-        {/* Desktop-Menü */}
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
           {content.header.nav.map((n) => (
             <Link
@@ -85,10 +85,10 @@ export default function Header({ content }) {
           ))}
         </nav>
 
-        {/* Rechte Seite: normales Google-Widget + Mobile-Menü-Button */}
+        {/* Rechte Seite: kleines Google-Gadget + Mobile Menü */}
         <div className="flex items-center gap-4">
-          {/* Hier kommt direkt das originale Google-Translate-Widget rein */}
-          <div id="google_translate_element" />
+          {/* 👉 hier rendert Google sein Widget */}
+          <div id="google_translate_element" className="google-translate-minimal" />
 
           {/* Mobile-Menü-Button */}
           <button
@@ -104,7 +104,7 @@ export default function Header({ content }) {
         </div>
       </div>
 
-      {/* Mobile-Navigation */}
+      {/* Mobile Navigation */}
       {isMobile && (
         <div className="md:hidden mx-4 mb-4 bg-white rounded-lg shadow p-4">
           <nav className="flex flex-col gap-2">
