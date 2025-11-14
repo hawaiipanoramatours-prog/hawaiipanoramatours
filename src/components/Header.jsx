@@ -8,18 +8,18 @@ export default function Header({ content }) {
   const [isMobile, setIsMobile] = useState(false)
   const location = useLocation()
 
-  // Scroll-Effekt für Schatten
+  // Scroll-Effekt
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 50)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // ✅ Google Translate Script laden und Widget einbinden
+  // ✅ Google Translate normal einbinden
   useEffect(() => {
     const id = 'google-translate-script'
 
-    // Callback MUSS global sein
+    // globale Callback-Funktion
     window.googleTranslateElementInit = function () {
       if (!window.google || !window.google.translate) return
       new window.google.translate.TranslateElement(
@@ -27,7 +27,7 @@ export default function Header({ content }) {
           pageLanguage: content?.i18n?.default || 'de',
           includedLanguages: 'de,en,es',
           layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
-          autoDisplay: false
+          autoDisplay: false,
         },
         'google_translate_element'
       )
@@ -53,7 +53,6 @@ export default function Header({ content }) {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      {/* Hauptzeile im Header */}
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo + Name */}
         <Link to="/" className="flex items-center gap-3">
@@ -69,7 +68,7 @@ export default function Header({ content }) {
           </span>
         </Link>
 
-        {/* Desktop-Navigation */}
+        {/* Desktop-Menü */}
         <nav className="hidden md:flex items-center gap-8">
           {content.header.nav.map((n) => (
             <Link
@@ -86,15 +85,10 @@ export default function Header({ content }) {
           ))}
         </nav>
 
-        {/* Rechte Seite: Globus + unsichtbares Google-Select + Mobile-Menü-Button */}
+        {/* Rechte Seite: normales Google-Widget + Mobile-Menü-Button */}
         <div className="flex items-center gap-4">
-          {/* 🌍 Globus – komplette Fläche wird Klickzone */}
-          <div className="relative w-8 h-8 flex items-center justify-center">
-            {/* Sichtbares Icon */}
-            <Fi.FiGlobe className="text-turquoise w-6 h-6 pointer-events-none" />
-            {/* Google-Widget, das wir per CSS über den Globus legen */}
-            <div id="google_translate_element" className="gt-overlay" />
-          </div>
+          {/* Hier kommt direkt das originale Google-Translate-Widget rein */}
+          <div id="google_translate_element" />
 
           {/* Mobile-Menü-Button */}
           <button
