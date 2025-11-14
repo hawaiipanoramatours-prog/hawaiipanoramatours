@@ -87,8 +87,11 @@ export default function Header({ content }) {
 
         {/* Rechte Seite: Google-Translate + Mobile-Menü */}
         <div className="flex items-center gap-4">
-          {/* ▶️ Google-Translate-Dropdown – wir stylen es per CSS */}
-          <div id="google_translate_element" className="google-translate-custom" />
+          {/* ▶️ Globe + Google-Translate-Dropdown zusammen */}
+<div className="flex items-center gap-2 google-translate-custom">
+  <Fi.FiGlobe className="text-turquoise text-xl" />
+  <div id="google_translate_element"></div>
+</div>
 
           {/* Mobile-Menü-Button */}
           <button
