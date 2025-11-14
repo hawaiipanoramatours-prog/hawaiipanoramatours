@@ -17,11 +17,12 @@ export default function Header({ content }) {
 
   // GOOGLE TRANSLATE LADEN
   useEffect(() => {
+    // Callback, die Google aufruft
     window.googleTranslateElementInit = function () {
       if (!window.google || !window.google.translate) return
       new window.google.translate.TranslateElement(
         {
-          pageLanguage: 'de',
+          pageLanguage: content?.i18n?.default || 'de',
           includedLanguages: 'de,en,es',
           layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
           autoDisplay: false
@@ -38,7 +39,7 @@ export default function Header({ content }) {
         'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
       document.body.appendChild(s)
     }
-  }, [])
+  }, [content])
 
   return (
     <motion.header
@@ -79,22 +80,13 @@ export default function Header({ content }) {
           ))}
         </nav>
 
-        {/* Rechte Seite: Globe-Icon + verstecktes Google-Widget + Mobile-Button */}
+        {/* Rechte Seite: Globe + Google-Dropdown (gestylt) + Mobile-Button */}
         <div className="flex items-center gap-4">
-          {/* 🌍 Globe Icon – öffnet Google-Sprachauswahl */}
-          <button
-            onClick={() => {
-              const select = document.querySelector('.goog-te-combo')
-              if (select) select.click()
-            }}
-            className="text-turquoise hover:text-gray-800 text-2xl"
-            title="Sprache wählen"
-          >
-            <Fi.FiGlobe />
-          </button>
-
-          {/* Verstecktes Google-Element (wird über CSS unsichtbar gemacht) */}
-          <div id="google_translate_element" className="google-hidden"></div>
+          {/* 🌍 Globe + Select zusammen */}
+          <div className="flex items-center gap-2 google-translate-header">
+            <Fi.FiGlobe className="text-turquoise text-xl" />
+            <div id="google_translate_element"></div>
+          </div>
 
           {/* Mobile Menü Toggle */}
           <button
