@@ -7,39 +7,44 @@ html, body {
   font-family: 'Poppins', sans-serif;
 }
 
-//* ==== Google Translate: nur Globe sichtbar, Select unsichtbar drüber ==== */
+/* ==== Google Translate über dem Globus platzieren ==== */
 
-.google-translate-custom {
-  position: relative;
-  width: 32px;
-  height: 32px;
+/* Container, in den Google sein Widget rendert */
+.gt-overlay {
+  position: absolute;
+  inset: 0;            /* füllt den ganzen 32x32-Bereich */
 }
 
-/* Google zeigt normalerweise ein Label + Logo → alles ausblenden */
-.google-translate-custom .goog-te-gadget {
-  font-size: 0 !important;
+/* Das Gadget selbst soll die gesamte Fläche belegen */
+.gt-overlay .goog-te-gadget {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+  font-size: 0 !important;         /* Standardtext ausblenden */
 }
 
-.google-translate-custom .goog-te-gadget span,
-.google-translate-custom .goog-te-gadget img {
+/* Text & Google-Logo ausblenden */
+.gt-overlay .goog-te-gadget span,
+.gt-overlay .goog-te-gadget img {
   display: none !important;
 }
 
-/* Das echte Select-Element unsichtbar machen, aber KLICKBAR lassen */
-.google-translate-custom .goog-te-combo {
-  position: absolute;
-  inset: 0;            /* top:0, right:0, bottom:0, left:0 */
-  width: 100%;
-  height: 100%;
-  opacity: 0;          /* komplett unsichtbar */
-  cursor: pointer;
-  border: 0;
-  padding: 0;
-  margin: 0;
-  background: transparent;
+/* Das <select> unsichtbar, aber komplette Fläche klickbar */
+.gt-overlay .goog-te-combo {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  cursor: pointer !important;
+  color: transparent !important;
 }
 
-/* Falls Google oben eine Übersetzungsleiste einblendete → verstecken */
+/* Falls Google oben eine Leiste einblendet – ausblenden */
 .goog-te-banner-frame.skiptranslate,
 iframe.goog-te-banner-frame {
   display: none !important;
