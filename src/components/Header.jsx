@@ -6,7 +6,6 @@ import * as Fi from 'react-icons/fi'
 export default function Header({ content }) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
-  const [lang, setLang] = useState('de')
   const location = useLocation()
 
   // Scroll-Effekt für Schatten
@@ -16,17 +15,11 @@ export default function Header({ content }) {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Google Translate Script einbinden
+  // ✅ Google Translate Script laden und Widget einbinden
   useEffect(() => {
     const id = 'google-translate-script'
-    if (!document.getElementById(id)) {
-      const s = document.createElement('script')
-      s.id = id
-      s.src =
-        'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
-      document.body.appendChild(s)
-    }
 
+    // Callback MUSS global sein
     window.googleTranslateElementInit = function () {
       if (!window.google || !window.google.translate) return
       new window.google.translate.TranslateElement(
@@ -39,24 +32,22 @@ export default function Header({ content }) {
         'google_translate_element'
       )
     }
-  }, [content])
 
-  // eigene Sprach-Auswahl → Google-Select im Hintergrund ansteuern
-  const handleLangChange = (code) => {
-    setLang(code)
-    const select = document.querySelector('.goog-te-combo')
-    if (select) {
-      select.value = code
-      select.dispatchEvent(new Event('change'))
+    if (!document.getElementById(id)) {
+      const s = document.createElement('script')
+      s.id = id
+      s.src =
+        'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
+      document.body.appendChild(s)
     }
-  }
+  }, [content])
 
   return (
     <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur shadow-sm'
-          : 'bg-white/95 backdrop-blur'
+          ? 'bg-white/95 backdrop-blur-md shadow-sm'
+          : 'bg-white/90 backdrop-blur'
       }`}
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
@@ -94,29 +85,10 @@ export default function Header({ content }) {
           ))}
         </nav>
 
-        {/* Rechte Seite: Sprachwahl + Mobile-Button */}
+        {/* Rechte Seite: Google-Translate + Mobile-Menü */}
         <div className="flex items-center gap-4">
-          {/* Google-Widget im Hintergrund (unsichtbar) */}
-          <div id="google_translate_element" className="hidden" />
-
-          {/* Eigene, elegante Sprach-Auswahl */}
-          <div className="relative hidden sm:block">
-            <select
-              value={lang}
-              onChange={(e) => handleLangChange(e.target.value)}
-              className="appearance-none bg-sand/40 hover:bg-sand/60 border border-sand/60 text-sm font-poppins text-gray-700 rounded-full pl-3 pr-7 py-1 cursor-pointer focus:outline-none focus:ring-2 focus:ring-turquoise"
-            >
-              <option value="de">DE</option>
-              <option value="en">EN</option>
-              <option value="es">ES</option>
-            </select>
-            <span className="pointer-events-none absolute right-2 top-1.5 text-[10px] text-gray-500">
-              ▾
-            </span>
-            <span className="block text-[10px] text-gray-400 mt-1 text-right">
-              Powered by Google&nbsp;Translate
-            </span>
-          </div>
+          {/* ▶️ Google-Translate-Dropdown – wir stylen es per CSS */}
+          <div id="google_translate_element" className="google-translate-custom" />
 
           {/* Mobile-Menü-Button */}
           <button
