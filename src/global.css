@@ -7,40 +7,39 @@ html, body {
   font-family: 'Poppins', sans-serif;
 }
 
-/* ==== Google Translate verstecken (nur technisch im Hintergrund) ==== */
+//* ==== Google Translate: nur Globe sichtbar, Select unsichtbar drüber ==== */
 
-/* Container für das versteckte Google-Widget */
-.google-hidden {
+.google-translate-custom {
   position: relative;
-  width: 0;
-  height: 0;
-  overflow: hidden;
+  width: 32px;
+  height: 32px;
 }
 
-/* Standard-Text und Google-Markierung entfernen */
-.google-hidden .goog-te-gadget {
+/* Google zeigt normalerweise ein Label + Logo → alles ausblenden */
+.google-translate-custom .goog-te-gadget {
   font-size: 0 !important;
 }
 
-.google-hidden .goog-te-gadget span,
-.google-hidden .goog-te-gadget img {
+.google-translate-custom .goog-te-gadget span,
+.google-translate-custom .goog-te-gadget img {
   display: none !important;
 }
 
-/* Das eigentliche Dropdown unsichtbar, aber klickbar lassen */
-.google-hidden .goog-te-combo {
+/* Das echte Select-Element unsichtbar machen, aber KLICKBAR lassen */
+.google-translate-custom .goog-te-combo {
   position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
-  width: 80px;
-  height: 32px;
-  padding: 0;
-  border: 0;
+  inset: 0;            /* top:0, right:0, bottom:0, left:0 */
+  width: 100%;
+  height: 100%;
+  opacity: 0;          /* komplett unsichtbar */
   cursor: pointer;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
 }
 
-/* Falls Google oben eine Leiste einblendet – ausblenden */
+/* Falls Google oben eine Übersetzungsleiste einblendete → verstecken */
 .goog-te-banner-frame.skiptranslate,
 iframe.goog-te-banner-frame {
   display: none !important;
@@ -48,63 +47,4 @@ iframe.goog-te-banner-frame {
 
 body {
   top: 0 !important;
-}
-/* ==== Google Translate im Header hübsch machen ==== */
-
-.google-translate-custom .goog-te-gadget {
-  font-size: 0; /* Standard-Text "Select Language" ausblenden */
-}
-
-.google-translate-custom .goog-te-gadget span,
-.google-translate-custom .goog-te-gadget img {
-  display: none !important; /* Google-Logo und Text weg */
-}
-
-.google-translate-custom .goog-te-combo {
-  font-size: 0.75rem;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  border: 1px solid rgba(89, 195, 195, 0.7);
-  background-color: #ffffff;
-  color: #374151;
-  outline: none;
-  cursor: pointer;
-}
-
-.google-translate-custom .goog-te-combo:focus {
-  box-shadow: 0 0 0 2px rgba(89, 195, 195, 0.25);
-}
-
-/* ==== Google Translate Styling ==== */
-
-/* Container im Header */
-.google-translate-custom {
-  display: inline-block;
-}
-
-/* Das Standard-Label "Select Language" ausblenden */
-.google-translate-custom .goog-te-gadget {
-  font-size: 0;
-}
-
-/* Den Text neben dem Dropdown entfernen */
-.google-translate-custom .goog-te-gadget span {
-  display: none;
-}
-
-/* Das eigentliche <select> hübsch machen */
-.google-translate-custom .goog-te-combo {
-  font-size: 0.75rem;
-  padding: 0.25rem 1.75rem 0.25rem 0.75rem;
-  border-radius: 9999px;
-  border: 1px solid rgba(89, 195, 195, 0.7);
-  background-color: #ffffff;
-  color: #374151;
-  outline: none;
-  cursor: pointer;
-}
-
-/* Kleiner Pfeil fürs Dropdown (Browser-Standard beibehalten) */
-.google-translate-custom .goog-te-combo:focus {
-  box-shadow: 0 0 0 2px rgba(89, 195, 195, 0.25);
 }
