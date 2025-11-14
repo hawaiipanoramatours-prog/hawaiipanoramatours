@@ -24,7 +24,7 @@ export default function Header({ content }) {
           pageLanguage: 'de',
           includedLanguages: 'de,en,es',
           layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
-          autoDisplay: false,
+          autoDisplay: false
         },
         'google_translate_element'
       )
@@ -50,7 +50,7 @@ export default function Header({ content }) {
       transition={{ duration: 0.5 }}
     >
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo + Name */}
+        {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
           <img
             src="/githup%20upload%20Hawaii%20Panorama%20Tours.png"
@@ -62,7 +62,7 @@ export default function Header({ content }) {
           </span>
         </Link>
 
-        {/* Desktop-Menü */}
+        {/* Desktop Menu */}
         <nav className="hidden md:flex items-center gap-8">
           {content.header.nav.map((n) => (
             <Link
@@ -79,9 +79,9 @@ export default function Header({ content }) {
           ))}
         </nav>
 
-        {/* Rechte Seite: Globe + versteckter Google-Translator + Mobile-Menü */}
+        {/* Rechte Seite: Globe-Icon + verstecktes Google-Widget + Mobile-Button */}
         <div className="flex items-center gap-4">
-          {/* 🌍 Globe-Icon – klickt das versteckte Dropdown */}
+          {/* 🌍 Globe Icon – öffnet Google-Sprachauswahl */}
           <button
             onClick={() => {
               const select = document.querySelector('.goog-te-combo')
@@ -93,10 +93,10 @@ export default function Header({ content }) {
             <Fi.FiGlobe />
           </button>
 
-          {/* Google-Translate-DIV – wird versteckt gestylt */}
+          {/* Verstecktes Google-Element (wird über CSS unsichtbar gemacht) */}
           <div id="google_translate_element" className="google-hidden"></div>
 
-          {/* Mobile-Menü Button */}
+          {/* Mobile Menü Toggle */}
           <button
             onClick={() => setIsMobile((s) => !s)}
             className="md:hidden text-turquoise text-2xl"
@@ -106,7 +106,7 @@ export default function Header({ content }) {
         </div>
       </div>
 
-      {/* Mobile-Navigation */}
+      {/* Mobile Menu */}
       {isMobile && (
         <div className="md:hidden mx-4 mb-4 bg-white rounded-lg shadow p-4">
           <nav className="flex flex-col gap-3">
