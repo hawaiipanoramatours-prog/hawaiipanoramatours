@@ -27,7 +27,7 @@ export default function Header({ content }) {
           pageLanguage: content?.i18n?.default || 'de',
           includedLanguages: 'de,en,es',
           layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
-          autoDisplay: false,
+          autoDisplay: false
         },
         'google_translate_element'
       )
@@ -53,6 +53,7 @@ export default function Header({ content }) {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
+      {/* Hauptzeile im Header */}
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo + Name */}
         <Link to="/" className="flex items-center gap-3">
@@ -85,7 +86,7 @@ export default function Header({ content }) {
           ))}
         </nav>
 
-              {/* Rechte Seite: Globe + unsichtbares Google-Select + Mobile-Menü */}
+        {/* Rechte Seite: Globe + unsichtbares Google-Select + Mobile-Menü-Button */}
         <div className="flex items-center gap-4">
           {/* 🌍 Globe mit unsichtbarem Select darüber */}
           <div className="relative w-8 h-8 flex items-center justify-center">
@@ -108,6 +109,7 @@ export default function Header({ content }) {
             )}
           </button>
         </div>
+      </div>
 
       {/* Mobile-Navigation */}
       {isMobile && (
