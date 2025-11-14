@@ -39,3 +39,21 @@ html, body {
 .google-translate-custom .goog-te-combo:focus {
   box-shadow: 0 0 0 2px rgba(89, 195, 195, 0.25);
 }
+/* Versteckt das originale Google Translate Widget */
+.google-hidden .goog-te-gadget {
+  font-size: 0;
+}
+.google-hidden .goog-te-gadget span {
+  display: none;
+}
+.google-hidden .goog-te-combo {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
