@@ -85,16 +85,16 @@ export default function Header({ content }) {
           ))}
         </nav>
 
-        {/* Rechte Seite: Google-Translate + Mobile-Menü */}
+              {/* Rechte Seite: Globe + unsichtbares Google-Select + Mobile-Menü */}
         <div className="flex items-center gap-4">
-          {/* 🌍 Globe mit unsichtbarem Google-Select darüber */}
-<div className="google-translate-custom flex items-center justify-center w-8 h-8 relative">
-  {/* Der sichtbare Globe */}
-  <Fi.FiGlobe className="text-turquoise text-xl pointer-events-none" />
-
-  {/* Hier rendert Google das Select hinein (unsichtbar, aber klickbar) */}
-  <div id="google_translate_element" className="absolute inset-0" />
-</div>
+          {/* 🌍 Globe mit unsichtbarem Select darüber */}
+          <div className="relative w-8 h-8 flex items-center justify-center">
+            {/* Sichtbares Icon */}
+            <Fi.FiGlobe className="text-turquoise w-6 h-6 pointer-events-none" />
+            {/* Hier rendert Google sein <select>, das per CSS unsichtbar ist,
+                aber die ganze 32x32-Fläche klickbar macht */}
+            <div id="google_translate_element" className="google-translate-custom" />
+          </div>
 
           {/* Mobile-Menü-Button */}
           <button
@@ -108,7 +108,7 @@ export default function Header({ content }) {
             )}
           </button>
         </div>
-      </div>
+
 
       {/* Mobile-Navigation */}
       {isMobile && (
