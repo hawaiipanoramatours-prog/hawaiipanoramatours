@@ -109,7 +109,6 @@ export default function Header({ content }) {
           </button>
         </div>
 
-
       {/* Mobile-Navigation */}
       {isMobile && (
         <div className="md:hidden mx-4 mb-4 bg-white rounded-lg shadow p-4">
