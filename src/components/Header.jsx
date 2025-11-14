@@ -86,15 +86,14 @@ export default function Header({ content }) {
           ))}
         </nav>
 
-        {/* Rechte Seite: Globe + unsichtbares Google-Select + Mobile-Menü-Button */}
+        {/* Rechte Seite: Globus + unsichtbares Google-Select + Mobile-Menü-Button */}
         <div className="flex items-center gap-4">
-          {/* 🌍 Globe mit unsichtbarem Select darüber */}
+          {/* 🌍 Globus – komplette Fläche wird Klickzone */}
           <div className="relative w-8 h-8 flex items-center justify-center">
             {/* Sichtbares Icon */}
             <Fi.FiGlobe className="text-turquoise w-6 h-6 pointer-events-none" />
-            {/* Hier rendert Google sein <select>, das per CSS unsichtbar ist,
-                aber die ganze 32x32-Fläche klickbar macht */}
-            <div id="google_translate_element" className="google-translate-custom" />
+            {/* Google-Widget, das wir per CSS über den Globus legen */}
+            <div id="google_translate_element" className="gt-overlay" />
           </div>
 
           {/* Mobile-Menü-Button */}
