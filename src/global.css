@@ -57,3 +57,46 @@ html, body {
   right: 0;
   top: 0;
 }
+/* ==== Google Translate komplett verstecken, nur fürs Globe-Icon nutzbar ==== */
+
+/* Container selbst soll keinen Platz einnehmen */
+.google-hidden {
+  position: relative;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* Standard-Text & Label verstecken */
+.google-hidden .goog-te-gadget {
+  font-size: 0 !important;
+}
+
+/* "Select language", Google-Text, Google-Icon etc. ausblenden */
+.google-hidden .goog-te-gadget span,
+.google-hidden .goog-te-gadget img {
+  display: none !important;
+}
+
+/* Das eigentliche Dropdown (Select) unsichtbar machen,
+   aber klickbar lassen, damit unser Globe es triggern kann */
+.google-hidden .goog-te-combo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 50px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+/* Falls Google die obere Übersetzungs-Leiste einblenden will: ausblenden */
+.goog-te-banner-frame.skiptranslate,
+iframe.goog-te-banner-frame {
+  display: none !important;
+}
+body {
+  top: 0 !important;
+}
