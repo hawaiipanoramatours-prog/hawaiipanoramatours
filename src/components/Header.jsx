@@ -87,10 +87,13 @@ export default function Header({ content }) {
 
         {/* Rechte Seite: Google-Translate + Mobile-Menü */}
         <div className="flex items-center gap-4">
-          {/* ▶️ Globe + Google-Translate-Dropdown zusammen */}
-<div className="flex items-center gap-2 google-translate-custom">
-  <Fi.FiGlobe className="text-turquoise text-xl" />
-  <div id="google_translate_element"></div>
+          {/* 🌍 Globe mit unsichtbarem Google-Select darüber */}
+<div className="google-translate-custom flex items-center justify-center w-8 h-8 relative">
+  {/* Der sichtbare Globe */}
+  <Fi.FiGlobe className="text-turquoise text-xl pointer-events-none" />
+
+  {/* Hier rendert Google das Select hinein (unsichtbar, aber klickbar) */}
+  <div id="google_translate_element" className="absolute inset-0" />
 </div>
 
           {/* Mobile-Menü-Button */}
