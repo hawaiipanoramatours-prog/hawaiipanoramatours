@@ -51,16 +51,16 @@ body {
 }
 /* ==== Google Translate im Header hübsch machen ==== */
 
-.google-translate-header .goog-te-gadget {
+.google-translate-custom .goog-te-gadget {
   font-size: 0; /* Standard-Text "Select Language" ausblenden */
 }
 
-.google-translate-header .goog-te-gadget span,
-.google-translate-header .goog-te-gadget img {
+.google-translate-custom .goog-te-gadget span,
+.google-translate-custom .goog-te-gadget img {
   display: none !important; /* Google-Logo und Text weg */
 }
 
-.google-translate-header .goog-te-combo {
+.google-translate-custom .goog-te-combo {
   font-size: 0.75rem;
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
@@ -71,9 +71,10 @@ body {
   cursor: pointer;
 }
 
-.google-translate-header .goog-te-combo:focus {
+.google-translate-custom .goog-te-combo:focus {
   box-shadow: 0 0 0 2px rgba(89, 195, 195, 0.25);
 }
+
 /* ==== Google Translate Styling ==== */
 
 /* Container im Header */
