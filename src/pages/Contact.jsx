@@ -93,137 +93,107 @@ export function Contact() {
             </div>
           </div>
 
-          {/* Rechte Seite: Formular oder Danke-Box */}
+          {/* Rechte Seite: Formular */}
           <motion.div
-            key={status === 'success' ? 'success' : 'form'}
+            key="form"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            {status === 'success' ? (
-              
-              <motion.div
-                className="bg-gradient-to-br from-sand/40 to-light-blue/30 rounded-2xl p-8 shadow-lg text-center flex flex-col items-center space-y-4"
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.4 }}
-              >
-                <div className="text-5xl mb-2">🌺</div>
-                <h3 className="font-playfair text-2xl font-bold text-gray-800">
-                  Vielen Dank!
-                </h3>
-                <p className="font-poppins text-gray-700 max-w-md">
-                  Ihre Nachricht wurde erfolgreich gesendet.
-                  <br />
-                  Ich melde mich so schnell wie möglich bei Ihnen.
-                </p>
-                <button
-                  type="button"
-                  onClick={() => setStatus('idle')}
-                  className="mt-4 px-6 py-2 rounded-full border border-turquoise text-turquoise font-poppins text-sm hover:bg-turquoise hover:text-white transition"
-                >
-                  Neue Nachricht schreiben
-                </button>
-              </motion.div>
+            <motion.form
+              onSubmit={handleSubmit}
+              className="bg-gradient-to-br from-sand/30 to-light-blue/20 rounded-2xl p-8 space-y-6 shadow-lg"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+            >
 
-            ) : (
+              {/* Redirect */}
+              <input
+                type="hidden"
+                name="_redirect"
+                value="https://www.hawaiipanoramatours.de/thanks.html"
+              />
 
-              <motion.form
-                onSubmit={handleSubmit}
-                className="bg-gradient-to-br from-sand/30 to-light-blue/20 rounded-2xl p-8 space-y-6 shadow-lg"
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4 }}
-              >
-
-                {/* ✅ HIER IST DAS EINGEBAUTE REDIRECT-FELD */}
-                <input
-                  type="hidden"
-                  name="_redirect"
-                  value="https://www.hawaiipanoramatours.de/thanks.html"
-                />
-
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block font-poppins text-sm font-medium text-gray-700 mb-2">
-                      Name *
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      required
-                      value={formData.name}
-                      onChange={handleChange('name')}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-turquoise outline-none"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block font-poppins text-sm font-medium text-gray-700 mb-2">
-                      E-Mail *
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange('email')}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-turquoise outline-none"
-                    />
-                  </div>
-                </div>
-
+              <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block font-poppins text-sm font-medium text-gray-700 mb-2">
-                    Betreff
+                    Name *
                   </label>
                   <input
                     type="text"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange('subject')}
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange('name')}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-turquoise outline-none"
                   />
                 </div>
 
                 <div>
                   <label className="block font-poppins text-sm font-medium text-gray-700 mb-2">
-                    Nachricht *
+                    E-Mail *
                   </label>
-                  <textarea
-                    name="message"
-                    rows="5"
+                  <input
+                    type="email"
+                    name="email"
                     required
-                    value={formData.message}
-                    onChange={handleChange('message')}
+                    value={formData.email}
+                    onChange={handleChange('email')}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-turquoise outline-none"
-                  ></textarea>
+                  />
                 </div>
+              </div>
 
-                {status === 'error' && (
-                  <p className="text-sm text-red-500 font-poppins">
-                    Ups, etwas ist schiefgelaufen. Bitte versuchen Sie es später noch einmal
-                    oder schreiben Sie direkt an {content.brand.social.email}.
-                  </p>
-                )}
+              <div>
+                <label className="block font-poppins text-sm font-medium text-gray-700 mb-2">
+                  Betreff
+                </label>
+                <input
+                  type="text"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange('subject')}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-turquoise outline-none"
+                />
+              </div>
 
-                <button
-                  type="submit"
-                  disabled={status === 'submitting'}
-                  className={`w-full bg-turquoise text-white py-3 rounded-lg font-poppins font-semibold transition ${
-                    status === 'submitting'
-                      ? 'opacity-70 cursor-not-allowed'
-                      : 'hover:bg-turquoise/90'
-                  }`}
-                >
-                  {status === 'submitting' ? 'Wird gesendet…' : 'Nachricht senden'}
-                </button>
-              </motion.form>
-            )}
+              <div>
+                <label className="block font-poppins text-sm font-medium text-gray-700 mb-2">
+                  Nachricht *
+                </label>
+                <textarea
+                  name="message"
+                  rows="5"
+                  required
+                  value={formData.message}
+                  onChange={handleChange('message')}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-turquoise outline-none"
+                ></textarea>
+              </div>
+
+              {status === 'error' && (
+                <p className="text-sm text-red-500 font-poppins">
+                  Ups, etwas ist schiefgelaufen. Bitte versuchen Sie es später noch einmal
+                  oder schreiben Sie direkt an {content.brand.social.email}.
+                </p>
+              )}
+
+              <button
+                type="submit"
+                disabled={status === 'submitting'}
+                className={`w-full bg-turquoise text-white py-3 rounded-lg font-poppins font-semibold transition ${
+                  status === 'submitting'
+                    ? 'opacity-70 cursor-not-allowed'
+                    : 'hover:bg-turquoise/90'
+                }`}
+              >
+                {status === 'submitting' ? 'Wird gesendet…' : 'Nachricht senden'}
+              </button>
+            </motion.form>
           </motion.div>
         </div>
       </section>
     </div>
   )
 }
-
