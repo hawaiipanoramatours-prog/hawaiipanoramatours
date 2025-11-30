@@ -10,7 +10,7 @@
     "social": {
       "instagram": "https://instagram.com/hawaiipanoramatours",
       "facebook": "https://facebook.com/hawaiipanoramatours",
-      "email": "info@hawaiipanoramatours.com",
+      "email": "hawaiipanoramatours@gmail.com",
       "place": "Hawaii, USA",
       "calendly": "https://calendly.com/hawaiipanoramatours"
     }
@@ -44,19 +44,19 @@
   "hero": {
     "bg": "pexels-troy-squillaci-1303476-2521619-min.jpg",
     "title": {
-      "de": "Entdeckt Hawaii mit",
-      "en": "Discover Hawai‘i with"
+      "de": "Entdeckt Hawai'i",
+      "en": "Discover Hawai‘i"
     },
     "highlight": {
-      "de": "Hawaii Panorama Tours!",
-      "en": "Hawaii Panorama Tours!"
+      "de": "-persönlich geplant & stressfrei",
+      "en": "-personally planned & stress-free,"
     },
     "subtitle": {
-      "de": "Erleben Sie Hawaii authentisch, individuell und stressfrei mit persönlicher Betreuung und Insider-Tipps - auf Deutsch, Englisch und Spanisch!",
-      "en": "Experience Hawai‘i authentically, tailor-made and stress-free with personal guidance and insider tips - in German, Englisch and Spanisch!"
+      "de": "Individuelle Reiseplanung mit Insider-Tipps & persönlicher Betreuung – auf Deutsch, Englisch und Spanisch. Kostenlos & unverbindlich.",
+      "en": "Individual travel planning with insider tips & personal support – in German, English, and Spanish. For free & without obligation."
     },
     "ctaPlan": {
-      "label": { "de": "Traumreise planen", "en": "Plan your dream trip" }
+      "label": { "de": "Kostenlos anfragen", "en": "Request for free" }
     },
     "ctaServices": {
       "label": { "de": "Meine Concierge-Dienste", "en": "My concierge services" }
@@ -92,7 +92,7 @@
           "en": "Custom planning"
         },
         "desc": {
-          "de": "Maßgeschneiderte Route…",
+          "de": "Maßgeschneiderte Route",
           "en": "Tailored itinerary with insider tips"
         }
       },
@@ -104,7 +104,7 @@
           "en": "On-site support"
         },
         "desc": {
-          "de": "Ich bin für Sie da…",
+          "de": "Ich bin für Sie da",
           "en": "I’m there for you during your trip"
         }
       }
@@ -118,8 +118,8 @@
         "en": "Orientation & day planning"
       },
       "desc": {
-        "de": "Perfekte Tagesrouten…",
-        "en": "Perfect day routes…"
+        "de": "Perfekte Tagesrouten",
+        "en": "Perfect day routes"
       },
       "price": "ab 99 $/Tag",
       "features": [
@@ -136,7 +136,7 @@
         "en": "Concierge & guide"
       },
       "desc": {
-        "de": "Persönliche Begleitung…",
+        "de": "Persönliche Begleitung",
         "en": "Personal guide & concierge"
       },
       "price": "ab 299 $/Tag",
