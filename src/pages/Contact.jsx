@@ -42,6 +42,7 @@ export function Contact() {
       if (res.ok) {
         setStatus('success')
         setFormData({ name: '', email: '', subject: '', message: '' })
+        window.location.href = "https://www.hawaiipanoramatours.de/thanks.html"
       } else {
         setStatus('error')
       }
@@ -71,6 +72,7 @@ export function Contact() {
 
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-12">
+          
           {/* Linke Seite: Kontaktinfos */}
           <div>
             <h2 className="font-playfair text-3xl font-bold text-gray-800 mb-8">
@@ -91,7 +93,7 @@ export function Contact() {
             </div>
           </div>
 
-          {/* Rechte Seite: Formular ODER Danke-Box */}
+          {/* Rechte Seite: Formular oder Danke-Box */}
           <motion.div
             key={status === 'success' ? 'success' : 'form'}
             initial={{ opacity: 0, y: 20 }}
@@ -99,7 +101,7 @@ export function Contact() {
             transition={{ duration: 0.5 }}
           >
             {status === 'success' ? (
-              // Danke-Box nach erfolgreichem Absenden
+              
               <motion.div
                 className="bg-gradient-to-br from-sand/40 to-light-blue/30 rounded-2xl p-8 shadow-lg text-center flex flex-col items-center space-y-4"
                 initial={{ scale: 0.9, opacity: 0 }}
@@ -123,8 +125,9 @@ export function Contact() {
                   Neue Nachricht schreiben
                 </button>
               </motion.div>
+
             ) : (
-              // Formular (Standard / idle / submitting / error)
+
               <motion.form
                 onSubmit={handleSubmit}
                 className="bg-gradient-to-br from-sand/30 to-light-blue/20 rounded-2xl p-8 space-y-6 shadow-lg"
@@ -132,6 +135,14 @@ export function Contact() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
               >
+
+                {/* ✅ HIER IST DAS EINGEBAUTE REDIRECT-FELD */}
+                <input
+                  type="hidden"
+                  name="_redirect"
+                  value="https://www.hawaiipanoramatours.de/thanks.html"
+                />
+
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block font-poppins text-sm font-medium text-gray-700 mb-2">
@@ -215,3 +226,4 @@ export function Contact() {
     </div>
   )
 }
+
