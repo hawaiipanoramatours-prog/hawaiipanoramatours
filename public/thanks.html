@@ -2,80 +2,238 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
-    <title>Vielen Dank – Hawaii Panorama Tours</title>
+    <title>Mahalo – Nachricht erhalten | Hawaii Panorama Tours</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Vielen Dank für Ihre Nachricht an Hawaii Panorama Tours. Ich melde mich so schnell wie möglich bei Ihnen."
+    />
 
-    <!-- Optional: gleiche Schriftarten wie auf der Hauptseite -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap"
       rel="stylesheet"
-    >
+    />
 
     <style>
-      body {
+      :root {
+        --turquoise: #11b8c9;
+        --light-blue: #7fd3f7;
+        --sand: #f4e3c3;
+        --dark: #123047;
+      }
+
+      * {
+        box-sizing: border-box;
         margin: 0;
-        font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-        background: #f7fafc;
-        color: #1a202c;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        min-height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
-        min-height: 100vh;
+        background: radial-gradient(circle at top, #ffffff 0, #e5f5ff 45%, #cfeaf5 100%);
+        color: #1f2933;
       }
-      .thankyou-wrapper {
-        max-width: 640px;
-        padding: 32px 24px;
-        background: #ffffff;
-        border-radius: 16px;
-        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+
+      .page-wrapper {
+        max-width: 960px;
+        width: 100%;
+        padding: 24px;
+      }
+
+      .card {
+        background: linear-gradient(
+          135deg,
+          rgba(244, 227, 195, 0.92),
+          rgba(127, 211, 247, 0.92)
+        );
+        border-radius: 24px;
+        box-shadow: 0 20px 40px rgba(15, 52, 96, 0.18);
+        padding: 32px 24px 28px;
         text-align: center;
+        position: relative;
+        overflow: hidden;
+        animation: fadeInUp 0.6s ease-out forwards;
       }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.4), transparent 55%)
+            no-repeat,
+          radial-gradient(circle at 100% 100%, rgba(255, 255, 255, 0.2), transparent 55%)
+            no-repeat;
+        pointer-events: none;
+      }
+
+      .card-inner {
+        position: relative;
+        z-index: 1;
+      }
+
+      .flower {
+        font-size: 3.5rem;
+        margin-bottom: 0.5rem;
+      }
+
       h1 {
-        font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-        font-size: 2rem;
-        margin-bottom: 8px;
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.1rem, 4vw, 2.8rem);
+        color: var(--dark);
+        margin-bottom: 0.75rem;
       }
-      p {
-        margin: 6px 0;
+
+      .subtitle {
+        font-size: 0.98rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(18, 48, 71, 0.7);
+        margin-bottom: 1.25rem;
+      }
+
+      .lead {
+        font-size: 1.02rem;
+        color: #1f2933;
+        max-width: 540px;
+        margin: 0 auto 1.8rem;
+        line-height: 1.6;
+      }
+
+      .lead span {
+        font-weight: 600;
+      }
+
+      .info {
+        font-size: 0.95rem;
+        color: #253444;
+        max-width: 520px;
+        margin: 0 auto 2rem;
         line-height: 1.5;
       }
-      .highlight {
-        color: #0f766e; /* türkis */
-        font-weight: 600;
+
+      .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
       }
-      .btn-home {
-        display: inline-block;
-        margin-top: 24px;
-        padding: 10px 20px;
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.7rem 1.6rem;
         border-radius: 999px;
-        border: none;
-        text-decoration: none;
-        background: #0f766e;
-        color: #ffffff;
-        font-weight: 600;
         font-size: 0.95rem;
+        font-weight: 500;
+        text-decoration: none;
+        border: 1px solid transparent;
+        transition: all 0.2s ease;
+        cursor: pointer;
       }
-      .btn-home:hover {
-        opacity: 0.9;
+
+      .btn-primary {
+        background: linear-gradient(135deg, var(--turquoise), #0e9db1);
+        color: #ffffff;
+        box-shadow: 0 12px 24px rgba(17, 184, 201, 0.4);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 16px 30px rgba(17, 184, 201, 0.5);
+        filter: brightness(1.02);
+      }
+
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.7);
+        color: var(--dark);
+        border-color: rgba(18, 48, 71, 0.2);
+      }
+
+      .btn-secondary:hover {
+        background: #ffffff;
+        border-color: rgba(18, 48, 71, 0.35);
+      }
+
+      .meta {
+        font-size: 0.85rem;
+        color: rgba(18, 48, 71, 0.7);
+      }
+
+      .meta span {
+        font-weight: 500;
+      }
+
+      .brand {
+        margin-top: 0.3rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: 0.78rem;
+        color: rgba(18, 48, 71, 0.85);
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (min-width: 768px) {
+        .card {
+          padding: 40px 40px 32px;
+        }
+        .flower {
+          font-size: 4rem;
+        }
       }
     </style>
   </head>
+
   <body>
-    <main class="thankyou-wrapper">
-      <h1>Mahalo &amp; vielen Dank!</h1>
-      <p class="highlight">
-        Ihre Anfrage ist erfolgreich bei <strong>Hawaii Panorama Tours</strong> eingegangen.
-      </p>
-      <p>
-        Ich melde mich so schnell wie möglich bei Ihnen zurück – in der Regel innerhalb von
-        <strong>24&nbsp;Stunden</strong>.
-      </p>
-      <p>
-        In der Zwischenzeit können Sie gerne weiter auf meiner Seite stöbern
-        und Ihre erste Inspiration für Ihre Zeit auf Oʻahu holen.
-      </p>
-      <a href="/" class="btn-home">Zur Startseite</a>
-    </main>
+    <div class="page-wrapper">
+      <main class="card" role="main">
+        <div class="card-inner">
+          <div class="flower" aria-hidden="true">🌺</div>
+          <p class="subtitle">Mahalo für Ihre Nachricht</p>
+          <h1>Ihre Anfrage ist angekommen.</h1>
+
+          <p class="lead">
+            <span>Vielen Dank für Ihr Vertrauen in Hawaii Panorama Tours.</span><br />
+            Ihre Nachricht wurde erfolgreich übermittelt – ich melde mich so
+            schnell wie möglich persönlich bei Ihnen.
+          </p>
+
+          <p class="info">
+            In der Zwischenzeit können Sie gerne weiter auf der Website stöbern
+            und erste Inspirationen für Ihre Reise sammeln.
+          </p>
+
+          <div class="buttons">
+            <a href="/" class="btn btn-primary">Zur Startseite</a>
+            <a href="/kontakt" class="btn btn-secondary">Zur Kontaktseite</a>
+          </div>
+
+          <p class="meta">
+            Bei dringenden Anfragen erreichen Sie mich auch per E-Mail:<br />
+            <span>info@hawaiipanoramatours.de</span>
+          </p>
+          <div class="brand">Hawaii Panorama Tours</div>
+        </div>
+      </main>
+    </div>
   </body>
 </html>
