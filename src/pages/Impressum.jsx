@@ -13,7 +13,7 @@ export default function Impressum() {
 
       <p className="mt-4">
         <strong>Kontakt</strong><br />
-        E-Mail: <a href="mailto:info@hawaiipanoramatours.com" className="text-turquoise hover:underline">info@hawaiipanoramatours.com</a><br />
+        E-Mail: <a href="mailto:hawaiipanoramatours@gmail.com" className="text-turquoise hover:underline">info@hawaiipanoramatours.com</a><br />
         Telefon: — (auf Anfrage)<br />
         Website: <a href="https://hawaiipanoramatours.de" className="text-turquoise hover:underline">www.hawaiipanoramatours.de</a>
       </p>
