@@ -44,12 +44,12 @@
   "hero": {
     "bg": "pexels-troy-squillaci-1303476-2521619-min.jpg",
     "title": {
-      "de": "Entdeckt Hawai'i",
-      "en": "Discover Hawai‘i"
+      "de": "Entdeckt Hawai'i-",
+      "en": "Discover Hawai‘i-"
     },
     "highlight": {
-      "de": "-persönlich geplant & stressfrei",
-      "en": "-personally planned & stress-free,"
+      "de": "persönlich geplant & stressfrei",
+      "en": "personally planned & stress-free,"
     },
     "subtitle": {
       "de": "Individuelle Reiseplanung mit Insider-Tipps & persönlicher Betreuung – auf Deutsch, Englisch und Spanisch. Kostenlos & unverbindlich.",
