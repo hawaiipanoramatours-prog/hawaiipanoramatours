@@ -16,15 +16,20 @@
       rel="stylesheet"
     />
 
-    <!-- 🔥 Google tag (gtag.js) – GA4 + Google Ads Conversion Tracking -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id='AW-17598990085"></script>
+    <!-- Google tag (gtag.js) – GA4 + Google Ads -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17598990085"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      // Google Ads Conversion Tag
+      // Base Google Ads Tag (Page View Tag)
       gtag('config', 'AW-17598990085');
+
+      // 🔥 Conversion Event – Submit Lead Form
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17598990085/xh50CIXDu84bEIWO7cdB'
+      });
     </script>
 
     <style>
