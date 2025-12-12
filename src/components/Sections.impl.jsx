@@ -263,7 +263,7 @@ export function Gallery(){
             Eindrücke von meinen Touren
           </h2>
           <p className="font-poppins text-lg text-gray-600 max-w-2xl mx-auto">
-            Ein paar Eindrücke von Gästen und Momenten auf Oʻahu – damit Sie sehen, mit wem Sie reisen.
+            Eindrücke aus Hawaii – damit Sie sehen, mit wem Sie reisen.
           </p>
         </motion.div>
 
