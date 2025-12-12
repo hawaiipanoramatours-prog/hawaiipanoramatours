@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import * as Fi from 'react-icons/fi'
 import SafeIcon from './SafeIcon'
 
-export function Hero({ content, lang }){
+export function Hero({ content, lang }) {
   const h = content.hero
   const bg = h.bg
   return (
@@ -58,7 +58,7 @@ export function Hero({ content, lang }){
   )
 }
 
-export function HowItWorks({ content, lang }){
+export function HowItWorks({ content, lang }) {
   const h = content.how
   return (
     <section className="py-20 bg-gradient-to-b from-white to-sand/20">
@@ -112,7 +112,8 @@ export function HowItWorks({ content, lang }){
   )
 }
 
-export function ServicesSection({ content, lang }){
+/* 🔧 Neu ausgerichtete Karten, Buttons alle auf einer Linie */
+export function ServicesSection({ content, lang }) {
   const items = content.services
   return (
     <section id="services" className="py-20 bg-white">
@@ -133,13 +134,14 @@ export function ServicesSection({ content, lang }){
               : 'Wählen Sie den Service, der perfekt zu Ihnen passt'}
           </p>
         </motion.div>
+
         <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {items.map((s, i) => {
             const Icon = Fi[s.icon]
             return (
               <motion.div
                 key={i}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl border border-gray-100"
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl border border-gray-100 flex flex-col"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: i * 0.2 }}
@@ -148,18 +150,22 @@ export function ServicesSection({ content, lang }){
                 <div className="w-16 h-16 bg-gradient-to-r from-turquoise to-light-blue rounded-2xl grid place-items-center mb-6">
                   <SafeIcon icon={Icon} className="w-8 h-8 text-white" />
                 </div>
+
                 <h3 className="font-playfair text-2xl font-semibold text-gray-800 mb-3">
                   {s.title[lang] || s.title.de}
                 </h3>
+
                 <p className="font-poppins text-gray-600 mb-4">
                   {s.desc[lang] || s.desc.de}
                 </p>
+
                 <div className="mb-6">
                   <span className="font-playfair text-3xl font-bold text-turquoise">
                     {s.price}
                   </span>
                 </div>
-                <ul className="space-y-2 mb-8">
+
+                <ul className="space-y-2 mb-6">
                   {s.features.map((f, idx) => (
                     <li
                       key={idx}
@@ -170,14 +176,17 @@ export function ServicesSection({ content, lang }){
                     </li>
                   ))}
                 </ul>
-                <a
-                  href={content.brand.social.calendly}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-full bg-turquoise hover:bg-turquoise/90 text-white py-3 px-6 rounded-full font-poppins font-semibold block text-center"
-                >
-                  {lang === 'en' ? 'Enquire' : 'Anfragen'}
-                </a>
+
+                <div className="mt-auto">
+                  <a
+                    href={content.brand.social.calendly}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full bg-turquoise hover:bg-turquoise/90 text-white py-3 px-6 rounded-full font-poppins font-semibold block text-center"
+                  >
+                    {lang === 'en' ? 'Enquire' : 'Anfragen'}
+                  </a>
+                </div>
               </motion.div>
             )
           })}
@@ -187,7 +196,7 @@ export function ServicesSection({ content, lang }){
   )
 }
 
-export function Offerings({ content, lang }){
+export function Offerings({ content, lang }) {
   const items = content.offerings
   return (
     <section className="py-20 bg-gradient-to-b from-sand/20 to-light-blue/10">
@@ -238,8 +247,8 @@ export function Offerings({ content, lang }){
   )
 }
 
-/* ✅ NEU: Galerie-Sektion mit deinen 6 Bildern */
-export function Gallery(){
+/* Galerie-Sektion */
+export function Gallery() {
   const images = [
     { src: '/Gallery1.JPG', alt: 'Kunden auf Hawaii Tour 1' },
     { src: '/Gallery2.jpg', alt: 'Kunden auf Hawaii Tour 2' },
@@ -288,7 +297,7 @@ export function Gallery(){
   )
 }
 
-export function Testimonials({ content }){
+export function Testimonials({ content }) {
   const list = content.testimonials
   return (
     <section className="py-20 bg-white">
@@ -303,7 +312,6 @@ export function Testimonials({ content }){
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-800 mb-4">
             Was meine Gäste sagen
           </h2>
-          {/* Untertitel entfernt, wie wir es angepasst hatten */}
         </motion.div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {list.map((t, i) => (
@@ -337,7 +345,7 @@ export function Testimonials({ content }){
   )
 }
 
-export function ContactCTA({ content, lang }){
+export function ContactCTA({ content, lang }) {
   const c = content.cta
   return (
     <section
@@ -385,7 +393,7 @@ export function ContactCTA({ content, lang }){
   )
 }
 
-export function Footer({ content }){
+export function Footer({ content }) {
   return (
     <footer className="bg-gray-800 text-white py-12">
       <div className="container mx-auto px-6">
