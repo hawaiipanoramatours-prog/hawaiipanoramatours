@@ -260,10 +260,10 @@ export function Gallery(){
           viewport={{ once: true }}
         >
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Eindrücke von meinen Touren
+            Eindrücke aus Hawai'i
           </h2>
           <p className="font-poppins text-lg text-gray-600 max-w-2xl mx-auto">
-            Eindrücke aus Hawaii – damit Sie sehen, mit wem Sie reisen.
+           Ein paar Eindrücke von Gästen und Momenten auf Oʻahu – damit Sie sehen, mit wem Sie reisen.
           </p>
         </motion.div>
 
