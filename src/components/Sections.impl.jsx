@@ -260,10 +260,10 @@ export function Gallery(){
           viewport={{ once: true }}
         >
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Eindrücke aus Hawai'i
+            Hawaii-Momente & Gäste-Impressionen
           </h2>
           <p className="font-poppins text-lg text-gray-600 max-w-2xl mx-auto">
-           Ein paar Eindrücke von Gästen und Momenten auf Oʻahu – damit Sie sehen, mit wem Sie reisen.
+           Einblicke in echte Begegnungen und besondere Orte auf Oʻahu – damit Sie ein Gefühl für die Atmosphäre und Erfahrungen auf der Insel bekommen.
           </p>
         </motion.div>
 
