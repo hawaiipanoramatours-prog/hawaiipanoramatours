@@ -114,16 +114,16 @@
     {
       "icon": "FiCompass",
       "title": {
-        "de": "Orientierung & Tagesplanung",
-        "en": "Orientation & day planning"
+        "de": "Orientierung & Reiseplanung",
+        "en": "Orientation & travel planning"
       },
       "desc": {
-        "de": "Perfekte Tagesrouten",
-        "en": "Perfect day routes"
+        "de": "Perfekter Urlaub",
+        "en": "Perfect vacation"
       },
       "price": "ab 99 $/Tag",
       "features": [
-        "Detaillierte Tagesplanung",
+        "Detaillierte Gesamtplanung",
         "Orientierung vor Ort",
         "Insider-Tipps",
         "Flexible Anpassungen"
