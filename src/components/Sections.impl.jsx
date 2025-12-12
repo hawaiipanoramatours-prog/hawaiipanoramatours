@@ -262,9 +262,6 @@ export function Gallery(){
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-800 mb-4">
             Hawaii-Momente & Gäste-Impressionen
           </h2>
-          <p className="font-poppins text-lg text-gray-600 max-w-2xl mx-auto">
-           Einblicke in echte Begegnungen und besondere Orte auf Oʻahu – damit Sie ein Gefühl für die Atmosphäre und Erfahrungen auf der Insel bekommen.
-          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
