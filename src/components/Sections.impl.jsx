@@ -2,9 +2,11 @@ import { motion } from 'framer-motion'
 import * as Fi from 'react-icons/fi'
 import SafeIcon from './SafeIcon'
 
+/* ✅ HERO – nur 1 CTA + Social-Textlink (Instagram + Facebook) */
 export function Hero({ content, lang }) {
   const h = content.hero
   const bg = h.bg
+
   return (
     <section
       className="relative h-screen flex items-center justify-center overflow-hidden"
@@ -16,6 +18,7 @@ export function Hero({ content, lang }) {
       }}
     >
       <div className="absolute inset-0 bg-black/40" />
+
       <div className="relative z-10 text-center text-white px-6 max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -28,30 +31,76 @@ export function Hero({ content, lang }) {
               {h.highlight[lang] || h.highlight.de}
             </span>
           </h1>
-          <p className="font-poppins text-xl md:text-2xl mb-8 text-gray-200">
+
+          <p className="font-poppins text-xl md:text-2xl mb-10 text-gray-200">
             {h.subtitle[lang] || h.subtitle.de}
           </p>
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          className="flex flex-col items-center justify-center"
         >
+          {/* ✅ EIN klarer CTA */}
           <a
             href={content.brand.social.calendly}
             target="_blank"
             rel="noreferrer"
             className="bg-turquoise hover:bg-turquoise/90 text-white px-8 py-4 rounded-full font-poppins font-semibold text-lg"
           >
-            {h.ctaPlan.label[lang] || h.ctaPlan.label.de}
+            {h.ctaPlan?.label?.[lang] || h.ctaPlan?.label?.de || 'Kostenlos anfragen'}
           </a>
-          <a
-            href="#services"
-            className="border-2 border-white text-white hover:bg-white hover:text-gray-800 px-8 py-4 rounded-full font-poppins font-semibold text-lg"
-          >
-            {h.ctaServices.label[lang] || h.ctaServices.label.de}
-          </a>
+
+          {/* ✅ Ruhiger Social-Link (kein Button, kein Conversion-Bruch) */}
+          <p className="mt-5 font-poppins text-sm text-white/90">
+            {lang === 'en' ? (
+              <>
+                More impressions & inspiration on{' '}
+                <a
+                  href={content.brand.social.instagram}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline underline-offset-4 hover:text-white"
+                >
+                  Instagram
+                </a>{' '}
+                and{' '}
+                <a
+                  href={content.brand.social.facebook}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline underline-offset-4 hover:text-white"
+                >
+                  Facebook
+                </a>
+                .
+              </>
+            ) : (
+              <>
+                Mehr Eindrücke & Inspirationen auf{' '}
+                <a
+                  href={content.brand.social.instagram}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline underline-offset-4 hover:text-white"
+                >
+                  Instagram
+                </a>{' '}
+                und{' '}
+                <a
+                  href={content.brand.social.facebook}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline underline-offset-4 hover:text-white"
+                >
+                  Facebook
+                </a>
+                .
+              </>
+            )}
+          </p>
         </motion.div>
       </div>
     </section>
@@ -217,6 +266,7 @@ export function Offerings({ content, lang }) {
               : 'Umfassende Services für Ihr perfektes Hawaii-Erlebnis'}
           </p>
         </motion.div>
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {items.map((o, i) => {
             const Icon = Fi[o.icon]
@@ -313,6 +363,7 @@ export function Testimonials({ content }) {
             Was meine Gäste sagen
           </h2>
         </motion.div>
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {list.map((t, i) => (
             <motion.div
@@ -439,10 +490,9 @@ export function Footer({ content }) {
               </a>
             </div>
           </div>
+
           <div>
-            <h3 className="font-playfair text-lg font-semibold mb-4">
-              Navigation
-            </h3>
+            <h3 className="font-playfair text-lg font-semibold mb-4">Navigation</h3>
             <ul className="space-y-2 font-poppins">
               <li>
                 <a href="/" className="text-gray-300 hover:text-turquoise">
@@ -450,35 +500,25 @@ export function Footer({ content }) {
                 </a>
               </li>
               <li>
-                <a
-                  href="/services"
-                  className="text-gray-300 hover:text-turquoise"
-                >
+                <a href="/services" className="text-gray-300 hover:text-turquoise">
                   Dienstleistungen
                 </a>
               </li>
               <li>
-                <a
-                  href="/about"
-                  className="text-gray-300 hover:text-turquoise"
-                >
+                <a href="/about" className="text-gray-300 hover:text-turquoise">
                   Über mich
                 </a>
               </li>
               <li>
-                <a
-                  href="/contact"
-                  className="text-gray-300 hover:text-turquoise"
-                >
+                <a href="/contact" className="text-gray-300 hover:text-turquoise">
                   Kontakt
                 </a>
               </li>
             </ul>
           </div>
+
           <div>
-            <h3 className="font-playfair text-lg font-semibold mb-4">
-              Kontakt
-            </h3>
+            <h3 className="font-playfair text-lg font-semibold mb-4">Kontakt</h3>
             <div className="space-y-2 font-poppins text-gray-300">
               <p>{content.brand.social.email}</p>
               <p>{content.brand.social.phone}</p>
@@ -496,24 +536,17 @@ export function Footer({ content }) {
             </div>
           </div>
         </div>
+
         <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="flex gap-6 font-poppins text-sm text-gray-400 mb-4 md:mb-0">
-            <a
-              href={content.legal.impressumPath}
-              className="hover:text-turquoise"
-            >
+            <a href={content.legal.impressumPath} className="hover:text-turquoise">
               Impressum
             </a>
-            <a
-              href={content.legal.privacyPath}
-              className="hover:text-turquoise"
-            >
+            <a href={content.legal.privacyPath} className="hover:text-turquoise">
               Datensatz
             </a>
           </div>
-          <p className="font-poppins text-sm text-gray-400">
-            Mit Aloha von Hawaii 🌺
-          </p>
+          <p className="font-poppins text-sm text-gray-400">Mit Aloha von Hawaii 🌺</p>
         </div>
       </div>
     </footer>
