@@ -52,6 +52,13 @@ export function Hero({ content, lang }) {
           >
             {h.ctaPlan?.label?.[lang] || h.ctaPlan?.label?.de || 'Kostenlos anfragen'}
           </a>
+          
+          {/* ✅ Direkt unter dem Button: Klarheit, wie du dich meldest */}
+          <p className="mt-3 font-poppins text-xs md:text-sm text-white/90">
+          {lang === 'en'
+          ? 'I’ll personally get back to you via email or WhatsApp (phone call on request).'
+          : 'Ich melde mich persönlich per E-Mail oder WhatsApp (auf Wunsch telefonisch).'}
+          </p>
 
           {/* ✅ Ruhiger Social-Link (kein Button, kein Conversion-Bruch) */}
           <p className="mt-5 font-poppins text-sm text-white/90">
