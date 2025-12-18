@@ -8,24 +8,28 @@ export function Hero({ content, lang }) {
   const bg = h.bg
 
   const trust = {
-    de: {
-      title: 'Ideal für Sie, wenn Sie:',
-      good: [
-        'lokale Insider-Tipss und besondere Orte entdecken möchten',
-        'sicher und stressfrei planen und reisen möchten',
-        'deutschsprachige Beratung statt Massenangebote schätzen',
-        'zwischen persönlicher Reiseplanung oder privater Tourbegleitung mit Fahrzeug wählen möchten',
-      ], 
-    },
-    en: {
-      title: 'Ideal if you:',
-      good: [
-        'want a personalized, thoughtfully planned Hawaiʻi trip',
-        'prefer clear guidance over mass-tourism offers',
-        'would like optional personal on-island support',
-  }
+  de: {
+    title: 'Ideal für Sie, wenn Sie:',
+    good: [
+      'lokale Insider-Tipss und besondere Orte entdecken möchten',
+      'sicher und stressfrei planen und reisen möchten',
+      'deutschsprachige Beratung statt Massenangebote schätzen',
+      'zwischen persönlicher Reiseplanung oder privater Tourbegleitung mit Fahrzeug wählen möchten',
+    ],
+  },
+  en: {
+    title: 'Ideal if you:',
+    good: [
+      'want a personalized, thoughtfully planned Hawaiʻi trip',
+      'prefer clear guidance over mass-tourism offers',
+      'would like optional personal on-island support',
+    ],
+  },
+}
 
   const t = trust[lang] || trust.de
+  const badTitle = t.badTitle || trust.de.badTitle
+  const badList = t.bad || trust.de.bad
 
   return (
     <section
@@ -79,11 +83,11 @@ export function Hero({ content, lang }) {
                 </ul>
 
                 <p className="font-poppins text-sm md:text-base font-semibold text-white/95 mt-4 mb-2">
-                  {t.badTitle}
+                  {badTitle}
                 </p>
 
                 <ul className="space-y-2">
-                  {t.bad.map((item, idx) => (
+                  {badList.map((item, idx) => (
                     <li
                       key={idx}
                       className="flex gap-2 font-poppins text-sm md:text-base text-white/90"
@@ -562,7 +566,9 @@ export function Footer({ content }) {
           </div>
 
           <div>
-            <h3 className="font-playfair text-lg font-semibold mb-4">Navigation</h3>
+            <h3 className="font-playfair text-lg font-semibold mb-4">
+              Navigation
+            </h3>
             <ul className="space-y-2 font-poppins">
               <li>
                 <a href="/" className="text-gray-300 hover:text-turquoise">
@@ -570,17 +576,26 @@ export function Footer({ content }) {
                 </a>
               </li>
               <li>
-                <a href="/services" className="text-gray-300 hover:text-turquoise">
+                <a
+                  href="/services"
+                  className="text-gray-300 hover:text-turquoise"
+                >
                   Dienstleistungen
                 </a>
               </li>
               <li>
-                <a href="/about" className="text-gray-300 hover:text-turquoise">
+                <a
+                  href="/about"
+                  className="text-gray-300 hover:text-turquoise"
+                >
                   Über mich
                 </a>
               </li>
               <li>
-                <a href="/contact" className="text-gray-300 hover:text-turquoise">
+                <a
+                  href="/contact"
+                  className="text-gray-300 hover:text-turquoise"
+                >
                   Kontakt
                 </a>
               </li>
@@ -616,7 +631,9 @@ export function Footer({ content }) {
               Datensatz
             </a>
           </div>
-          <p className="font-poppins text-sm text-gray-400">Mit Aloha von Hawaii 🌺</p>
+          <p className="font-poppins text-sm text-gray-400">
+            Mit Aloha von Hawaii 🌺
+          </p>
         </div>
       </div>
     </footer>
