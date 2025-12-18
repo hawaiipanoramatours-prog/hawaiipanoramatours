@@ -57,7 +57,7 @@ export function Hero({ content, lang }) {
           <p className="mt-3 font-poppins text-xs md:text-sm text-white/90">
           {lang === 'en'
           ? 'I’ll personally get back to you via Phone, E-mail or WhatsApp.'
-          : 'Ich melde mich persönlich über den von Ihnen angegebenen Kontaktweg (E-Mail, WhatsApp oder telefonisch).'}
+          : 'Persönliche Rückmeldung über Ihren bevorzugten Kontaktweg.'}
           </p>
 
           {/* ✅ Ruhiger Social-Link (kein Button, kein Conversion-Bruch) */}
