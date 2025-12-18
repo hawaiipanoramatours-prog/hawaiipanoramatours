@@ -2,64 +2,39 @@ import { motion } from 'framer-motion'
 import * as Fi from 'react-icons/fi'
 import SafeIcon from './SafeIcon'
 
-/* ✅ TRUST-BLOCK – MOBILE-OPTIMIERT (kurz & klar) */
-function TrustBlock({ lang }) {
-  const isEn = lang === 'en'
-
-  return (
-    <div className="mt-6 w-full max-w-3xl mx-auto text-left">
-      <div className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 p-5 md:p-6">
-        <h3 className="font-playfair text-lg md:text-xl font-semibold text-white mb-3">
-          {isEn ? 'Ideal for you if you:' : 'Ideal für Sie, wenn Sie:'}
-        </h3>
-
-        <ul className="space-y-2 font-poppins text-sm md:text-base text-white/90">
-          <li>
-            ✔️{' '}
-            {isEn
-              ? 'want a personal, custom Hawai‘i trip plan'
-              : 'Ihre Hawaiʻi-Reise individuell und persönlich planen möchten'}
-          </li>
-          <li>
-            ✔️{' '}
-            {isEn
-              ? 'prefer German-speaking guidance over mass offers'
-              : 'deutschsprachige Beratung statt Massenangebote schätzen'}
-          </li>
-          <li>
-            ✔️{' '}
-            {isEn
-              ? 'want optional personal guidance on O‘ahu'
-              : 'auf Wunsch persönlich vor Ort begleitet werden möchten'}
-          </li>
-        </ul>
-
-        <div className="mt-5">
-          <h4 className="font-playfair text-lg md:text-xl font-semibold text-white mb-2">
-            {isEn ? 'Not suitable for:' : 'Nicht geeignet für:'}
-          </h4>
-          <ul className="space-y-2 font-poppins text-sm md:text-base text-white/90">
-            <li>
-              ✖️{' '}
-              {isEn
-                ? 'package tours or group tours'
-                : 'Pauschalreisen oder Gruppentouren'}
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-/* ✅ HERO – nur 1 CTA + Trust-Block + Social-Textlink (Instagram + Facebook) */
+/* ✅ HERO – 1 CTA + Trust-Block (schmal) + Contact-Line + Social-Links */
 export function Hero({ content, lang }) {
   const h = content.hero
   const bg = h.bg
 
+  const trust = {
+    de: {
+      title: 'Ideal für Sie, wenn Sie:',
+      good: [
+        'Ihre Hawaiʻi-Reise individuell und persönlich planen möchten',
+        'deutschsprachige Beratung statt Massenangebote schätzen',
+        'auf Wunsch persönlich vor Ort begleitet werden möchten',
+      ],
+      badTitle: 'Nicht geeignet für:',
+      bad: ['Pauschalreisen oder Gruppentouren'],
+    },
+    en: {
+      title: 'Ideal if you:',
+      good: [
+        'want a personalized, thoughtfully planned Hawaiʻi trip',
+        'prefer clear guidance over mass-tourism offers',
+        'would like optional personal on-island support',
+      ],
+      badTitle: 'Not suitable for:',
+      bad: ['package deals or group/bus tours'],
+    },
+  }
+
+  const t = trust[lang] || trust.de
+
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex justify-center overflow-hidden"
       style={{
         backgroundImage: `url(${bg})`,
         backgroundSize: 'cover',
@@ -69,99 +44,139 @@ export function Hero({ content, lang }) {
     >
       <div className="absolute inset-0 bg-black/40" />
 
-      <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto py-14">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h1 className="font-playfair text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            {h.title[lang] || h.title.de}
-            <span className="block text-turquoise">
-              {h.highlight[lang] || h.highlight.de}
-            </span>
-          </h1>
-
-          <p className="font-poppins text-xl md:text-2xl mb-10 text-gray-200">
-            {h.subtitle[lang] || h.subtitle.de}
-          </p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="flex flex-col items-center justify-center"
-        >
-          {/* ✅ EIN klarer CTA */}
-          <a
-            href={content.brand.social.calendly}
-            target="_blank"
-            rel="noreferrer"
-            className="bg-turquoise hover:bg-turquoise/90 text-white px-8 py-4 rounded-full font-poppins font-semibold text-lg"
+      {/* ✅ Header-Offset: damit die Headline NICHT “zu weit oben” sitzt */}
+      <div className="relative z-10 w-full px-6 pt-28 md:pt-32 pb-14 flex items-start md:items-center">
+        <div className="text-center text-white max-w-4xl mx-auto w-full">
+          <motion.div
+            initial={{ opacity: 0, y: 22 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
           >
-            {h.ctaPlan?.label?.[lang] || h.ctaPlan?.label?.de || 'Kostenlos anfragen'}
-          </a>
+            {/* ✅ Headline etwas “ruhiger” (weniger nach oben gedrückt) */}
+            <h1 className="font-playfair text-5xl md:text-7xl font-bold mb-5 leading-[0.95]">
+              {h.title?.[lang] || h.title?.de}
+              <span className="block text-turquoise mt-2">
+                {h.highlight?.[lang] || h.highlight?.de}
+              </span>
+            </h1>
 
-          {/* ✅ Direkt unter dem Button: Klarheit, wie du dich meldest */}
-          <p className="mt-3 font-poppins text-xs md:text-sm text-white/90">
-            {lang === 'en'
-              ? 'I’ll personally get back to you via email or WhatsApp (phone call on request).'
-              : 'Persönliche Rückmeldung über Ihren bevorzugten Kontaktweg.'}
-          </p>
+            <p className="font-poppins text-xl md:text-2xl mb-7 text-gray-200">
+              {h.subtitle?.[lang] || h.subtitle?.de}
+            </p>
 
-          {/* ✅ TRUST-BLOCK (kurz) direkt unter CTA */}
-          <TrustBlock lang={lang} />
+            {/* ✅ TRUST-BLOCK: schmaler, scanbar, mobile clean */}
+            <div className="mx-auto max-w-md sm:max-w-lg text-left mb-9">
+              <div className="rounded-2xl bg-white/10 border border-white/15 backdrop-blur-sm p-5">
+                <p className="font-poppins text-sm md:text-base font-semibold text-white/95 mb-3">
+                  {t.title}
+                </p>
 
-          {/* ✅ Ruhiger Social-Link (kein Button, kein Conversion-Bruch) */}
-          <p className="mt-6 font-poppins text-sm text-white/90">
-            {lang === 'en' ? (
-              <>
-                More impressions & inspiration on{' '}
-                <a
-                  href={content.brand.social.instagram}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="underline underline-offset-4 hover:text-white"
-                >
-                  Instagram
-                </a>{' '}
-                and{' '}
-                <a
-                  href={content.brand.social.facebook}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="underline underline-offset-4 hover:text-white"
-                >
-                  Facebook
-                </a>
-                .
-              </>
-            ) : (
-              <>
-                Mehr Eindrücke & Inspirationen auf{' '}
-                <a
-                  href={content.brand.social.instagram}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="underline underline-offset-4 hover:text-white"
-                >
-                  Instagram
-                </a>{' '}
-                und{' '}
-                <a
-                  href={content.brand.social.facebook}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="underline underline-offset-4 hover:text-white"
-                >
-                  Facebook
-                </a>
-                .
-              </>
-            )}
-          </p>
-        </motion.div>
+                <ul className="space-y-2">
+                  {t.good.map((item, idx) => (
+                    <li
+                      key={idx}
+                      className="flex gap-2 font-poppins text-sm md:text-base text-white/90"
+                    >
+                      <span className="shrink-0">✔️</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <p className="font-poppins text-sm md:text-base font-semibold text-white/95 mt-4 mb-2">
+                  {t.badTitle}
+                </p>
+
+                <ul className="space-y-2">
+                  {t.bad.map((item, idx) => (
+                    <li
+                      key={idx}
+                      className="flex gap-2 font-poppins text-sm md:text-base text-white/90"
+                    >
+                      <span className="shrink-0">✖️</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 22 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.25 }}
+            className="flex flex-col items-center justify-center"
+          >
+            {/* ✅ EIN klarer CTA */}
+            <a
+              href={content.brand.social.calendly}
+              target="_blank"
+              rel="noreferrer"
+              className="bg-turquoise hover:bg-turquoise/90 text-white px-8 py-4 rounded-full font-poppins font-semibold text-lg"
+            >
+              {h.ctaPlan?.label?.[lang] ||
+                h.ctaPlan?.label?.de ||
+                'Kostenlos anfragen'}
+            </a>
+
+            {/* ✅ Direkt unter dem Button: Kontakt-Hinweis */}
+            <p className="mt-3 font-poppins text-xs md:text-sm text-white/90">
+              {lang === 'en'
+                ? 'I’ll personally get back to you via email or WhatsApp (phone call on request).'
+                : 'Ich melde mich persönlich per E-Mail oder WhatsApp (auf Wunsch telefonisch).'}
+            </p>
+
+            {/* ✅ Social-Links darunter */}
+            <p className="mt-5 font-poppins text-sm text-white/90">
+              {lang === 'en' ? (
+                <>
+                  More impressions & inspiration on{' '}
+                  <a
+                    href={content.brand.social.instagram}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline underline-offset-4 hover:text-white"
+                  >
+                    Instagram
+                  </a>{' '}
+                  and{' '}
+                  <a
+                    href={content.brand.social.facebook}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline underline-offset-4 hover:text-white"
+                  >
+                    Facebook
+                  </a>
+                  .
+                </>
+              ) : (
+                <>
+                  Mehr Eindrücke & Inspirationen auf{' '}
+                  <a
+                    href={content.brand.social.instagram}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline underline-offset-4 hover:text-white"
+                  >
+                    Instagram
+                  </a>{' '}
+                  und{' '}
+                  <a
+                    href={content.brand.social.facebook}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline underline-offset-4 hover:text-white"
+                  >
+                    Facebook
+                  </a>
+                  .
+                </>
+              )}
+            </p>
+          </motion.div>
+        </div>
       </div>
     </section>
   )
@@ -441,8 +456,12 @@ export function Testimonials({ content }) {
               </div>
               <p className="font-poppins text-gray-700 mb-6 italic">“{t.text}”</p>
               <div>
-                <h4 className="font-playfair font-semibold text-gray-800">{t.name}</h4>
-                <p className="font-poppins text-sm text-gray-600">{t.location}</p>
+                <h4 className="font-playfair font-semibold text-gray-800">
+                  {t.name}
+                </h4>
+                <p className="font-poppins text-sm text-gray-600">
+                  {t.location}
+                </p>
               </div>
             </motion.div>
           ))}
@@ -608,5 +627,3 @@ export function Footer({ content }) {
     </footer>
   )
 }
-
-
