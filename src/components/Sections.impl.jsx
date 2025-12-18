@@ -11,7 +11,7 @@ export function Hero({ content, lang }) {
     de: {
       title: 'Ideal für Sie, wenn Sie:',
       good: [
-        'lokale Insider-Tipss und besondere Orte entdecken möchten',
+        'lokale Insider-Tipps und besondere Orte entdecken möchten',
         'sicher und stressfrei planen und reisen möchten',
         'deutschsprachige Beratung statt Massenangebote schätzen',
         'zwischen persönlicher Reiseplanung oder privater Tourbegleitung mit Fahrzeug wählen möchten',
