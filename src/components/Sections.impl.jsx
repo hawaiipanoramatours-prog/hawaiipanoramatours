@@ -14,10 +14,9 @@ export function Hero({ content, lang }) {
         'lokale Insider-Tipss und besondere Orte entdecken möchten',
         'sicher und stressfrei planen und reisen möchten',
         'deutschsprachige Beratung statt Massenangebote schätzen',
-        'auf Wunsch persönlich vor Ort begleitet werden möchten',
+        'zwischen persönlicher Reiseplanung oder privater Tourbegleitung mit Fahrzeug wählen möchten',
       ],
-      badTitle: 'Nicht geeignet für:',
-      bad: ['Pauschalreisen oder Gruppentouren'],
+      
     },
     en: {
       title: 'Ideal if you:',
@@ -25,10 +24,6 @@ export function Hero({ content, lang }) {
         'want a personalized, thoughtfully planned Hawaiʻi trip',
         'prefer clear guidance over mass-tourism offers',
         'would like optional personal on-island support',
-      ],
-      badTitle: 'Not suitable for:',
-      bad: ['package deals or group/bus tours'],
-    },
   }
 
   const t = trust[lang] || trust.de
