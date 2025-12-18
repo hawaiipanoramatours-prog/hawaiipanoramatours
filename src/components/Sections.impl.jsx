@@ -585,7 +585,7 @@ export function Footer({ content }) {
                 rel="noreferrer"
                 className="bg-turquoise text-white px-4 py-2 rounded-lg font-poppins text-sm"
               >
-                Beratungsgespräch anfragen
+                Kostenlos anfragen
               </a>
             </div>
           </div>
