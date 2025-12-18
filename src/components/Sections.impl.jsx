@@ -600,7 +600,7 @@ export function Footer({ content }) {
               Impressum
             </a>
             <a href={content.legal.privacyPath} className="hover:text-turquoise">
-              Datensatz
+              Datenschutz
             </a>
           </div>
           <p className="font-poppins text-sm text-gray-400">
