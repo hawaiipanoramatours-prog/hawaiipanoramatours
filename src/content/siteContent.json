@@ -41,28 +41,33 @@
     ],
     "googleTranslate": { "enabled": true }
   },
-"hero": {
-  "bg": "pexels-troy-squillaci-1303476-2521619-min.jpg",
-  "title": {
-    "de": "Ihre Reise nach Hawai‘i –",
-    "en": "Your journey to Hawai‘i –"
+  "hero": {
+    "bg": "pexels-troy-squillaci-1303476-2521619-min.jpg",
+    "title": {
+      "de": "Ihre Hawai‘i-Reise –",
+      "en": "Your journey to Hawai‘i –"
+    },
+    "highlight": {
+      "de": "persönlich geplant und auf Deutsch",
+      "en": "personally planned & stress-free"
+    },
+    "subtitle": {
+      "de": "Unverbindliche Erstberatung für individuelle Reiseplanung und optionale persönliche Begleitung auf Oʻahu – auch mehrsprachig möglich.",
+      "en": "A non-binding initial consultation for personalized trip planning and optional personal guidance on Oʻahu — available in German, English, or Spanish"
+    },
+    "ctaPlan": {
+      "label": {
+        "de": "Kostenloses Erstgespräch anfragen",
+        "en": "Request a free consultation"
+      }
+    },
+    "ctaServices": {
+      "label": {
+        "de": "Meine Concierge-Dienste",
+        "en": "My concierge services"
+      }
+    }
   },
-  "highlight": {
-    "de": "persönlich & stressfrei geplant",
-    "en": "personally planned & stress-free"
-  },
-  "subtitle": {
-    "de": "Unverbindliche Erstberatung für individuelle Reiseplanung und persönliche Begleitung auf Oʻahu – auf Deutsch, Englisch oder Spanisch",
-    "en": "A non-binding initial consultation for personalized trip planning and optional personal guidance on Oʻahu — available in German, English, or Spanish"
-  },
-  "ctaPlan": {
-    "label": { "de": "Kostenloses Erstgespräch anfragen", "en": "Request a free consultation" }
-  },
-  "ctaServices": {
-    "label": { "de": "Meine Concierge-Dienste", "en": "My concierge services" }
-  }
-}
-
   "how": {
     "title": {
       "de": "Wie es funktioniert",
