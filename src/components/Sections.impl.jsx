@@ -107,7 +107,7 @@ export function Hero({ content, lang }) {
           <p className="mt-3 font-poppins text-xs md:text-sm text-white/90">
             {lang === 'en'
               ? 'I’ll personally get back to you via email or WhatsApp (phone call on request).'
-              : 'Ich melde mich persönlich per E-Mail oder WhatsApp (auf Wunsch telefonisch).'}
+              : 'Persönliche Rückmeldung über Ihren bevorzugten Kontaktweg.'}
           </p>
 
           {/* ✅ TRUST-BLOCK (kurz) direkt unter CTA */}
