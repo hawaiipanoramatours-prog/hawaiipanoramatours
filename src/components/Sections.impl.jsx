@@ -15,8 +15,7 @@ export function Hero({ content, lang }) {
         'sicher und stressfrei planen und reisen möchten',
         'deutschsprachige Beratung statt Massenangebote schätzen',
         'zwischen persönlicher Reiseplanung oder privater Tourbegleitung mit Fahrzeug wählen möchten',
-      ],
-      
+      ], 
     },
     en: {
       title: 'Ideal if you:',
