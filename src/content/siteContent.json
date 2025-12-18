@@ -44,19 +44,19 @@
   "hero": {
     "bg": "pexels-troy-squillaci-1303476-2521619-min.jpg",
     "title": {
-      "de": "Hawai'i erleben-",
+      "de": "Ihre Hawai'i-Reise -
       "en": "Discover Hawai‘i-"
     },
     "highlight": {
-      "de": "abgestimmt auf Ihre Wünsche",
+      "de": "persönlich geplant auf Deutsch",
       "en": "tailored to your wishes,"
     },
     "subtitle": {
-      "de": "Unverbindliche Erstberatung – individuelle Reiseplanung und optionale persönliche Begleitung auf Deutsch, Englisch und Spanisch.",
+      "de": "Unverbindliche Erstberatung für eine individuelle Reiseplanung und optionale persönliche Begleitung auf Oʻahu – auch mehrsprachig möglich",
       "en": "Enjoy a complimentary first consultation with personalized trip planning and optional guided experiences — available in German, English, and Spanish"
     },
     "ctaPlan": {
-      "label": { "de": "Kostenlos anfragen", "en": "Request for free" }
+      "label": { "de": "Kostenloses Erstgespräch anfragen", "en": "Request for free" }
     },
     "ctaServices": {
       "label": { "de": "Meine Concierge-Dienste", "en": "My concierge services" }
