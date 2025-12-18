@@ -2,93 +2,48 @@ import { motion } from 'framer-motion'
 import * as Fi from 'react-icons/fi'
 import SafeIcon from './SafeIcon'
 
-/* ✅ TRUST-BLOCK – direkt unter Hero-CTA */
+/* ✅ TRUST-BLOCK – MOBILE-OPTIMIERT (kurz & klar) */
 function TrustBlock({ lang }) {
   const isEn = lang === 'en'
 
   return (
-    <div className="mt-8 w-full max-w-4xl mx-auto text-left">
-      <div className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 p-6 md:p-7">
-        <h3 className="font-playfair text-xl md:text-2xl font-semibold text-white mb-4">
-          {isEn ? 'Who this is ideal for' : 'Für wen diese Beratung ideal ist'}
+    <div className="mt-6 w-full max-w-3xl mx-auto text-left">
+      <div className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 p-5 md:p-6">
+        <h3 className="font-playfair text-lg md:text-xl font-semibold text-white mb-3">
+          {isEn ? 'Ideal for you if you:' : 'Ideal für Sie, wenn Sie:'}
         </h3>
 
         <ul className="space-y-2 font-poppins text-sm md:text-base text-white/90">
           <li>
             ✔️{' '}
             {isEn
-              ? 'Travelers who want a personal, custom Hawai‘i plan'
-              : 'Für Reisende, die ihre Hawaiʻi-Reise persönlich und individuell planen möchten'}
+              ? 'want a personal, custom Hawai‘i trip plan'
+              : 'Ihre Hawaiʻi-Reise individuell und persönlich planen möchten'}
           </li>
           <li>
             ✔️{' '}
             {isEn
-              ? 'German-speaking guests who value clear guidance over mass offers'
-              : 'Für deutschsprachige Gäste, die klare Beratung statt Massenangebote schätzen'}
+              ? 'prefer German-speaking guidance over mass offers'
+              : 'deutschsprachige Beratung statt Massenangebote schätzen'}
           </li>
           <li>
             ✔️{' '}
             {isEn
-              ? 'Couples, solo travelers, or small groups with special wishes'
-              : 'Für Paare, Alleinreisende oder kleine Gruppen mit besonderen Wünschen'}
-          </li>
-          <li>
-            ✔️{' '}
-            {isEn
-              ? 'Travelers who (optionally) want personal guidance on O‘ahu'
-              : 'Für Reisende, die auf Wunsch persönlich vor Ort begleitet werden möchten'}
+              ? 'want optional personal guidance on O‘ahu'
+              : 'auf Wunsch persönlich vor Ort begleitet werden möchten'}
           </li>
         </ul>
 
-        <div className="mt-6">
-          <h4 className="font-playfair text-lg md:text-xl font-semibold text-white mb-3">
-            {isEn ? 'Not suitable for' : 'Nicht geeignet für'}
+        <div className="mt-5">
+          <h4 className="font-playfair text-lg md:text-xl font-semibold text-white mb-2">
+            {isEn ? 'Not suitable for:' : 'Nicht geeignet für:'}
           </h4>
           <ul className="space-y-2 font-poppins text-sm md:text-base text-white/90">
             <li>
               ✖️{' '}
               {isEn
-                ? 'Package tours or classic all-inclusive deals'
-                : 'Pauschalreisen oder klassische All-inclusive-Pakete'}
-            </li>
-            <li>✖️ {isEn ? 'Group or bus tours' : 'Gruppen- oder Bustouren'}</li>
-            <li>
-              ✖️{' '}
-              {isEn
-                ? 'Travelers looking only for the cheapest price'
-                : 'Reisende, die ausschließlich nach dem günstigsten Preis suchen'}
-            </li>
-          </ul>
-        </div>
-
-        <div className="mt-6">
-          <h4 className="font-playfair text-lg md:text-xl font-semibold text-white mb-3">
-            {isEn ? 'Why guests choose me' : 'Warum meine Gäste sich für mich entscheiden'}
-          </h4>
-          <ul className="space-y-2 font-poppins text-sm md:text-base text-white/90">
-            <li>
-              •{' '}
-              {isEn
-                ? 'Personal consultation — not automated booking platforms'
-                : 'Persönliche Beratung statt automatisierter Buchungsplattformen'}
-            </li>
-            <li>
-              •{' '}
-              {isEn
-                ? 'Tailored planning instead of standard routes'
-                : 'Maßgeschneiderte Planung statt Standardrouten'}
-            </li>
-            <li>
-              •{' '}
-              {isEn
-                ? 'Honest recommendations based on local experience'
-                : 'Ehrliche Empfehlungen auf Basis lokaler Erfahrung'}
-            </li>
-            <li>
-              •{' '}
-              {isEn
-                ? 'Direct contact — no call centers, no hand-offs'
-                : 'Direkter Kontakt – keine Callcenter, keine Weitergabe'}
+                ? 'package tours or group tours'
+                : 'Pauschalreisen oder Gruppentouren'}
             </li>
           </ul>
         </div>
@@ -155,7 +110,7 @@ export function Hero({ content, lang }) {
               : 'Ich melde mich persönlich per E-Mail oder WhatsApp (auf Wunsch telefonisch).'}
           </p>
 
-          {/* ✅ TRUST-BLOCK direkt unter CTA */}
+          {/* ✅ TRUST-BLOCK (kurz) direkt unter CTA */}
           <TrustBlock lang={lang} />
 
           {/* ✅ Ruhiger Social-Link (kein Button, kein Conversion-Bruch) */}
@@ -653,4 +608,5 @@ export function Footer({ content }) {
     </footer>
   )
 }
+
 
