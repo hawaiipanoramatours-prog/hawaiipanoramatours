@@ -2,14 +2,109 @@ import { motion } from 'framer-motion'
 import * as Fi from 'react-icons/fi'
 import SafeIcon from './SafeIcon'
 
-/* ✅ HERO – nur 1 CTA + Social-Textlink (Instagram + Facebook) */
+/* ✅ TRUST-BLOCK – direkt unter Hero-CTA */
+function TrustBlock({ lang }) {
+  const isEn = lang === 'en'
+
+  return (
+    <div className="mt-8 w-full max-w-4xl mx-auto text-left">
+      <div className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 p-6 md:p-7">
+        <h3 className="font-playfair text-xl md:text-2xl font-semibold text-white mb-4">
+          {isEn ? 'Who this is ideal for' : 'Für wen diese Beratung ideal ist'}
+        </h3>
+
+        <ul className="space-y-2 font-poppins text-sm md:text-base text-white/90">
+          <li>
+            ✔️{' '}
+            {isEn
+              ? 'Travelers who want a personal, custom Hawai‘i plan'
+              : 'Für Reisende, die ihre Hawaiʻi-Reise persönlich und individuell planen möchten'}
+          </li>
+          <li>
+            ✔️{' '}
+            {isEn
+              ? 'German-speaking guests who value clear guidance over mass offers'
+              : 'Für deutschsprachige Gäste, die klare Beratung statt Massenangebote schätzen'}
+          </li>
+          <li>
+            ✔️{' '}
+            {isEn
+              ? 'Couples, solo travelers, or small groups with special wishes'
+              : 'Für Paare, Alleinreisende oder kleine Gruppen mit besonderen Wünschen'}
+          </li>
+          <li>
+            ✔️{' '}
+            {isEn
+              ? 'Travelers who (optionally) want personal guidance on O‘ahu'
+              : 'Für Reisende, die auf Wunsch persönlich vor Ort begleitet werden möchten'}
+          </li>
+        </ul>
+
+        <div className="mt-6">
+          <h4 className="font-playfair text-lg md:text-xl font-semibold text-white mb-3">
+            {isEn ? 'Not suitable for' : 'Nicht geeignet für'}
+          </h4>
+          <ul className="space-y-2 font-poppins text-sm md:text-base text-white/90">
+            <li>
+              ✖️{' '}
+              {isEn
+                ? 'Package tours or classic all-inclusive deals'
+                : 'Pauschalreisen oder klassische All-inclusive-Pakete'}
+            </li>
+            <li>✖️ {isEn ? 'Group or bus tours' : 'Gruppen- oder Bustouren'}</li>
+            <li>
+              ✖️{' '}
+              {isEn
+                ? 'Travelers looking only for the cheapest price'
+                : 'Reisende, die ausschließlich nach dem günstigsten Preis suchen'}
+            </li>
+          </ul>
+        </div>
+
+        <div className="mt-6">
+          <h4 className="font-playfair text-lg md:text-xl font-semibold text-white mb-3">
+            {isEn ? 'Why guests choose me' : 'Warum meine Gäste sich für mich entscheiden'}
+          </h4>
+          <ul className="space-y-2 font-poppins text-sm md:text-base text-white/90">
+            <li>
+              •{' '}
+              {isEn
+                ? 'Personal consultation — not automated booking platforms'
+                : 'Persönliche Beratung statt automatisierter Buchungsplattformen'}
+            </li>
+            <li>
+              •{' '}
+              {isEn
+                ? 'Tailored planning instead of standard routes'
+                : 'Maßgeschneiderte Planung statt Standardrouten'}
+            </li>
+            <li>
+              •{' '}
+              {isEn
+                ? 'Honest recommendations based on local experience'
+                : 'Ehrliche Empfehlungen auf Basis lokaler Erfahrung'}
+            </li>
+            <li>
+              •{' '}
+              {isEn
+                ? 'Direct contact — no call centers, no hand-offs'
+                : 'Direkter Kontakt – keine Callcenter, keine Weitergabe'}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/* ✅ HERO – nur 1 CTA + Trust-Block + Social-Textlink (Instagram + Facebook) */
 export function Hero({ content, lang }) {
   const h = content.hero
   const bg = h.bg
 
   return (
     <section
-      className="relative h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{
         backgroundImage: `url(${bg})`,
         backgroundSize: 'cover',
@@ -19,7 +114,7 @@ export function Hero({ content, lang }) {
     >
       <div className="absolute inset-0 bg-black/40" />
 
-      <div className="relative z-10 text-center text-white px-6 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto py-14">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -52,16 +147,19 @@ export function Hero({ content, lang }) {
           >
             {h.ctaPlan?.label?.[lang] || h.ctaPlan?.label?.de || 'Kostenlos anfragen'}
           </a>
-          
+
           {/* ✅ Direkt unter dem Button: Klarheit, wie du dich meldest */}
           <p className="mt-3 font-poppins text-xs md:text-sm text-white/90">
-          {lang === 'en'
-          ? 'I’ll personally get back to you via Phone, E-mail or WhatsApp.'
-          : 'Persönliche Rückmeldung über Ihren bevorzugten Kontaktweg.'}
+            {lang === 'en'
+              ? 'I’ll personally get back to you via email or WhatsApp (phone call on request).'
+              : 'Ich melde mich persönlich per E-Mail oder WhatsApp (auf Wunsch telefonisch).'}
           </p>
 
+          {/* ✅ TRUST-BLOCK direkt unter CTA */}
+          <TrustBlock lang={lang} />
+
           {/* ✅ Ruhiger Social-Link (kein Button, kein Conversion-Bruch) */}
-          <p className="mt-5 font-poppins text-sm text-white/90">
+          <p className="mt-6 font-poppins text-sm text-white/90">
             {lang === 'en' ? (
               <>
                 More impressions & inspiration on{' '}
@@ -388,12 +486,8 @@ export function Testimonials({ content }) {
               </div>
               <p className="font-poppins text-gray-700 mb-6 italic">“{t.text}”</p>
               <div>
-                <h4 className="font-playfair font-semibold text-gray-800">
-                  {t.name}
-                </h4>
-                <p className="font-poppins text-sm text-gray-600">
-                  {t.location}
-                </p>
+                <h4 className="font-playfair font-semibold text-gray-800">{t.name}</h4>
+                <p className="font-poppins text-sm text-gray-600">{t.location}</p>
               </div>
             </motion.div>
           ))}
@@ -559,3 +653,4 @@ export function Footer({ content }) {
     </footer>
   )
 }
+
