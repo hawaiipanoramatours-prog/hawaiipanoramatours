@@ -74,7 +74,7 @@
       "en": "How it works"
     },
     "subtitle": {
-      "de": "In nur drei einfachen Schritten zu Ihrer perfekten Hawaii-Reise",
+      "de": "In nur drei einfachen Schritten zu Ihrer perfekten Hawai'i-Reise",
       "en": "Three simple steps to your perfect Hawai‘i trip"
     },
     "steps": [
@@ -138,16 +138,16 @@
     {
       "icon": "FiUsers",
       "title": {
-        "de": "Concierge & Begleitung",
+        "de": "Concierge & Reiseführung",
         "en": "Concierge & guide"
       },
       "desc": {
-        "de": "Persönliche Begleitung",
+        "de": "Private Reiseführung",
         "en": "Personal guide & concierge"
       },
       "price": "ab 299 $/Tag",
       "features": [
-        "Reisebegleitung",
+        "Private Touren",
         "Übersetzung",
         "Aktivitätenbuchung",
         "24/7 Betreuung"
@@ -165,7 +165,7 @@
       },
       "price": "ab 499 $/Tag",
       "features": [
-        "Private Begleitung",
+        "Private Premium-Touren",
         "Exklusive Spots",
         "Fotoshootings",
         "VIP-Zugang"
