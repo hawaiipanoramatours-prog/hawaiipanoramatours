@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import * as Fi from 'react-icons/fi'
 import SafeIcon from './SafeIcon'
 
-/* ✅ HERO – 1 CTA + Siegel + Trust-Block + Social-Textlink */
+/* ✅ HERO – 1 CTA + Trust-Block + Social-Textlink (Instagram + Facebook) */
 export function Hero({ content, lang }) {
   const h = content.hero
   const bg = h.bg
@@ -18,6 +18,7 @@ export function Hero({ content, lang }) {
       ],
     },
     en: {
+      // optional: falls du später EN brauchst (kannst du auch löschen)
       title: 'Ideal for you if you:',
       good: [
         'want to discover local insider tips & special places',
@@ -42,6 +43,7 @@ export function Hero({ content, lang }) {
     >
       <div className="absolute inset-0 bg-black/40" />
 
+      {/* ✅ Header-Offset: damit die Headline NICHT “zu weit oben” sitzt */}
       <div className="relative z-10 w-full px-6 pt-28 md:pt-32 pb-14 flex items-start md:items-center">
         <div className="text-center text-white max-w-4xl mx-auto w-full">
           <motion.div
@@ -56,21 +58,11 @@ export function Hero({ content, lang }) {
               </span>
             </h1>
 
-            <p className="font-poppins text-xl md:text-2xl mb-5 text-gray-200">
+            <p className="font-poppins text-xl md:text-2xl mb-7 text-gray-200">
               {h.subtitle?.[lang] || h.subtitle?.de}
             </p>
 
-            {/* ✅ SIEGEL / BADGE */}
-            <div className="flex justify-center mb-7">
-              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm px-4 py-2">
-                <span className="text-white/90">✅</span>
-                <span className="font-poppins text-xs md:text-sm text-white/95">
-                  Deutschsprachige Reiseberatung direkt auf Oʻahu
-                </span>
-              </div>
-            </div>
-
-            {/* ✅ TRUST-BLOCK */}
+            {/* ✅ TRUST-BLOCK: schmaler, scanbar, mobile clean */}
             <div className="mx-auto max-w-md sm:max-w-lg text-left mb-9">
               <div className="rounded-2xl bg-white/10 border border-white/15 backdrop-blur-sm p-5">
                 <p className="font-poppins text-sm md:text-base font-semibold text-white/95 mb-3">
@@ -98,6 +90,7 @@ export function Hero({ content, lang }) {
             transition={{ duration: 0.8, delay: 0.25 }}
             className="flex flex-col items-center justify-center"
           >
+            {/* ✅ EIN klarer CTA */}
             <a
               href={content.brand.social.calendly}
               target="_blank"
@@ -109,6 +102,7 @@ export function Hero({ content, lang }) {
                 'Kostenlos anfragen'}
             </a>
 
+            {/* ✅ Ruhiger Social-Link (kein Button, kein Conversion-Bruch) */}
             <p className="mt-5 font-poppins text-sm text-white/90">
               {lang === 'en' ? (
                 <>
