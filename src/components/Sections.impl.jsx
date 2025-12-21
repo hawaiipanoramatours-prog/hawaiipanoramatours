@@ -43,7 +43,7 @@ export function Hero({ content, lang }) {
       <div className="absolute inset-0 bg-black/40" />
 
       {/* ✅ Header-Offset: damit die Headline NICHT “zu weit oben” sitzt */}
-      <div className="relative z-10 w-full px-6 pt-28 md:pt-32 pb-14 flex items-start md:items-center">
+      <div className="relative z-10 w-full px-6 pt-20 md:pt-24 pb-14 flex items-start md:items-center">
         <div className="text-center text-white max-w-4xl mx-auto w-full">
           <motion.div
             initial={{ opacity: 0, y: 22 }}
