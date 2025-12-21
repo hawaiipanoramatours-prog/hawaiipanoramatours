@@ -38,7 +38,7 @@ export function Hero({ content, lang }) {
         backgroundImage: `url(${bg})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
+        backgroundAttachment: 'scroll',
       }}
     >
       <div className="absolute inset-0 bg-black/40" />
