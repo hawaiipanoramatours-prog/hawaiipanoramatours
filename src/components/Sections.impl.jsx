@@ -10,7 +10,7 @@ export function Hero({ content, lang }) {
   const trust = {
     de: {
       good: [
-        'Insider-Tipps statt Stardardtouren',
+        'Insider-Tipps statt Standardtouren',
         'Orte, die viele verpassen',
         'Stressfrei planen - ohne lange Recherche',
         'Planung oder private Tour mit Fahrzeug',
