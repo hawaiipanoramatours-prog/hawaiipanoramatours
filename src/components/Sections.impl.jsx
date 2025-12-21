@@ -9,12 +9,11 @@ export function Hero({ content, lang }) {
 
   const trust = {
     de: {
-      title: 'Ideal für Sie, wenn Sie:',
       good: [
-        'lokale Insider-Tipps und besondere Orte entdecken möchten',
-        'sicher und stressfrei planen und reisen möchten',
-        'deutschsprachige Beratung statt Massenangebote schätzen',
-        'zwischen persönlicher Reiseplanung oder privater Tourbegleitung mit Fahrzeug wählen möchten',
+        'lokale Insider-Tipps statt Stardard-und Massentouren',
+        'Besondere Orte erlebenm die viele verpassen',
+        'Stressfrei planen - ohne lange Recherche',
+        'Reiseplanung oder private Tour mir Fahrzeug',
       ],
     },
     en: {
