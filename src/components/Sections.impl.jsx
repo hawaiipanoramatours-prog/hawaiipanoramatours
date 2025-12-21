@@ -9,11 +9,12 @@ export function Hero({ content, lang }) {
 
   const trust = {
     de: {
+      title: 'Wenn Sie...',
       good: [
-        'Keine Massen-und Standardtouren',
-        'Orte, die viele verpassen',
+        'Keine Massen- und Standardtouren möchten',
+        'Keine besonderen Orte verpassen wollen',
         'Stressfrei planen - ohne lange Recherche',
-        'Planung oder private Tour mit Fahrzeug',
+        'Private Touren oder persönliche Planung schätzen',
       ],
     },
     en: {
