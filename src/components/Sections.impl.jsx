@@ -57,7 +57,7 @@ export function Hero({ content, lang }) {
               </span>
             </h1>
 
-            <p className="font-poppins text-xl md:text-2xl mb-7 text-gray-200">
+            <p className="font-poppins text-xl md:text-2xl mb-4 text-gray-200">
               {h.subtitle?.[lang] || h.subtitle?.de}
             </p>
 
