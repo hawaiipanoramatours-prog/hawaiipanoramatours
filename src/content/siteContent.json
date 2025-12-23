@@ -206,45 +206,50 @@
   ],
   "testimonials": [
     {
-      "name": "Tanja & Andree Schubert",
+      "name": "Tanja & Andree S.",
       "location": "Deutschland",
       "text": "Alles Top gelaufen mit Nasia, pünktlich und mega nett. Hat uns alles super erklärt und viele Tipps gegeben.",
       "rating": 5
     },
     {
-      "name": "Jennifer Thompson",
+      "name": "Jennifer T.",
       "location": "UK",
       "text": "The most authentic Hawaii experience we could have asked for. Absolutely recommended!",
       "rating": 5
     },
     {
-      "name": "Claudia Schmitz",
+      "name": "Claudia S.",
       "location": "Deutschland",
       "text": "Nasia hat unsere Traumreise perfekt geplant. Ihre Erfahrung und Leidenschaft für Hawaii machen den Unterschied!",
       "rating": 5
     }
   ],
-  "about": {
-    "photo": "About%20me%20pic.jpg",
-    "headline": {
-      "de": "Aloha! Ich bin Nasia 🌺",
-      "en": "Aloha! I’m Nasia 🌺"
+"about": {
+  "photo": "About%20me%20pic.jpg",
+  "headline": {
+    "de": "Aloha! Ich bin Nasia 🌺",
+    "en": "Aloha! I’m Nasia 🌺"
+  },
+  "paras": [
+    {
+      "de": "Seit vielen Jahren lebe ich auf Hawaiʻi und kenne die Inseln nicht nur als Reiseziel, sondern als Zuhause.",
+      "en": "I’ve lived in Hawaiʻi for many years and know the islands not just as a destination, but as home."
     },
-    "paras": [
-      {
-        "de": "Seit Jahren bin ich auf Hawaii zuhause und liebe es, Gästen die authentische Seite der Inseln zu zeigen.",
-        "en": "I’ve called Hawai‘i home for years and love sharing its authentic side."
-      },
-      {
-        "de": "Ich bin persönlich für Sie da – vor, während und nach Ihrer Reise. Mit lokalen Kontakten sorge ich für besondere Erlebnisse.",
-        "en": "I’m personally there for you with local connections and tailored experiences."
-      }
-    ]
-  },
-  "contact": {
-    "title": { "de": "Kontakt", "en": "Contact" },
-    "lead": { "de": "Lassen Sie mich Ihre Traumreise planen", "en": "Let’s plan your dream trip" }
-  },
+    {
+      "de": "Ich begleite meine Gäste persönlich – von der individuellen Planung bis zur Zeit vor Ort – und lege großen Wert auf authentische Erlebnisse abseits von Massentourismus.",
+      "en": "I personally support my guests from individual planning through their time on the islands, with a strong focus on authentic experiences beyond mass tourism."
+    },
+    {
+      "de": "Durch lokale Kontakte und eigene Erfahrung entstehen Reisen, die sich entspannt, stimmig und besonders anfühlen.",
+      "en": "With local connections and firsthand experience, I create journeys that feel relaxed, thoughtful, and truly special."
+    },
+    {
+      "de": "Mein Anspruch ist es, Ihnen Sicherheit, Orientierung und echte Insider-Einblicke zu geben – damit Sie Hawaiʻi bewusst und in Ihrem eigenen Tempo erleben können.",
+      "en": "My goal is to provide clarity, confidence, and genuine insider insight—so you can experience Hawaiʻi at your own pace."
+    }
+  ]
+}
+
   "cta": {
     "bg": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2073&q=80",
     "title": {
