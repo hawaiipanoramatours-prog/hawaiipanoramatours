@@ -214,27 +214,32 @@ export function HowItWorks({ content, lang }) {
 }
 
 /* 🔧 Neu ausgerichtete Karten, Buttons alle auf einer Linie */
-export function ServicesSection({ content, lang }) {
+export function ServicesSection({ content, lang, hideTitle = false }) {
   const items = content.services
+
   return (
     <section id="services" className="py-20 bg-white">
       <div className="container mx-auto px-6">
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            {lang === 'en' ? 'My services' : 'Meine Leistungen'}
-          </h2>
-          <p className="font-poppins text-xl text-gray-600 max-w-2xl mx-auto">
-            {lang === 'en'
-              ? 'Choose the service that fits you best'
-              : 'Wählen Sie den Service, der perfekt zu Ihnen passt'}
-          </p>
-        </motion.div>
+
+        {/* ✅ Überschrift NUR anzeigen, wenn hideTitle = false */}
+        {!hideTitle && (
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+              {lang === 'en' ? 'My services' : 'Meine Leistungen'}
+            </h2>
+            <p className="font-poppins text-xl text-gray-600 max-w-2xl mx-auto">
+              {lang === 'en'
+                ? 'Choose the service that fits you best'
+                : 'Wählen Sie den Service, der perfekt zu Ihnen passt'}
+            </p>
+          </motion.div>
+        )}
 
         <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {items.map((s, i) => {
