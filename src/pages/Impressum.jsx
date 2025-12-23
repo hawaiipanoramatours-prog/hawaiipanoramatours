@@ -9,7 +9,7 @@ export default function Impressum() {
       <p><strong>Angaben gemäß § 5 TMG</strong></p>
       <p>
        Hawaii Panorama Tours LLC<br />
-       c/o Nasia Edwards<br />
+       Nasia Edwards<br />
        200 N Vineyard Blvd<br />
        Ste A325 -265<br />
        Honolulu, HI 96817, USA
