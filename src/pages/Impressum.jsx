@@ -7,11 +7,13 @@ export default function Impressum() {
       <h1 className="font-playfair text-4xl font-bold text-turquoise mb-6">Impressum</h1>
 
       <p><strong>Angaben gemäß § 5 TMG</strong></p>
-      <p>Hawaii Panorama Tours LLC<br />
-      c/o Nasia Edwards<br />
-          200 N Vineyard Blvd
-          Ste A325 -265
-          Honolulu, HI 96817, USA</p>
+      <p>
+       Hawaii Panorama Tours LLC<br />
+       c/o Nasia Edwards<br />
+       200 N Vineyard Blvd<br />
+       Ste A325 -265<br />
+       Honolulu, HI 96817, USA
+      </p>
 
       <p className="mt-4">
         <strong>Kontakt</strong><br />
