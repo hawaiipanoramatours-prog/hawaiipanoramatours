@@ -14,10 +14,23 @@ export default function Datenschutz() {
 
       <h2 className="font-playfair text-2xl font-semibold text-gray-800 mt-8 mb-2">1. Verantwortliche Stelle</h2>
       <p>
-        Hawaii Panorama Tours LLC<br />
-        Inhaberin: Nasia Edwards<br />
-        E-Mail: <a href="mailto:info@hawaiipanoramatours.com" className="text-turquoise hover:underline">info@hawaiipanoramatours.com</a>
-      </p>
+  Hawaii Panorama Tours LLC<br />
+  Inhaberin: Nasia Edwards<br />
+  E-Mail:{' '}
+  <a
+    href="mailto:info@hawaiipanoramatours.com"
+    className="text-turquoise hover:underline"
+  >
+    info@hawaiipanoramatours.com
+  </a>
+</p>
+
+<p>
+  Weitere Angaben finden Sie im{' '}
+  <a href="/impressum" className="text-turquoise hover:underline">
+    Impressum
+  </a>.
+</p>
 
       <h2 className="font-playfair text-2xl font-semibold text-gray-800 mt-8 mb-2">2. Erhebung und Verarbeitung personenbezogener Daten</h2>
       <p>
