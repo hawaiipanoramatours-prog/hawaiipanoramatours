@@ -24,8 +24,8 @@ export function Services() {
         </div>
       </motion.div>
 
-      {/* ✅ HIER: Titel/Subtitel der Section ausblenden */}
-      <ServicesSection content={content} lang={lang} hideTitle={true} />
+      {/* ✅ HIER: Überschrift von ServicesSection ausblenden */}
+      <ServicesSection content={content} lang={lang} hideTitle />
 
       <Offerings content={content} lang={lang} />
     </div>
