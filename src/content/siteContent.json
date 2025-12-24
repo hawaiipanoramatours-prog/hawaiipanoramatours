@@ -116,51 +116,54 @@
       }
     ]
   },
-  "services": [
-    {
-{
-  "icon": "FiCompass",
-  "title": {
-    "de": "Orientierung & Reiseplanung",
-    "en": "Orientation & travel planning"
-  },
-  "desc": {
-    "de": "Perfekter Urlaub",
-    "en": "Perfect vacation"
-  },
-  "price": {
-    "de": "ab 99 $/einmalig",
-    "en": "from $99 (one-time)"
-  },
-  "priceNote": {
-    "de": "Wird bei privater Tourbuchung angerechnet.",
-    "en": "Credited toward a private tour booking."
-  },
-  "features": [
-    "Detaillierte Gesamtplanung",
-    "Orientierung vor Ort",
-    "Insider-Tipps",
-    "Flexible Anpassungen"
-  ]
-},
-    {
-      "icon": "FiUsers",
-      "title": {
-        "de": "Concierge & Reiseführung",
-        "en": "Concierge & guide"
-      },
-      "desc": {
-        "de": "Private Reiseführung",
-        "en": "Personal guide & concierge"
-      },
-      "price": "ab 299 $/Tag",
-      "features": [
-        "Private Touren",
-        "Übersetzung",
-        "Aktivitätenbuchung",
-        "24/7 Betreuung"
-      ]
+"services": [
+  {
+    "icon": "FiCompass",
+    "title": {
+      "de": "Orientierung & Reiseplanung",
+      "en": "Orientation & travel planning"
     },
+    "desc": {
+      "de": "Perfekter Urlaub",
+      "en": "Perfect vacation"
+    },
+    "price": {
+      "de": "ab 99 $/einmalig",
+      "en": "from $99 (one-time)"
+    },
+    "priceNote": {
+      "de": "Wird bei privater Tourbuchung angerechnet.",
+      "en": "Credited toward a private tour booking."
+    },
+    "features": [
+      "Detaillierte Gesamtplanung",
+      "Orientierung vor Ort",
+      "Insider-Tipps",
+      "Flexible Anpassungen"
+    ]
+  },
+  {
+    "icon": "FiUsers",
+    "title": {
+      "de": "Concierge & Reiseführung",
+      "en": "Concierge & guide"
+    },
+    "desc": {
+      "de": "Private Reiseführung",
+      "en": "Personal guide & concierge"
+    },
+    "price": {
+      "de": "ab 299 $/Tag",
+      "en": "from $299/day"
+    },
+    "features": [
+      "Private Touren",
+      "Übersetzung",
+      "Aktivitätenbuchung",
+      "24/7 Betreuung"
+    ]
+  }
+]
     {
       "icon": "FiStar",
       "title": {
