@@ -1,15 +1,17 @@
 import { Outlet, useLocation } from 'react-router-dom'
 import { useEffect, useMemo, useState } from 'react'
 import Header from './components/Header'
+import { Footer } from './components/Sections.impl'
 import ScrollToTop from './components/ScrollToTop'
-
-// ✅ wichtig: i18n importieren, damit changeLanguage möglich ist
-import i18n from './i18n'
 
 function getDomainLang() {
   const host = window.location.hostname.toLowerCase()
+
+  // ✅ .com => EN, .de => DE (passt für hawaiipanoramatours.com / .de)
   if (host.endsWith('.com')) return 'en'
   if (host.endsWith('.de')) return 'de'
+
+  // falls Vercel-Preview etc.: Standard DE
   return 'de'
 }
 
@@ -43,7 +45,7 @@ function GoogleTranslateInit({ defaultLang = 'de', languages = ['de', 'en', 'es'
         clearInterval(checkInterval)
         window.googleTranslateElementInit()
       }
-    }, 500)
+    }, 1000)
 
     return () => clearInterval(checkInterval)
   }, [defaultLang, languages])
@@ -55,10 +57,8 @@ export default function App() {
   const [content, setContent] = useState(null)
   const location = useLocation()
 
-  const domainLang = useMemo(() => {
-    if (typeof window === 'undefined') return 'de'
-    return localStorage.getItem('lang') || getDomainLang()
-  }, [])
+  // ✅ Domain-Language fix: .com => EN, .de => DE
+  const lang = useMemo(() => getDomainLang(), [])
 
   useEffect(() => {
     const local = localStorage.getItem('siteContent')
@@ -66,12 +66,7 @@ export default function App() {
     else import('./content/siteContent.json').then((m) => setContent(m.default || m))
   }, [])
 
-  // ✅ i18next Sprache beim Start fix setzen (domain-basiert)
-  useEffect(() => {
-    i18n.changeLanguage(domainLang)
-  }, [domainLang])
-
-  // 🔹 Google Translate bei jedem Seitenwechsel neu triggern (dein bestehender Fix)
+  // 🔹 Google Translate bei jedem Seitenwechsel neu triggern
   useEffect(() => {
     const select = document.querySelector('.goog-te-combo')
     if (select) {
@@ -90,21 +85,12 @@ export default function App() {
     return <Admin content={content} setContent={setContent} />
   }
 
-  // ⚠️ dein Footer-Import war bei dir: Footer from './components/Sections.impl'
-  // In deiner Struktur ist Footer ein named export. Am saubersten:
-  // import { Footer } from './components/Sections'
-  // -> ich lasse es hier bewusst wie du es aktuell nutzt, wenn es bei dir läuft.
-  const Footer = require('./components/Sections.impl').Footer
-
   return (
     <div className="min-h-screen">
       <ScrollToTop />
-
-      {/* ✅ jetzt domain-basiert: .com -> en, .de -> de */}
-      <GoogleTranslateInit defaultLang={domainLang} languages={['de', 'en', 'es']} />
-
+      <GoogleTranslateInit defaultLang={lang} languages={['de', 'en', 'es']} />
       <Header content={content} />
-      <Outlet context={{ content }} />
+      <Outlet context={{ content, lang }} />
       <Footer content={content} />
     </div>
   )
