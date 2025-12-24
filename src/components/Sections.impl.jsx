@@ -21,10 +21,10 @@ export function Hero({ content, lang }) {
       // optional: falls du später EN brauchst (kannst du auch löschen)
       title: 'Ideal for you if you:',
       good: [
-        'want to discover local insider tips & special places',
-        'want to plan and travel safely & stress-free',
-        'value clear guidance over mass-tourism offers',
-        'want to choose between personal planning or private tour guidance with a vehicle',
+        'want to avoid mass- or standard tourism',
+        'don't want to miss out on secret spots',
+        'want to plan stress free without long researches',
+        'value private tours or personal planning',
       ],
     },
   }
