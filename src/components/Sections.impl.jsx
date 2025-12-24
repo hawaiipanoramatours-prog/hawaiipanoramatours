@@ -101,7 +101,7 @@ export function Hero({ content, lang }) {
               className="bg-turquoise hover:bg-turquoise/90 text-white px-8 py-4 rounded-full font-poppins font-semibold text-lg"
             >
               {pick(h.ctaPlan?.label, lang) ||
-                (lang === 'en' ? 'Request a free consultation' : 'Kostenlos anfragen')}
+                (lang === 'en' ? 'Request a free consultation' : 'Unverbindlich anfragen')}
             </a>
 
             <p className="mt-5 font-poppins text-sm text-white/90">
