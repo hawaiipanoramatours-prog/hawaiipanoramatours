@@ -3,43 +3,19 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import * as Fi from 'react-icons/fi'
 
-export default function Header({ content }) {
+export default function Header({ content, lang = 'de' }) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
   const location = useLocation()
 
-  // Scroll-Effekt
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 50)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-// ✅ Google Translate Script laden & Widget einbinden
-useEffect(() => {
-  const id = 'google-translate-script'
-
-  window.googleTranslateElementInit = function () {
-    if (!window.google || !window.google.translate) return
-    new window.google.translate.TranslateElement(
-      {
-        pageLanguage: content?.i18n?.default || 'de',
-        includedLanguages: 'de,en,es',
-        layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false,
-      },
-      'google_translate_element'
-    )
-  }
-
-  if (!document.getElementById(id)) {
-    const s = document.createElement('script')
-    s.id = id
-    s.src =
-      'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
-    document.body.appendChild(s)
-  }
-}, [content])
+  // ✅ Guard (falls content kurz null ist)
+  if (!content) return null
 
   return (
     <motion.header
@@ -63,13 +39,13 @@ useEffect(() => {
             />
           </div>
           <span className="font-playfair font-bold text-xl text-turquoise">
-            {content.brand.siteName}
+            {content.brand?.siteName}
           </span>
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
-          {content.header.nav.map((n) => (
+          {content.header?.nav?.map((n) => (
             <Link
               key={n.path}
               to={n.path}
@@ -79,26 +55,22 @@ useEffect(() => {
                   : 'text-gray-700 hover:text-turquoise'
               }`}
             >
-              {n.name.de}
+              {n.name?.[lang] || n.name?.de}
             </Link>
           ))}
         </nav>
 
-        {/* Rechte Seite: kleines Google-Gadget + Mobile Menü */}
+        {/* Rechts: Google-Widget Platzhalter + Mobile Button */}
         <div className="flex items-center gap-4">
-          {/* 👉 hier rendert Google sein Widget */}
+          {/* ✅ NUR Platzhalter – Script/Init kommt aus App.jsx */}
           <div id="google_translate_element" className="google-translate-minimal" />
 
-          {/* Mobile-Menü-Button */}
           <button
             onClick={() => setIsMobile((s) => !s)}
             className="md:hidden text-turquoise p-2"
+            aria-label="Menu"
           >
-            {isMobile ? (
-              <Fi.FiX className="w-6 h-6" />
-            ) : (
-              <Fi.FiMenu className="w-6 h-6" />
-            )}
+            {isMobile ? <Fi.FiX className="w-6 h-6" /> : <Fi.FiMenu className="w-6 h-6" />}
           </button>
         </div>
       </div>
@@ -107,7 +79,7 @@ useEffect(() => {
       {isMobile && (
         <div className="md:hidden mx-4 mb-4 bg-white rounded-lg shadow p-4">
           <nav className="flex flex-col gap-2">
-            {content.header.nav.map((n) => (
+            {content.header?.nav?.map((n) => (
               <Link
                 key={n.path}
                 to={n.path}
@@ -118,7 +90,7 @@ useEffect(() => {
                     : 'text-gray-700 hover:bg-gray-50'
                 }`}
               >
-                {n.name.de}
+                {n.name?.[lang] || n.name?.de}
               </Link>
             ))}
           </nav>
