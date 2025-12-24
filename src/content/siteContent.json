@@ -100,10 +100,6 @@
         "de": "ab 99 $/einmalig",
         "en": "from $99 (one-time)"
       },
-      "priceNote": {
-        "de": "Wird bei privater Tourbuchung angerechnet.",
-        "en": "Credited toward a private tour booking."
-      },
       "features": [
         "Detaillierte Gesamtplanung",
         "Orientierung vor Ort",
