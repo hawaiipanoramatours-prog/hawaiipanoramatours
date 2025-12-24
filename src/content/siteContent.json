@@ -82,7 +82,7 @@
       "icon": "FiCompass",
       "title": { "de": "Orientierung & Reiseplanung", "en": "Orientation & travel planning" },
       "desc": { "de": "Perfekter Urlaub", "en": "Perfect vacation" },
-      "price": "ab 99 $/einmalig",
+      "price": "99 $/einmalig",
       "features": [
         "Detaillierte Gesamtplanung",
         "Orientierung vor Ort",
