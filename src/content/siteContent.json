@@ -127,7 +127,8 @@
         "de": "Perfekter Urlaub",
         "en": "Perfect vacation"
       },
-      "price": "ab 99 $/Tag",
+      "price": "ab 99 $/einmalig",
+      "wird bei privater Tourbuchung angerechnet"
       "features": [
         "Detaillierte Gesamtplanung",
         "Orientierung vor Ort",
