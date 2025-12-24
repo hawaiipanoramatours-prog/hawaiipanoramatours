@@ -2,33 +2,40 @@ import { motion } from 'framer-motion'
 import * as Fi from 'react-icons/fi'
 import SafeIcon from './SafeIcon'
 
+/* ✅ helper: unterstützt Strings ODER {de,en,es} */
+const pick = (val, lang = 'de') => {
+  if (!val) return ''
+  if (typeof val === 'string') return val
+  return val?.[lang] || val?.de || ''
+}
+
 /* ✅ HERO – 1 CTA + Trust-Block + Social-Textlink (Instagram + Facebook) */
 export function Hero({ content, lang }) {
   const h = content.hero
   const bg = h.bg
 
- const trust = {
-  de: {
-    title: 'Wenn Sie...',
-    good: [
-      'Keine Massen- und Standardtouren möchten',
-      'Keine besonderen Orte verpassen wollen',
-      'Stressfrei planen – ohne lange Recherche',
-      'Private Touren oder persönliche Planung schätzen',
-    ],
-  },
-  en: {
-    title: 'Ideal for you if you:',
-    good: [
-      'want to avoid mass or standard tourism',
-      "don't want to miss out on secret spots",
-      'want to plan stress-free without long research',
-      'value private tours or personal planning',
-    ],
-  },
-}
+  const trust = {
+    de: {
+      title: 'Wenn Sie...',
+      good: [
+        'Keine Massen- und Standardtouren möchten',
+        'Keine besonderen Orte verpassen wollen',
+        'Stressfrei planen – ohne lange Recherche',
+        'Private Touren oder persönliche Planung schätzen',
+      ],
+    },
+    en: {
+      title: 'Ideal for you if you:',
+      good: [
+        'want to avoid mass or standard tourism',
+        "don't want to miss out on secret spots",
+        'want to plan stress-free without long research',
+        'value private tours or personal planning',
+      ],
+    },
+  }
 
-const t = trust[lang] || trust.de
+  const t = trust[lang] || trust.de
 
   return (
     <section
@@ -42,7 +49,6 @@ const t = trust[lang] || trust.de
     >
       <div className="absolute inset-0 bg-black/40" />
 
-      {/* ✅ Header-Offset: damit die Headline NICHT “zu weit oben” sitzt */}
       <div className="relative z-10 w-full px-6 pt-20 md:pt-24 pb-14 flex items-start md:items-center">
         <div className="text-center text-white max-w-4xl mx-auto w-full">
           <motion.div
@@ -51,17 +57,16 @@ const t = trust[lang] || trust.de
             transition={{ duration: 0.8 }}
           >
             <h1 className="font-playfair text-5xl md:text-7xl font-bold mb-5 leading-[0.95]">
-              {h.title?.[lang] || h.title?.de}
+              {pick(h.title, lang)}
               <span className="block text-turquoise mt-2">
-                {h.highlight?.[lang] || h.highlight?.de}
+                {pick(h.highlight, lang)}
               </span>
             </h1>
 
             <p className="font-poppins text-xl md:text-2xl mb-4 text-gray-200">
-              {h.subtitle?.[lang] || h.subtitle?.de}
+              {pick(h.subtitle, lang)}
             </p>
 
-            {/* ✅ TRUST-BLOCK: schmaler, scanbar, mobile clean */}
             <div className="mx-auto max-w-md sm:max-w-lg text-left mb-9">
               <div className="rounded-2xl bg-white/10 border border-white/15 backdrop-blur-sm p-5">
                 <p className="font-poppins text-sm md:text-base font-semibold text-white/95 mb-3">
@@ -89,19 +94,16 @@ const t = trust[lang] || trust.de
             transition={{ duration: 0.8, delay: 0.25 }}
             className="flex flex-col items-center justify-center"
           >
-            {/* ✅ EIN klarer CTA */}
             <a
               href={content.brand.social.calendly}
               target="_blank"
               rel="noreferrer"
               className="bg-turquoise hover:bg-turquoise/90 text-white px-8 py-4 rounded-full font-poppins font-semibold text-lg"
             >
-              {h.ctaPlan?.label?.[lang] ||
-                h.ctaPlan?.label?.de ||
-                'Kostenlos anfragen'}
+              {pick(h.ctaPlan?.label, lang) ||
+                (lang === 'en' ? 'Request a free consultation' : 'Kostenlos anfragen')}
             </a>
 
-            {/* ✅ Ruhiger Social-Link (kein Button, kein Conversion-Bruch) */}
             <p className="mt-5 font-poppins text-sm text-white/90">
               {lang === 'en' ? (
                 <>
@@ -169,10 +171,10 @@ export function HowItWorks({ content, lang }) {
           viewport={{ once: true }}
         >
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            {h.title?.[lang] || h.title?.de}
+            {pick(h.title, lang)}
           </h2>
           <p className="font-poppins text-xl text-gray-600 max-w-2xl mx-auto">
-            {h.subtitle?.[lang] || h.subtitle?.de}
+            {pick(h.subtitle, lang)}
           </p>
         </motion.div>
 
@@ -197,10 +199,10 @@ export function HowItWorks({ content, lang }) {
                     <SafeIcon icon={Icon} className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="font-playfair text-2xl font-semibold text-gray-800 mb-4 text-center">
-                    {s.title?.[lang] || s.title?.de}
+                    {pick(s.title, lang)}
                   </h3>
                   <p className="font-poppins text-gray-600 text-center">
-                    {s.desc?.[lang] || s.desc?.de}
+                    {pick(s.desc, lang)}
                   </p>
                 </div>
               </motion.div>
@@ -219,8 +221,6 @@ export function ServicesSection({ content, lang, hideTitle = false }) {
   return (
     <section id="services" className="py-20 bg-white">
       <div className="container mx-auto px-6">
-
-        {/* ✅ Überschrift NUR anzeigen, wenn hideTitle = false */}
         {!hideTitle && (
           <motion.div
             className="text-center mb-16"
@@ -257,11 +257,11 @@ export function ServicesSection({ content, lang, hideTitle = false }) {
                 </div>
 
                 <h3 className="font-playfair text-2xl font-semibold text-gray-800 mb-3">
-                  {s.title?.[lang] || s.title?.de}
+                  {pick(s.title, lang)}
                 </h3>
 
                 <p className="font-poppins text-gray-600 mb-4">
-                  {s.desc?.[lang] || s.desc?.de}
+                  {pick(s.desc, lang)}
                 </p>
 
                 <div className="mb-6">
@@ -271,13 +271,13 @@ export function ServicesSection({ content, lang, hideTitle = false }) {
                 </div>
 
                 <ul className="space-y-2 mb-6">
-                  {s.features.map((f, idx) => (
+                  {(s.features || []).map((f, idx) => (
                     <li
                       key={idx}
                       className="flex items-center font-poppins text-gray-600"
                     >
                       <div className="w-2 h-2 bg-turquoise rounded-full mr-3" />
-                      {f}
+                      {pick(f, lang)}
                     </li>
                   ))}
                 </ul>
@@ -339,11 +339,9 @@ export function Offerings({ content, lang }) {
                   <SafeIcon icon={Icon} className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="font-playfair text-xl font-semibold text-gray-800 mb-3">
-                  {o.title?.[lang] || o.title?.de}
+                  {pick(o.title, lang)}
                 </h3>
-                <p className="font-poppins text-gray-600">
-                  {o.desc?.[lang] || o.desc?.de}
-                </p>
+                <p className="font-poppins text-gray-600">{pick(o.desc, lang)}</p>
               </motion.div>
             )
           })}
@@ -354,14 +352,32 @@ export function Offerings({ content, lang }) {
 }
 
 /* Galerie-Sektion */
-export function Gallery() {
+export function Gallery({ lang = 'de' }) {
   const images = [
-    { src: '/Gallery1.JPG', alt: 'Kunden auf Hawaii Tour 1' },
-    { src: '/Gallery2.jpg', alt: 'Kunden auf Hawaii Tour 2' },
-    { src: '/Gallery3.jpg', alt: 'Kunden auf Hawaii Tour 3' },
-    { src: '/Gallery4.jpg', alt: 'Kunden auf Hawaii Tour 4' },
-    { src: '/Gallery5.jpg', alt: 'Kunden auf Hawaii Tour 5' },
-    { src: '/Gallery6.JPG', alt: 'Kunden auf Hawaii Tour 6' },
+    {
+      src: '/Gallery1.JPG',
+      alt: { de: 'Kunden auf Hawaii Tour 1', en: 'Guests on Hawai‘i tour 1' },
+    },
+    {
+      src: '/Gallery2.jpg',
+      alt: { de: 'Kunden auf Hawaii Tour 2', en: 'Guests on Hawai‘i tour 2' },
+    },
+    {
+      src: '/Gallery3.jpg',
+      alt: { de: 'Kunden auf Hawaii Tour 3', en: 'Guests on Hawai‘i tour 3' },
+    },
+    {
+      src: '/Gallery4.jpg',
+      alt: { de: 'Kunden auf Hawaii Tour 4', en: 'Guests on Hawai‘i tour 4' },
+    },
+    {
+      src: '/Gallery5.jpg',
+      alt: { de: 'Kunden auf Hawaii Tour 5', en: 'Guests on Hawai‘i tour 5' },
+    },
+    {
+      src: '/Gallery6.JPG',
+      alt: { de: 'Kunden auf Hawaii Tour 6', en: 'Guests on Hawai‘i tour 6' },
+    },
   ]
 
   return (
@@ -375,7 +391,9 @@ export function Gallery() {
           viewport={{ once: true }}
         >
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Hawaii-Momente & Gäste-Impressionen
+            {lang === 'en'
+              ? 'Hawai‘i moments & guest impressions'
+              : 'Hawaii-Momente & Gäste-Impressionen'}
           </h2>
         </motion.div>
 
@@ -391,7 +409,7 @@ export function Gallery() {
             >
               <img
                 src={img.src}
-                alt={img.alt}
+                alt={pick(img.alt, lang)}
                 loading="lazy"
                 className="w-full h-64 md:h-72 object-cover hover:scale-105 transition-transform duration-500"
               />
@@ -403,7 +421,7 @@ export function Gallery() {
   )
 }
 
-export function Testimonials({ content }) {
+export function Testimonials({ content, lang = 'de' }) {
   const list = content.testimonials
   return (
     <section className="py-20 bg-white">
@@ -416,7 +434,7 @@ export function Testimonials({ content }) {
           viewport={{ once: true }}
         >
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Was meine Gäste sagen
+            {lang === 'en' ? 'What my guests say' : 'Was meine Gäste sagen'}
           </h2>
         </motion.div>
 
@@ -440,9 +458,7 @@ export function Testimonials({ content }) {
                 <h4 className="font-playfair font-semibold text-gray-800">
                   {t.name}
                 </h4>
-                <p className="font-poppins text-sm text-gray-600">
-                  {t.location}
-                </p>
+                <p className="font-poppins text-sm text-gray-600">{t.location}</p>
               </div>
             </motion.div>
           ))}
@@ -473,10 +489,10 @@ export function ContactCTA({ content, lang }) {
           viewport={{ once: true }}
         >
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-white mb-6">
-            {c.title?.[lang] || c.title?.de}
+            {pick(c.title, lang)}
           </h2>
           <p className="font-poppins text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            {c.desc?.[lang] || c.desc?.de}
+            {pick(c.desc, lang)}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
@@ -500,7 +516,8 @@ export function ContactCTA({ content, lang }) {
   )
 }
 
-export function Footer({ content }) {
+/* ✅ FOOTER (DE/EN komplett) */
+export function Footer({ content, lang = 'de' }) {
   return (
     <footer className="bg-gray-800 text-white py-12">
       <div className="container mx-auto px-6">
@@ -518,9 +535,13 @@ export function Footer({ content }) {
                 {content.brand.siteName}
               </span>
             </div>
+
             <p className="font-poppins text-gray-300 mb-4">
-              Authentische Hawaii-Erlebnisse mit persönlicher Betreuung.
+              {lang === 'en'
+                ? 'Authentic Hawai‘i experiences with personal support.'
+                : 'Authentische Hawaii-Erlebnisse mit persönlicher Betreuung.'}
             </p>
+
             <div className="flex gap-4">
               <a
                 href={content.brand.social.instagram}
@@ -549,34 +570,36 @@ export function Footer({ content }) {
 
           <div>
             <h3 className="font-playfair text-lg font-semibold mb-4">
-              Navigation
+              {lang === 'en' ? 'Navigation' : 'Navigation'}
             </h3>
             <ul className="space-y-2 font-poppins">
               <li>
                 <a href="/" className="text-gray-300 hover:text-turquoise">
-                  Home
+                  {lang === 'en' ? 'Home' : 'Home'}
                 </a>
               </li>
               <li>
                 <a href="/services" className="text-gray-300 hover:text-turquoise">
-                  Dienstleistungen
+                  {lang === 'en' ? 'Services' : 'Dienstleistungen'}
                 </a>
               </li>
               <li>
                 <a href="/about" className="text-gray-300 hover:text-turquoise">
-                  Über mich
+                  {lang === 'en' ? 'About' : 'Über mich'}
                 </a>
               </li>
               <li>
                 <a href="/contact" className="text-gray-300 hover:text-turquoise">
-                  Kontakt
+                  {lang === 'en' ? 'Contact' : 'Kontakt'}
                 </a>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-playfair text-lg font-semibold mb-4">Kontakt</h3>
+            <h3 className="font-playfair text-lg font-semibold mb-4">
+              {lang === 'en' ? 'Contact' : 'Kontakt'}
+            </h3>
             <div className="space-y-2 font-poppins text-gray-300">
               <p>{content.brand.social.email}</p>
               <p>{content.brand.social.phone}</p>
@@ -589,7 +612,7 @@ export function Footer({ content }) {
                 rel="noreferrer"
                 className="bg-turquoise text-white px-4 py-2 rounded-lg font-poppins text-sm"
               >
-                Kostenlos anfragen
+                {lang === 'en' ? 'Request for free' : 'Kostenlos anfragen'}
               </a>
             </div>
           </div>
@@ -597,18 +620,16 @@ export function Footer({ content }) {
 
         <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="flex gap-6 font-poppins text-sm text-gray-400 mb-4 md:mb-0">
-            <a
-              href={content.legal.impressumPath}
-              className="hover:text-turquoise"
-            >
-              Impressum
+            <a href={content.legal.impressumPath} className="hover:text-turquoise">
+              {lang === 'en' ? 'Imprint' : 'Impressum'}
             </a>
             <a href={content.legal.privacyPath} className="hover:text-turquoise">
-              Datenschutz
+              {lang === 'en' ? 'Privacy policy' : 'Datenschutz'}
             </a>
           </div>
+
           <p className="font-poppins text-sm text-gray-400">
-            Mit Aloha von Hawaii 🌺
+            {lang === 'en' ? 'With Aloha from Hawai‘i 🌺' : 'Mit Aloha von Hawaii 🌺'}
           </p>
         </div>
       </div>
