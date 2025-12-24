@@ -89,8 +89,8 @@ export default function App() {
     <div className="min-h-screen">
       <ScrollToTop />
       <GoogleTranslateInit defaultLang={lang} languages={['de', 'en', 'es']} />
-      <Header content={content} lang={lang} />
-      <Footer content={content} lang={lang} />
+      <Header content={content} />
+      <Footer content={content} />
       <Outlet context={{ content, lang }} />
      </div>
   )
