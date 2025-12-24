@@ -162,27 +162,29 @@
       "Aktivitätenbuchung",
       "24/7 Betreuung"
     ]
+  },
+  {
+    "icon": "FiStar",
+    "title": {
+      "de": "Luxus-VIP-Paket",
+      "en": "Luxurious VIP Package"
+    },
+    "desc": {
+      "de": "Exklusives VIP-Erlebnis",
+      "en": "Exclusive VIP experience"
+    },
+    "price": {
+      "de": "ab 499 $/Tag",
+      "en": "from $499/day"
+    },
+    "features": [
+      "Private Premium-Touren",
+      "Exklusive Spots",
+      "Fotoshootings",
+      "VIP-Zugang"
+    ]
   }
-]
-    {
-      "icon": "FiStar",
-      "title": {
-        "de": "Luxus-VIP-Paket",
-        "en": "Luxurious VIP Package"
-      },
-      "desc": {
-        "de": "Exklusives VIP-Erlebnis",
-        "en": "Exclusive VIP experience"
-      },
-      "price": "ab 499 $/Tag",
-      "features": [
-        "Private Premium-Touren",
-        "Exklusive Spots",
-        "Fotoshootings",
-        "VIP-Zugang"
-      ]
-    }
-  ],
+],
   "offerings": [
     {
       "icon": "FiMapPin",
