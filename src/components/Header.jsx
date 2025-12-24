@@ -15,32 +15,31 @@ export default function Header({ content }) {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // ✅ Google Translate Script laden & Widget einbinden
-  useEffect(() => {
-    const id = 'google-translate-script'
+// ✅ Google Translate Script laden & Widget einbinden
+useEffect(() => {
+  const id = 'google-translate-script'
 
-    // Callback MUSS global sein
-    window.googleTranslateElementInit = function () {
-      if (!window.google || !window.google.translate) return
-      new window.google.translate.TranslateElement(
-        {
-          pageLanguage: content?.i18n?.default || 'de',
-          includedLanguages: 'de,en,es',
-          layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
-          autoDisplay: false,
-        },
-        'google_translate_element'
-      )
-    }
+  window.googleTranslateElementInit = function () {
+    if (!window.google || !window.google.translate) return
+    new window.google.translate.TranslateElement(
+      {
+        pageLanguage: content?.i18n?.default || 'de',
+        includedLanguages: 'de,en,es',
+        layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false,
+      },
+      'google_translate_element'
+    )
+  }
 
-    if (!document.getElementById(id)) {
-      const s = document.createElement('script')
-      s.id = id
-      s.src =
-        'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
-      document.body.appendChild(s)
-    }
-  }, [content])
+  if (!document.getElementById(id)) {
+    const s = document.createElement('script')
+    s.id = id
+    s.src =
+      'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
+    document.body.appendChild(s)
+  }
+}, [content])
 
   return (
     <motion.header
