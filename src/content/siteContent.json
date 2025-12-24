@@ -118,24 +118,31 @@
   },
   "services": [
     {
-      "icon": "FiCompass",
-      "title": {
-        "de": "Orientierung & Reiseplanung",
-        "en": "Orientation & travel planning"
-      },
-      "desc": {
-        "de": "Perfekter Urlaub",
-        "en": "Perfect vacation"
-      },
-      "price": "ab 99 $/einmalig",
-      "wird bei privater Tourbuchung angerechnet"
-      "features": [
-        "Detaillierte Gesamtplanung",
-        "Orientierung vor Ort",
-        "Insider-Tipps",
-        "Flexible Anpassungen"
-      ]
-    },
+{
+  "icon": "FiCompass",
+  "title": {
+    "de": "Orientierung & Reiseplanung",
+    "en": "Orientation & travel planning"
+  },
+  "desc": {
+    "de": "Perfekter Urlaub",
+    "en": "Perfect vacation"
+  },
+  "price": {
+    "de": "ab 99 $/einmalig",
+    "en": "from $99 (one-time)"
+  },
+  "priceNote": {
+    "de": "Wird bei privater Tourbuchung angerechnet.",
+    "en": "Credited toward a private tour booking."
+  },
+  "features": [
+    "Detaillierte Gesamtplanung",
+    "Orientierung vor Ort",
+    "Insider-Tipps",
+    "Flexible Anpassungen"
+  ]
+}
     {
       "icon": "FiUsers",
       "title": {
