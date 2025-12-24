@@ -90,8 +90,8 @@ export default function App() {
       <ScrollToTop />
       <GoogleTranslateInit defaultLang={lang} languages={['de', 'en', 'es']} />
       <Header content={content} />
-      <Outlet context={{ content, lang }} />
       <Footer content={content} />
+      <Outlet context={{ content, lang }} />
     </div>
   )
 }
