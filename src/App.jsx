@@ -7,11 +7,11 @@ import ScrollToTop from './components/ScrollToTop'
 function getDomainLang() {
   const host = window.location.hostname.toLowerCase()
 
-  // ✅ .com => EN, .de => DE (passt für hawaiipanoramatours.com / .de)
+  // ✅ .com => EN, .de => DE
   if (host.endsWith('.com')) return 'en'
   if (host.endsWith('.de')) return 'de'
 
-  // falls Vercel-Preview etc.: Standard DE
+  // Vercel preview etc.
   return 'de'
 }
 
@@ -21,8 +21,7 @@ function GoogleTranslateInit({ defaultLang = 'de', languages = ['de', 'en', 'es'
     if (!document.getElementById(id)) {
       const s = document.createElement('script')
       s.id = id
-      s.src =
-        'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
+      s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
       document.body.appendChild(s)
     }
 
@@ -57,7 +56,7 @@ export default function App() {
   const [content, setContent] = useState(null)
   const location = useLocation()
 
-  // ✅ Domain-Language fix: .com => EN, .de => DE
+  // ✅ Domain-Language fix
   const lang = useMemo(() => getDomainLang(), [])
 
   useEffect(() => {
@@ -89,9 +88,14 @@ export default function App() {
     <div className="min-h-screen">
       <ScrollToTop />
       <GoogleTranslateInit defaultLang={lang} languages={['de', 'en', 'es']} />
-      <Header content={content} />
-      <Footer content={content} />
+
+      {/* ✅ lang an Header/Footer geben */}
+      <Header content={content} lang={lang} />
+
+      {/* ✅ Content muss vor Footer kommen */}
       <Outlet context={{ content, lang }} />
-     </div>
+
+      <Footer content={content} lang={lang} />
+    </div>
   )
 }
