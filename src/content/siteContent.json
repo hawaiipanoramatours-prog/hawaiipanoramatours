@@ -11,6 +11,7 @@
       "instagram": "https://instagram.com/hawaiipanoramatours",
       "facebook": "https://facebook.com/hawaiipanoramatours",
       "email": "hawaiipanoramatours@gmail.com",
+      "phone": "",
       "place": "Hawaii, USA",
       "calendly": "https://calendly.com/hawaiipanoramatours"
     }
@@ -35,19 +36,16 @@
   "hero": {
     "bg": "pexels-troy-squillaci-1303476-2521619-min.jpg",
     "title": { "de": "Hawai‘i –", "en": "Hawai‘i –" },
-    "highlight": {
-      "de": "ausgewählt wie von Insidern",
-      "en": "personally planned & stress-free"
-    },
+    "highlight": { "de": "ausgewählt wie von Insidern", "en": "personally planned & stress-free" },
     "subtitle": {
       "de": "Individuell geplant oder privat geführt – auf Deutsch.",
       "en": "A non-binding initial consultation for personalized trip planning and optional personal guidance on Oʻahu — available in German, English, or Spanish"
     },
     "ctaPlan": {
-      "label": {
-        "de": "Kostenloses Erstgespräch anfragen",
-        "en": "Request a free consultation"
-      }
+      "label": { "de": "Kostenloses Erstgespräch anfragen", "en": "Request a free consultation" }
+    },
+    "ctaServices": {
+      "label": { "de": "Meine Concierge-Dienste", "en": "My concierge services" }
     }
   },
 
@@ -68,19 +66,13 @@
         "icon": "FiMap",
         "step": "02",
         "title": { "de": "Individuelle Planung", "en": "Custom planning" },
-        "desc": {
-          "de": "Maßgeschneiderte Route",
-          "en": "Tailored itinerary with insider tips"
-        }
+        "desc": { "de": "Maßgeschneiderte Route", "en": "Tailored itinerary with insider tips" }
       },
       {
         "icon": "FiHeart",
         "step": "03",
         "title": { "de": "Betreuung vor Ort", "en": "On-site support" },
-        "desc": {
-          "de": "Ich bin für Sie da",
-          "en": "I’m there for you during your trip"
-        }
+        "desc": { "de": "Ich bin für Sie da", "en": "I’m there for you during your trip" }
       }
     ]
   },
@@ -88,18 +80,9 @@
   "services": [
     {
       "icon": "FiCompass",
-      "title": {
-        "de": "Orientierung & Reiseplanung",
-        "en": "Orientation & travel planning"
-      },
-      "desc": {
-        "de": "Perfekter Urlaub",
-        "en": "Perfect vacation"
-      },
-      "price": {
-        "de": "ab 99 $/einmalig",
-        "en": "from $99 (one-time)"
-      },
+      "title": { "de": "Orientierung & Reiseplanung", "en": "Orientation & travel planning" },
+      "desc": { "de": "Perfekter Urlaub", "en": "Perfect vacation" },
+      "price": "ab 99 $/einmalig",
       "features": [
         "Detaillierte Gesamtplanung",
         "Orientierung vor Ort",
@@ -109,18 +92,9 @@
     },
     {
       "icon": "FiUsers",
-      "title": {
-        "de": "Concierge & Reiseführung",
-        "en": "Concierge & guide"
-      },
-      "desc": {
-        "de": "Private Reiseführung",
-        "en": "Personal guide & concierge"
-      },
-      "price": {
-        "de": "ab 299 $/Tag",
-        "en": "from $299/day"
-      },
+      "title": { "de": "Concierge & Reiseführung", "en": "Concierge & guide" },
+      "desc": { "de": "Private Reiseführung", "en": "Personal guide & concierge" },
+      "price": "ab 299 $/Tag",
       "features": [
         "Private Touren",
         "Übersetzung",
@@ -130,18 +104,9 @@
     },
     {
       "icon": "FiStar",
-      "title": {
-        "de": "Luxus-VIP-Paket",
-        "en": "Luxurious VIP Package"
-      },
-      "desc": {
-        "de": "Exklusives VIP-Erlebnis",
-        "en": "Exclusive VIP experience"
-      },
-      "price": {
-        "de": "ab 499 $/Tag",
-        "en": "from $499/day"
-      },
+      "title": { "de": "Luxus-VIP-Paket", "en": "Luxurious VIP Package" },
+      "desc": { "de": "Exklusives VIP-Erlebnis", "en": "Exclusive VIP experience" },
+      "price": "ab 499 $/Tag",
       "features": [
         "Private Premium-Touren",
         "Exklusive Spots",
@@ -152,28 +117,79 @@
   ],
 
   "offerings": [
-    { "icon": "FiMapPin", "title": { "de": "Tagesplanung & Orientierung", "en": "Planning & orientation" }, "desc": { "de": "Stressfrei erkunden", "en": "Explore stress-free" } },
-    { "icon": "FiGlobe", "title": { "de": "Übersetzung & Begleitung", "en": "Translation & guide" }, "desc": { "de": "Brücken bauen", "en": "Bridge cultures" } },
-    { "icon": "FiCar", "title": { "de": "Mietwagen & Aktivitäten", "en": "Car rental & activities" }, "desc": { "de": "Alles aus einer Hand", "en": "All in one place" } },
-    { "icon": "FiEye", "title": { "de": "Insider-Tipps", "en": "Insider tips" }, "desc": { "de": "Versteckte Paradiese", "en": "Hidden gems" } },
-    { "icon": "FiMountain", "title": { "de": "Wanderungsempfehlungen", "en": "Hiking" }, "desc": { "de": "Sichere Spots", "en": "Safe scenic spots" } },
-    { "icon": "FiCamera", "title": { "de": "Fotoshootings", "en": "Photoshoots" }, "desc": { "de": "Traumorte", "en": "Dream locations" } }
+    {
+      "icon": "FiMapPin",
+      "title": { "de": "Tagesplanung & Orientierung", "en": "Planning & orientation" },
+      "desc": { "de": "Stressfrei erkunden", "en": "Explore stress-free" }
+    },
+    {
+      "icon": "FiGlobe",
+      "title": { "de": "Übersetzung & Begleitung", "en": "Translation & guide" },
+      "desc": { "de": "Brücken bauen", "en": "Bridge cultures" }
+    },
+    {
+      "icon": "FiCar",
+      "title": { "de": "Mietwagen & Aktivitäten", "en": "Car rental & activities" },
+      "desc": { "de": "Alles aus einer Hand", "en": "All in one place" }
+    },
+    {
+      "icon": "FiEye",
+      "title": { "de": "Insider-Tipps", "en": "Insider tips" },
+      "desc": { "de": "Versteckte Paradiese", "en": "Hidden gems" }
+    },
+    {
+      "icon": "FiMountain",
+      "title": { "de": "Wanderungsempfehlungen", "en": "Hiking" },
+      "desc": { "de": "Sichere Spots", "en": "Safe scenic spots" }
+    },
+    {
+      "icon": "FiCamera",
+      "title": { "de": "Fotoshootings", "en": "Photoshoots" },
+      "desc": { "de": "Traumorte", "en": "Dream locations" }
+    }
   ],
 
   "testimonials": [
-    { "name": "Tanja & Andree S.", "location": "Deutschland", "text": "Alles Top gelaufen mit Nasia, pünktlich und mega nett. Hat uns alles super erklärt und viele Tipps gegeben.", "rating": 5 },
-    { "name": "Jennifer T.", "location": "UK", "text": "The most authentic Hawaii experience we could have asked for. Absolutely recommended!", "rating": 5 },
-    { "name": "Claudia S.", "location": "Deutschland", "text": "Nasia hat unsere Traumreise perfekt geplant. Ihre Erfahrung und Leidenschaft für Hawaii machen den Unterschied!", "rating": 5 }
+    {
+      "name": "Tanja & Andree S.",
+      "location": "Deutschland",
+      "text": "Alles Top gelaufen mit Nasia, pünktlich und mega nett. Hat uns alles super erklärt und viele Tipps gegeben.",
+      "rating": 5
+    },
+    {
+      "name": "Jennifer T.",
+      "location": "UK",
+      "text": "The most authentic Hawaii experience we could have asked for. Absolutely recommended!",
+      "rating": 5
+    },
+    {
+      "name": "Claudia S.",
+      "location": "Deutschland",
+      "text": "Nasia hat unsere Traumreise perfekt geplant. Ihre Erfahrung und Leidenschaft für Hawaii machen den Unterschied!",
+      "rating": 5
+    }
   ],
 
   "about": {
     "photo": "About%20me%20pic.jpg",
     "headline": { "de": "Aloha! Ich bin Nasia 🌺", "en": "Aloha! I’m Nasia 🌺" },
     "paras": [
-      { "de": "Seit vielen Jahren lebe ich auf Hawaiʻi und kenne die Inseln nicht nur als Reiseziel, sondern als Zuhause.", "en": "I’ve lived in Hawaiʻi for many years and know the islands not just as a destination, but as home." },
-      { "de": "Ich begleite meine Gäste persönlich – von der individuellen Planung bis zur Zeit vor Ort – und lege großen Wert auf authentische Erlebnisse abseits von Massentourismus.", "en": "I personally support my guests from individual planning through their time on the islands, with a strong focus on authentic experiences beyond mass tourism." },
-      { "de": "Durch lokale Kontakte und eigene Erfahrung entstehen Reisen, die sich entspannt, stimmig und besonders anfühlen.", "en": "With local connections and firsthand experience, I create journeys that feel relaxed, thoughtful, and truly special." },
-      { "de": "Mein Anspruch ist es, Ihnen Sicherheit, Orientierung und echte Insider-Einblicke zu geben – damit Sie Hawaiʻi bewusst und in Ihrem eigenen Tempo erleben können.", "en": "My goal is to provide clarity, confidence, and genuine insider insight—so you can experience Hawaiʻi at your own pace." }
+      {
+        "de": "Seit vielen Jahren lebe ich auf Hawaiʻi und kenne die Inseln nicht nur als Reiseziel, sondern als Zuhause.",
+        "en": "I’ve lived in Hawaiʻi for many years and know the islands not just as a destination, but as home."
+      },
+      {
+        "de": "Ich begleite meine Gäste persönlich – von der individuellen Planung bis zur Zeit vor Ort – und lege großen Wert auf authentische Erlebnisse abseits von Massentourismus.",
+        "en": "I personally support my guests from individual planning through their time on the islands, with a strong focus on authentic experiences beyond mass tourism."
+      },
+      {
+        "de": "Durch lokale Kontakte und eigene Erfahrung entstehen Reisen, die sich entspannt, stimmig und besonders anfühlen.",
+        "en": "With local connections and firsthand experience, I create journeys that feel relaxed, thoughtful, and truly special."
+      },
+      {
+        "de": "Mein Anspruch ist es, Ihnen Sicherheit, Orientierung und echte Insider-Einblicke zu geben – damit Sie Hawaiʻi bewusst und in Ihrem eigenen Tempo erleben können.",
+        "en": "My goal is to provide clarity, confidence, and genuine insider insight—so you can experience Hawaiʻi at your own pace."
+      }
     ]
   },
 
