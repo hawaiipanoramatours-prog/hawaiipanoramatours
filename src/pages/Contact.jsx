@@ -2,10 +2,21 @@ import { useOutletContext } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import React from 'react'
 
-const FORM_ENDPOINT = 'https://formspree.io/f/mwpapqeq' // 
+const FORM_ENDPOINT = 'https://formspree.io/f/mwpapqeq' //
+
+function getThanksUrl() {
+  const host = window.location.hostname.toLowerCase()
+  const base = host.endsWith('.com')
+    ? 'https://www.hawaiipanoramatours.com'
+    : 'https://www.hawaiipanoramatours.de'
+  return `${base}/thanks.html`
+}
 
 export function Contact() {
-  const { content } = useOutletContext()
+  const { content, lang } = useOutletContext()
+  const L = lang || 'de'
+  const thanksUrl = getThanksUrl()
+
   const [formData, setFormData] = React.useState({
     name: '',
     email: '',
@@ -42,7 +53,7 @@ export function Contact() {
       if (res.ok) {
         setStatus('success')
         setFormData({ name: '', email: '', subject: '', message: '' })
-        window.location.href = "https://www.hawaiipanoramatours.de/thanks.html"
+        window.location.href = thanksUrl
       } else {
         setStatus('error')
       }
@@ -62,21 +73,21 @@ export function Contact() {
       >
         <div className="container mx-auto px-6 text-center">
           <h1 className="font-playfair text-4xl md:text-6xl font-bold text-white mb-6">
-            Kontakt
+            {L === 'en' ? 'Contact' : 'Kontakt'}
           </h1>
           <p className="font-poppins text-xl text-white/90 max-w-3xl mx-auto">
-            Lassen Sie uns Ihre Traumreise planen
+            {L === 'en' ? "Let's plan your dream trip" : 'Lassen Sie uns Ihre Traumreise planen'}
           </p>
         </div>
       </motion.div>
 
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-12">
-          
+
           {/* Linke Seite: Kontaktinfos */}
           <div>
             <h2 className="font-playfair text-3xl font-bold text-gray-800 mb-8">
-              Nehmen Sie Kontakt auf
+              {L === 'en' ? 'Get in touch' : 'Nehmen Sie Kontakt auf'}
             </h2>
             <div className="space-y-4 font-poppins text-gray-600">
               <p>{content.brand.social.email}</p>
@@ -88,7 +99,7 @@ export function Contact() {
                 rel="noreferrer"
                 className="mt-4 inline-block bg-turquoise text-white px-6 py-3 rounded-full"
               >
-                Beratung buchen
+                {L === 'en' ? 'Book a consultation' : 'Beratung buchen'}
               </a>
             </div>
           </div>
@@ -109,16 +120,12 @@ export function Contact() {
             >
 
               {/* Redirect */}
-              <input
-                type="hidden"
-                name="_redirect"
-                value="https://www.hawaiipanoramatours.de/thanks.html"
-              />
+              <input type="hidden" name="_redirect" value={thanksUrl} />
 
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block font-poppins text-sm font-medium text-gray-700 mb-2">
-                    Name *
+                    {L === 'en' ? 'Name *' : 'Name *'}
                   </label>
                   <input
                     type="text"
@@ -132,7 +139,7 @@ export function Contact() {
 
                 <div>
                   <label className="block font-poppins text-sm font-medium text-gray-700 mb-2">
-                    E-Mail *
+                    {L === 'en' ? 'Email *' : 'E-Mail *'}
                   </label>
                   <input
                     type="email"
@@ -147,7 +154,7 @@ export function Contact() {
 
               <div>
                 <label className="block font-poppins text-sm font-medium text-gray-700 mb-2">
-                  Betreff
+                  {L === 'en' ? 'Subject' : 'Betreff'}
                 </label>
                 <input
                   type="text"
@@ -160,7 +167,7 @@ export function Contact() {
 
               <div>
                 <label className="block font-poppins text-sm font-medium text-gray-700 mb-2">
-                  Nachricht *
+                  {L === 'en' ? 'Message *' : 'Nachricht *'}
                 </label>
                 <textarea
                   name="message"
@@ -174,8 +181,10 @@ export function Contact() {
 
               {status === 'error' && (
                 <p className="text-sm text-red-500 font-poppins">
-                  Ups, etwas ist schiefgelaufen. Bitte versuchen Sie es später noch einmal
-                  oder schreiben Sie direkt an {content.brand.social.email}.
+                  {L === 'en'
+                    ? `Oops, something went wrong. Please try again later or email ${content.brand.social.email}.`
+                    : `Ups, etwas ist schiefgelaufen. Bitte versuchen Sie es später noch einmal
+                  oder schreiben Sie direkt an ${content.brand.social.email}.`}
                 </p>
               )}
 
@@ -188,7 +197,9 @@ export function Contact() {
                     : 'hover:bg-turquoise/90'
                 }`}
               >
-                {status === 'submitting' ? 'Wird gesendet…' : 'Nachricht senden'}
+                {status === 'submitting'
+                  ? (L === 'en' ? 'Sending…' : 'Wird gesendet…')
+                  : (L === 'en' ? 'Send message' : 'Nachricht senden')}
               </button>
             </motion.form>
           </motion.div>
