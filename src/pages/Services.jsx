@@ -78,24 +78,6 @@ function DecisionBlocks({ lang }) {
           </motion.div>
         </div>
 
-        {/* Block 3 – Inspiration (klein) */}
-        <div className="mt-10 text-center">
-          <p className="font-poppins text-gray-600 mb-3">
-            {lang === 'en' ? 'Inspiration & tips for Hawaii' : 'Inspiration & Tipps für Hawaii'}
-          </p>
-
-          <Link
-            to="/"
-            className="inline-block border border-turquoise text-turquoise hover:bg-turquoise hover:text-white px-6 py-2 rounded-full font-poppins font-semibold"
-          >
-            {lang === 'en' ? 'Explore' : 'Entdecken'}
-          </Link>
-        </div>
-      </div>
-    </section>
-  )
-}
-
 export function Services() {
   const { content, lang } = useOutletContext()
 
