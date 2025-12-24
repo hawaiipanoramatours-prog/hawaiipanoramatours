@@ -7,28 +7,28 @@ export function Hero({ content, lang }) {
   const h = content.hero
   const bg = h.bg
 
-  const trust = {
-    de: {
-      title: 'Wenn Sie...',
-      good: [
-        'Keine Massen- und Standardtouren möchten',
-        'Keine besonderen Orte verpassen wollen',
-        'Stressfrei planen - ohne lange Recherche',
-        'Private Touren oder persönliche Planung schätzen',
-      ],
-    },
-    en: {
-      // optional: falls du später EN brauchst (kannst du auch löschen)
-      title: 'Ideal for you if you:',
-   good: [
-      'want to avoid mass- or standard tourism',
+ const trust = {
+  de: {
+    title: 'Wenn Sie...',
+    good: [
+      'Keine Massen- und Standardtouren möchten',
+      'Keine besonderen Orte verpassen wollen',
+      'Stressfrei planen – ohne lange Recherche',
+      'Private Touren oder persönliche Planung schätzen',
+    ],
+  },
+  en: {
+    title: 'Ideal for you if you:',
+    good: [
+      'want to avoid mass or standard tourism',
       "don't want to miss out on secret spots",
-      'want to plan stress free without long researches',
-     'value private tours or personal planning',
-],
-  }
+      'want to plan stress-free without long research',
+      'value private tours or personal planning',
+    ],
+  },
+}
 
-  const t = trust[lang] || trust.de
+const t = trust[lang] || trust.de
 
   return (
     <section
