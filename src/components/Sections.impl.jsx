@@ -21,12 +21,11 @@ export function Hero({ content, lang }) {
       // optional: falls du später EN brauchst (kannst du auch löschen)
       title: 'Ideal for you if you:',
    good: [
-  'want to avoid mass- or standard tourism',
-  "don't want to miss out on secret spots",
-  'want to plan stress free without long researches',
-  'value private tours or personal planning',
+      'want to avoid mass- or standard tourism',
+      "don't want to miss out on secret spots",
+      'want to plan stress free without long researches',
+     'value private tours or personal planning',
 ],
-
   }
 
   const t = trust[lang] || trust.de
