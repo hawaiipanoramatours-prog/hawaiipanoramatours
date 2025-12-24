@@ -10,8 +10,7 @@ import {
 } from '../components/Sections.impl'
 
 export default function Home() {
-  const { content } = useOutletContext()
-  const lang = content.i18n?.default || 'de'
+  const { content, lang } = useOutletContext()
 
   return (
     <>
@@ -20,7 +19,6 @@ export default function Home() {
       <ServicesSection content={content} lang={lang} />
       <Offerings content={content} lang={lang} />
 
-      {/* 👇 NEU: Deine Bilder-Galerie zwischen Offers & Testimonials */}
       <Gallery />
 
       <Testimonials content={content} />
