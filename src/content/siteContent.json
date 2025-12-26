@@ -77,44 +77,68 @@
     ]
   },
 
-  "services": [
-    {
-      "icon": "FiCompass",
-      "title": { "de": "Orientierung & Reiseplanung", "en": "Orientation & travel planning" },
-      "desc": { "de": "Perfekter Urlaub", "en": "Perfect vacation" },
-      "price": "99 $/einmalig",
-      "features": [
+"services": [
+  {
+    "icon": "FiCompass",
+    "title": { "de": "Orientierung & Reiseplanung", "en": "Orientation & travel planning" },
+    "desc": { "de": "Perfekter Urlaub", "en": "Perfect vacation" },
+    "price": { "de": "99 $/einmalig", "en": "$99 (one-time)" },
+    "features": {
+      "de": [
         "Detaillierte Gesamtplanung",
         "Orientierung vor Ort",
         "Insider-Tipps",
         "Flexible Anpassungen"
+      ],
+      "en": [
+        "Comprehensive trip planning",
+        "On-site orientation",
+        "Insider tips",
+        "Flexible adjustments"
       ]
-    },
-    {
-      "icon": "FiUsers",
-      "title": { "de": "Concierge & Reiseführung", "en": "Concierge & guide" },
-      "desc": { "de": "Private Reiseführung", "en": "Personal guide & concierge" },
-      "price": "ab 299 $/Tag",
-      "features": [
+    }
+  },
+  {
+    "icon": "FiUsers",
+    "title": { "de": "Concierge & Reiseführung", "en": "Concierge & guide" },
+    "desc": { "de": "Private Reiseführung", "en": "Personal guide & concierge" },
+    "price": { "de": "ab 299 $/Tag", "en": "from $299/day" },
+    "features": {
+      "de": [
         "Private Touren",
         "Übersetzung",
         "Aktivitätenbuchung",
         "24/7 Betreuung"
+      ],
+      "en": [
+        "Private tours",
+        "Translation",
+        "Activity bookings",
+        "24/7 support"
       ]
-    },
-    {
-      "icon": "FiStar",
-      "title": { "de": "Luxus-VIP-Paket", "en": "Luxurious VIP Package" },
-      "desc": { "de": "Exklusives VIP-Erlebnis", "en": "Exclusive VIP experience" },
-      "price": "ab 499 $/Tag",
-      "features": [
+    }
+  },
+  {
+    "icon": "FiStar",
+    "title": { "de": "Luxus-VIP-Paket", "en": "Luxurious VIP Package" },
+    "desc": { "de": "Exklusives VIP-Erlebnis", "en": "Exclusive VIP experience" },
+    "price": { "de": "ab 499 $/Tag", "en": "from $499/day" },
+    "features": {
+      "de": [
         "Private Premium-Touren",
         "Exklusive Spots",
         "Fotoshootings",
         "VIP-Zugang"
+      ],
+      "en": [
+        "Private premium tours",
+        "Exclusive locations",
+        "Photoshoots",
+        "VIP access"
       ]
     }
-  ],
+  }
+],
 
   "offerings": [
     {
