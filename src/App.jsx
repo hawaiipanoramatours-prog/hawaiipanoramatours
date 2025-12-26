@@ -6,58 +6,68 @@ import ScrollToTop from './components/ScrollToTop'
 
 function getDomainLang() {
   const host = window.location.hostname.toLowerCase()
-
-  // ✅ .com => EN, .de => DE
   if (host.endsWith('.com')) return 'en'
   if (host.endsWith('.de')) return 'de'
-
-  // Vercel preview etc.
   return 'de'
 }
 
-function GoogleTranslateInit({ defaultLang = 'de', languages = ['de', 'en', 'es'] }) {
+function shouldUseGoogleTranslate() {
+  const host = window.location.hostname.toLowerCase()
+  return host.endsWith('.com') // ✅ NUR .com
+}
+
+function GoogleTranslateInit({ defaultLang = 'en', languages = ['de', 'en', 'es'] }) {
   useEffect(() => {
     const id = 'google-translate-script'
+
+    // ✅ Init-Funktion MUSS VOR Script-Load existieren (cb=...)
+    window.googleTranslateElementInit = function () {
+      if (!window.google || !window.google.translate) return
+
+      // ✅ Falls Google das Widget schon mal erstellt hat, nicht doppelt initialisieren
+      const el = document.getElementById('google_translate_element')
+      if (!el) return
+
+      // Optional: clean (verhindert doppelte Dropdowns bei Hot reloads)
+      // el.innerHTML = ''
+
+      new window.google.translate.TranslateElement(
+        {
+          pageLanguage: defaultLang,
+          includedLanguages: languages.join(','),
+          layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+          autoDisplay: false,
+        },
+        'google_translate_element'
+      )
+    }
+
     if (!document.getElementById(id)) {
       const s = document.createElement('script')
       s.id = id
-      s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
+      s.src =
+        'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
       document.body.appendChild(s)
+    } else {
+      // Script ist schon da → direkt versuchen zu initialisieren
+      window.googleTranslateElementInit()
     }
-
-    window.googleTranslateElementInit = function () {
-      if (window.google && window.google.translate) {
-        new window.google.translate.TranslateElement(
-          {
-            pageLanguage: defaultLang,
-            includedLanguages: languages.join(','),
-            layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
-            autoDisplay: false,
-          },
-          'google_translate_element'
-        )
-      }
-    }
-
-    const checkInterval = setInterval(() => {
-      if (window.google && window.google.translate) {
-        clearInterval(checkInterval)
-        window.googleTranslateElementInit()
-      }
-    }, 1000)
-
-    return () => clearInterval(checkInterval)
   }, [defaultLang, languages])
 
-  return <div id="google_translate_element" style={{ display: 'none' }} />
+  return null // ✅ WICHTIG: KEIN zweites google_translate_element rendern
 }
 
 export default function App() {
   const [content, setContent] = useState(null)
   const location = useLocation()
 
-  // ✅ Domain-Language fix
   const lang = useMemo(() => getDomainLang(), [])
+  const useGT = useMemo(() => shouldUseGoogleTranslate(), [])
+
+  useEffect(() => {
+    // ✅ HTML lang korrekt setzen (auch wenn index.html lang="de" hat)
+    document.documentElement.lang = lang
+  }, [lang])
 
   useEffect(() => {
     const local = localStorage.getItem('siteContent')
@@ -65,17 +75,18 @@ export default function App() {
     else import('./content/siteContent.json').then((m) => setContent(m.default || m))
   }, [])
 
-  // 🔹 Google Translate bei jedem Seitenwechsel neu triggern
+  // 🔹 SPA: nach Route-Wechsel ggf. erneut übersetzen (nur .com)
   useEffect(() => {
+    if (!useGT) return
     const select = document.querySelector('.goog-te-combo')
     if (select) {
       const currentLang = select.value
       setTimeout(() => {
         select.value = currentLang
         select.dispatchEvent(new Event('change'))
-      }, 800)
+      }, 500)
     }
-  }, [location])
+  }, [location, useGT])
 
   if (!content) return null
 
@@ -87,15 +98,16 @@ export default function App() {
   return (
     <div className="min-h-screen">
       <ScrollToTop />
-      <GoogleTranslateInit defaultLang={lang} languages={['de', 'en', 'es']} />
 
-      {/* ✅ lang an Header/Footer geben */}
+      {/* ✅ Google Translate NUR auf .com */}
+      {useGT && <GoogleTranslateInit defaultLang={lang} languages={['de', 'en', 'es']} />}
+
       <Header content={content} lang={lang} />
 
-      {/* ✅ Content muss vor Footer kommen */}
       <Outlet context={{ content, lang }} />
 
       <Footer content={content} lang={lang} />
     </div>
   )
 }
+
