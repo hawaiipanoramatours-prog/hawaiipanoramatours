@@ -121,7 +121,6 @@
   ],
 
   "offerings": [
-
     {
       "icon": "FiMapPin",
       "title": { "de": "Tagesplanung & Orientierung", "en": "Planning & orientation" },
