@@ -42,7 +42,7 @@
       "en": "A non-binding initial consultation for personalized trip planning and optional personal guidance on Oʻahu — available in German, English, or Spanish"
     },
     "ctaPlan": {
-      "label": { "de": "Unverbindlich anfragen", "en": "Request a free consultation" }
+      "label": { "de": "Kostenloses Erstgespräch anfragen", "en": "Request a free consultation" }
     },
     "ctaServices": {
       "label": { "de": "Meine Concierge-Dienste", "en": "My concierge services" }
@@ -82,41 +82,37 @@
       "icon": "FiCompass",
       "title": { "de": "Orientierung & Reiseplanung", "en": "Orientation & travel planning" },
       "desc": { "de": "Perfekter Urlaub", "en": "Perfect vacation" },
-      "price": { "de": "ab 99 $ / einmalig", "en": "from $99 (one-time)" },
-      "features": {
-        "de": [
-          "Detaillierte Gesamtplanung",
-          "Orientierung vor Ort",
-          "Insider-Tipps",
-          "Flexible Anpassungen"
-        ],
-        "en": [
-          "Comprehensive trip planning",
-          "On-site orientation",
-          "Insider tips",
-          "Flexible adjustments"
-        ]
-      }
+      "price": "99 $/einmalig",
+      "features": [
+        "Detaillierte Gesamtplanung",
+        "Orientierung vor Ort",
+        "Insider-Tipps",
+        "Flexible Anpassungen"
+      ]
     },
     {
       "icon": "FiUsers",
       "title": { "de": "Concierge & Reiseführung", "en": "Concierge & guide" },
       "desc": { "de": "Private Reiseführung", "en": "Personal guide & concierge" },
-      "price": { "de": "ab 299 $ / Tag", "en": "from $299 / day" },
-      "features": {
-        "de": ["Private Touren", "Übersetzung", "Aktivitätenbuchung", "24/7 Betreuung"],
-        "en": ["Private tours", "Translation", "Activity bookings", "24/7 support"]
-      }
+      "price": "ab 299 $/Tag",
+      "features": [
+        "Private Touren",
+        "Übersetzung",
+        "Aktivitätenbuchung",
+        "24/7 Betreuung"
+      ]
     },
     {
       "icon": "FiStar",
       "title": { "de": "Luxus-VIP-Paket", "en": "Luxurious VIP Package" },
       "desc": { "de": "Exklusives VIP-Erlebnis", "en": "Exclusive VIP experience" },
-      "price": { "de": "ab 499 $ / Tag", "en": "from $499 / day" },
-      "features": {
-        "de": ["Private Premium-Touren", "Exklusive Spots", "Fotoshootings", "VIP-Zugang"],
-        "en": ["Private premium tours", "Exclusive locations", "Photoshoots", "VIP access"]
-      }
+      "price": "ab 499 $/Tag",
+      "features": [
+        "Private Premium-Touren",
+        "Exklusive Spots",
+        "Fotoshootings",
+        "VIP-Zugang"
+      ]
     }
   ],
 
