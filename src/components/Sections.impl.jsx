@@ -266,7 +266,7 @@ export function ServicesSection({ content, lang, hideTitle = false }) {
 
                 <div className="mb-6">
                   <span className="font-playfair text-3xl font-bold text-turquoise">
-                    {s.price}
+                    {pick(s.price, lang)}
                   </span>
                 </div>
 
