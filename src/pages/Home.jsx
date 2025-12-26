@@ -19,9 +19,9 @@ export default function Home() {
       <ServicesSection content={content} lang={lang} />
       <Offerings content={content} lang={lang} />
 
-      <Gallery />
+     <Gallery lang={lang} />
+     <Testimonials content={content} lang={lang} />
 
-      <Testimonials content={content} />
       <ContactCTA content={content} lang={lang} />
     </>
   )
