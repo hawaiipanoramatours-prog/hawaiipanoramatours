@@ -271,13 +271,13 @@ export function ServicesSection({ content, lang, hideTitle = false }) {
                 </div>
 
                 <ul className="space-y-2 mb-6">
-                  {(s.features || []).map((f, idx) => (
+                  {(s.features?.[lang] || s.features?.de || []).map((f, idx) => (
                     <li
                       key={idx}
                       className="flex items-center font-poppins text-gray-600"
                     >
                       <div className="w-2 h-2 bg-turquoise rounded-full mr-3" />
-                      {pick(f, lang)}
+                      {f}
                     </li>
                   ))}
                 </ul>
