@@ -453,12 +453,16 @@ export function Testimonials({ content, lang = 'de' }) {
                   <Fi.FiStar key={k} className="w-5 h-5 text-yellow-400" />
                 ))}
               </div>
-             <p className="font-poppins text-gray-700 mb-6 italic">“{t.text}”</p>
+             <p className="font-poppins text-gray-700 mb-6 italic">
+  “{pick(t.text, lang)}”
+</p>
 <div>
   <h4 className="font-playfair font-semibold text-gray-800">
     {t.name}
   </h4>
-  <p className="font-poppins text-sm text-gray-600">{t.location}</p>
+  <p className="font-poppins text-sm text-gray-600">
+    {pick(t.location, lang)}
+  </p>
 </div>
             </motion.div>
           ))}
