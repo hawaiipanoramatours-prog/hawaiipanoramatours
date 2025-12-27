@@ -173,13 +173,9 @@
     }
   ],
 
- "testimonials": [
+"testimonials": [
   {
     "name": "Tanja & Andree S.",
-    "location": {
-      "de": "Deutschland",
-      "en": "Germany"
-    },
     "text": {
       "de": "Alles Top gelaufen mit Nasia, pünktlich und mega nett. Hat uns alles super erklärt und viele Tipps gegeben.",
       "en": "Everything went perfectly with Nasia – punctual, incredibly kind, and full of great tips. She explained everything clearly and made our trip stress-free."
@@ -188,10 +184,6 @@
   },
   {
     "name": "Jennifer T.",
-    "location": {
-      "de": "Großbritannien",
-      "en": "United Kingdom"
-    },
     "text": {
       "de": "Die authentischste Hawaii-Erfahrung, die wir uns hätten wünschen können. Absolut empfehlenswert!",
       "en": "The most authentic Hawai‘i experience we could have asked for. Highly recommended!"
@@ -200,10 +192,6 @@
   },
   {
     "name": "Claudia S.",
-    "location": {
-      "de": "Deutschland",
-      "en": "Germany"
-    },
     "text": {
       "de": "Nasia hat unsere Traumreise perfekt geplant. Ihre Erfahrung und Leidenschaft für Hawaii machen den Unterschied!",
       "en": "Nasia planned our dream trip perfectly. Her experience and passion for Hawai‘i truly make the difference."
