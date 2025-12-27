@@ -99,7 +99,7 @@ export function Contact() {
                 rel="noreferrer"
                 className="mt-4 inline-block bg-turquoise text-white px-6 py-3 rounded-full"
               >
-                {L === 'en' ? 'Book a call' : 'Jetzt Termin anfragen'}
+                {L === 'en' ? 'Book a call' : 'Jetzt Termin buchen'}
               </a>
             </div>
           </div>
