@@ -76,7 +76,7 @@ export function Contact() {
             {L === 'en' ? 'Contact' : 'Kontakt'}
           </h1>
           <p className="font-poppins text-xl text-white/90 max-w-3xl mx-auto">
-            {L === 'en' ? "Let's plan your dream trip" : 'Lassen Sie uns Ihre Traumreise planen'}
+            {L === 'en' ? "Let's plan your dream trip" : 'Lassen Sie mich Ihre Traumreise planen'}
           </p>
         </div>
       </motion.div>
@@ -99,7 +99,7 @@ export function Contact() {
                 rel="noreferrer"
                 className="mt-4 inline-block bg-turquoise text-white px-6 py-3 rounded-full"
               >
-                {L === 'en' ? 'Book a consultation' : 'Beratung buchen'}
+                {L === 'en' ? 'Book a call' : 'Jetzt Termin anfragen'}
               </a>
             </div>
           </div>
