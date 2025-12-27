@@ -21,7 +21,6 @@
   }
 }
 
-
   "i18n": {
     "default": "de",
     "languages": ["de", "en"],
