@@ -173,26 +173,44 @@
     }
   ],
 
-  "testimonials": [
-    {
-      "name": "Tanja & Andree S.",
-      "location": "Deutschland",
-      "text": "Alles Top gelaufen mit Nasia, pünktlich und mega nett. Hat uns alles super erklärt und viele Tipps gegeben.",
-      "rating": 5
+ "testimonials": [
+  {
+    "name": "Tanja & Andree S.",
+    "location": {
+      "de": "Deutschland",
+      "en": "Germany"
     },
-    {
-      "name": "Jennifer T.",
-      "location": "UK",
-      "text": "The most authentic Hawaii experience we could have asked for. Absolutely recommended!",
-      "rating": 5
+    "text": {
+      "de": "Alles Top gelaufen mit Nasia, pünktlich und mega nett. Hat uns alles super erklärt und viele Tipps gegeben.",
+      "en": "Everything went perfectly with Nasia – punctual, incredibly kind, and full of great tips. She explained everything clearly and made our trip stress-free."
     },
-    {
-      "name": "Claudia S.",
-      "location": "Deutschland",
-      "text": "Nasia hat unsere Traumreise perfekt geplant. Ihre Erfahrung und Leidenschaft für Hawaii machen den Unterschied!",
-      "rating": 5
-    }
-  ],
+    "rating": 5
+  },
+  {
+    "name": "Jennifer T.",
+    "location": {
+      "de": "Großbritannien",
+      "en": "United Kingdom"
+    },
+    "text": {
+      "de": "Die authentischste Hawaii-Erfahrung, die wir uns hätten wünschen können. Absolut empfehlenswert!",
+      "en": "The most authentic Hawai‘i experience we could have asked for. Highly recommended!"
+    },
+    "rating": 5
+  },
+  {
+    "name": "Claudia S.",
+    "location": {
+      "de": "Deutschland",
+      "en": "Germany"
+    },
+    "text": {
+      "de": "Nasia hat unsere Traumreise perfekt geplant. Ihre Erfahrung und Leidenschaft für Hawaii machen den Unterschied!",
+      "en": "Nasia planned our dream trip perfectly. Her experience and passion for Hawai‘i truly make the difference."
+    },
+    "rating": 5
+  }
+]
 
   "about": {
     "photo": "About%20me%20pic.jpg",
