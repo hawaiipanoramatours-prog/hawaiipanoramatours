@@ -13,9 +13,13 @@
       "email": "hawaiipanoramatours@gmail.com",
       "phone": "",
       "place": "Hawaii, USA",
-      "calendly": "https://calendly.com/hawaiipanoramatours"
+      },
+    "cta": {
+      "inquiry": "https://form.typeform.com/DEIN_TYPEFORM_LINK",
+      "booking": "https://calendly.com/hawaiipanoramatours"
     }
-  },
+  }
+}
 
   "i18n": {
     "default": "de",
