@@ -226,7 +226,7 @@
   "cta": {
     "bg": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2073&q=80",
     "title": { "de": "Bereit für Ihr Hawaii-Abenteuer?", "en": "Ready for your Hawai‘i adventure?" },
-    "desc": { "de": "Kostenloses Beratungsgespräch", "en": "Free consultation" }
+    "desc": { "de": "Kostenloses Kennenlerngespräch(15 Min)", "en": "Free 15-min intro call" }
   },
 
   "legal": {
