@@ -505,7 +505,7 @@ export function ContactCTA({ content, lang }) {
               rel="noreferrer"
               className="bg-white text-turquoise px-8 py-4 rounded-full font-poppins font-semibold text-lg"
             >
-              {lang === 'en' ? 'Book a call' : 'Jetzt Termin anfragen'}
+              {lang === 'en' ? 'Book a call' : 'Jetzt Termin buchen'}
             </a>
             <a
               href={`mailto:${content.brand.social.email}`}
