@@ -95,7 +95,7 @@ export function Hero({ content, lang }) {
             className="flex flex-col items-center justify-center"
           >
             <a
-              href={content.brand.social.calendly}
+              href={content.brand.cta.inquiry}
               target="_blank"
               rel="noreferrer"
               className="bg-turquoise hover:bg-turquoise/90 text-white px-8 py-4 rounded-full font-poppins font-semibold text-lg"
@@ -284,7 +284,7 @@ export function ServicesSection({ content, lang, hideTitle = false }) {
 
                 <div className="mt-auto">
                   <a
-                    href={content.brand.social.calendly}
+                    href={content.brand.cta.inquiry}
                     target="_blank"
                     rel="noreferrer"
                     className="w-full bg-turquoise hover:bg-turquoise/90 text-white py-3 px-6 rounded-full font-poppins font-semibold block text-center"
