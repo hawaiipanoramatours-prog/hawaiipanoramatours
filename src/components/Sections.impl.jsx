@@ -611,7 +611,7 @@ export function Footer({ content, lang = 'de' }) {
             </div>
             <div className="mt-4">
               <a
-                href={content.brand.social.calendly}
+                href={content.brand.cta.booking}
                 target="_blank"
                 rel="noreferrer"
                 className="bg-turquoise text-white px-4 py-2 rounded-lg font-poppins text-sm"
