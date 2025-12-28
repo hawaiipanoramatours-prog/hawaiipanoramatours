@@ -94,7 +94,7 @@ export function Contact() {
               <p>{content.brand.social.phone}</p>
               <p>{content.brand.social.place}</p>
               <a
-                href={content.brand.social.calendly}
+                href={content.brand.cta.booking}
                 target="_blank"
                 rel="noreferrer"
                 className="mt-4 inline-block bg-turquoise text-white px-6 py-3 rounded-full"
