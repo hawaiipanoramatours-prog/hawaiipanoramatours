@@ -21,14 +21,13 @@
     },
   "booking": "https://calendly.com/hawaiipanoramatours/15min"
     }
-  }
-}
+  },
 
   "i18n": {
     "default": "de",
     "languages": ["de", "en"],
     "useGoogleTranslate": true
-  },
+    },
 
   "header": {
     "nav": [
