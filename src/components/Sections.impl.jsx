@@ -95,7 +95,7 @@ export function Hero({ content, lang }) {
             className="flex flex-col items-center justify-center"
           >
             <a
-              href={content.brand.cta.inquiry}
+              href={content.brand.cta.inquiry?.[lang] || content.brand.cta.inquiry.de}
               target="_blank"
               rel="noreferrer"
               className="bg-turquoise hover:bg-turquoise/90 text-white px-8 py-4 rounded-full font-poppins font-semibold text-lg"
