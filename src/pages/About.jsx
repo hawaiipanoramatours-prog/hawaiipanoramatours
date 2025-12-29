@@ -50,7 +50,7 @@ export function About() {
               ))}
 
               <a
-                href={content.brand.social.calendly}
+                href={content.brand.cta.booking}
                 target="_blank"
                 rel="noreferrer"
                 className="bg-turquoise text-white px-8 py-3 rounded-full font-poppins font-semibold inline-block"
