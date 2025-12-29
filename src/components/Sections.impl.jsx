@@ -27,10 +27,10 @@ export function Hero({ content, lang }) {
     en: {
       title: 'Ideal for you if you:',
       good: [
-        'want to avoid mass or standard tourism',
-        "don't want to miss out on secret spots",
-        'want to plan stress-free without long research',
-        'value private tours or personal planning',
+        'want to avoid mass crowds and generic tours',
+        "don't want to miss truly special places",
+        'prefer stress-free planning without endless research',
+        'value personal service and private experiences',
       ],
     },
   }
