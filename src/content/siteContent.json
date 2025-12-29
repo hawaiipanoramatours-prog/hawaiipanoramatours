@@ -14,12 +14,13 @@
       "phone": "",
       "place": "Hawaii, USA"
     },
-    "cta": {
-      "inquiryDE": "https://form.typeform.com/to/rw6xVezT",
-      "inquiryEN": "https://form.typeform.com/to/zIfGTRI3",
-      "booking": "https://calendly.com/hawaiipanoramatours"
+   "cta": {
+    "inquiry": {
+      "de": "https://form.typeform.com/to/rw6xVezT",
+      "en": "https://form.typeform.com/to/zIfGTRI3"
     }
-  },
+  }
+},
 
   "i18n": {
     "default": "de",
