@@ -40,10 +40,10 @@
   "hero": {
     "bg": "pexels-troy-squillaci-1303476-2521619-min.jpg",
     "title": { "de": "Hawai‘i –", "en": "Hawai‘i –" },
-    "highlight": { "de": "ausgewählt wie von Insidern", "en": "picked like from insiders" },
+    "highlight": { "de": "ausgewählt wie von Insidern", "en": "curated by locals" },
     "subtitle": {
       "de": "Individuell geplant oder privat geführt – auf Deutsch.",
-      "en": "Personalized trip planning and optional tour guidance on Oʻahu — available in English, German or Spanish!"
+      "en": "Personalized trip planning and optional tour guidance on Oʻahu — available in English, German, and Spanish!"
     },
     "ctaPlan": {
       "label": { "de": "Reiseplanung starten", "en": "Start trip planning" }
@@ -210,27 +210,27 @@
     "paras": [
       {
         "de": "Seit vielen Jahren lebe ich auf Hawaiʻi und kenne die Inseln nicht nur als Reiseziel, sondern als Zuhause.",
-        "en": "I’ve lived in Hawaiʻi for many years and know the islands not just as a destination, but as home."
+        "en": "I’ve lived in Hawaiʻi for many years and know the islands not just as a destination, but as my home."
       },
       {
         "de": "Ich begleite meine Gäste persönlich – von der individuellen Planung bis zur Zeit vor Ort – und lege großen Wert auf authentische Erlebnisse abseits von Massentourismus.",
-        "en": "I personally support my guests from individual planning through their time on the islands, with a strong focus on authentic experiences beyond mass tourism."
+        "en": "I personally support my guests from the planning stage through their time on the islands, with a strong focus on authentic experiences away from mass tourism"
       },
       {
         "de": "Durch lokale Kontakte und eigene Erfahrung entstehen Reisen, die sich entspannt, stimmig und besonders anfühlen.",
-        "en": "With local connections and firsthand experience, I create journeys that feel relaxed, thoughtful, and truly special."
+        "en": "With strong local connections and firsthand experience, I create journeys that feel relaxed, well-balanced, and truly special"
       },
       {
         "de": "Mein Anspruch ist es, Ihnen Sicherheit, Orientierung und echte Insider-Einblicke zu geben – damit Sie Hawaiʻi bewusst und in Ihrem eigenen Tempo erleben können.",
-        "en": "My goal is to provide clarity, confidence, and genuine insider insight—so you can experience Hawaiʻi at your own pace."
+        "en": "My goal is to provide clarity, confidence, and genuine local insight—so you can experience Hawaiʻi at your own pace"
       }
     ]
   },
 
   "cta": {
     "bg": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2073&q=80",
-    "title": { "de": "Möchten Sie lieber direkt sprechen?", "en": "Prefer to talk directly?" },
-    "desc": { "de": "Kostenloses Kennenlerngespräch(15 Min)", "en": "Free 15-min intro call" }
+    "title": { "de": "Möchten Sie lieber direkt sprechen?", "en": "Prefer to speak directly?" },
+    "desc": { "de": "Kostenloses Kennenlerngespräch(15 Min)", "en": "Free 15-minute intro call" }
   },
 
   "legal": {
