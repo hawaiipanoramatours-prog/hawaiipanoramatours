@@ -284,7 +284,7 @@ export function ServicesSection({ content, lang, hideTitle = false }) {
 
                 <div className="mt-auto">
                   <a
-                    href={content.brand.cta.inquiry}
+                    href={content.brand.cta.inquiry?.[lang] || content.brand.cta.inquiry.de}
                     target="_blank"
                     rel="noreferrer"
                     className="w-full bg-turquoise hover:bg-turquoise/90 text-white py-3 px-6 rounded-full font-poppins font-semibold block text-center"
