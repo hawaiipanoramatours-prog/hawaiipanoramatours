@@ -16,7 +16,7 @@ export function Hero({ content, lang }) {
 
   const trust = {
     de: {
-      title: 'Wenn Sie...',
+      title: 'Ideal für Sie, wenn Sie...',
       good: [
         'Keine Massen- und Standardtouren möchten',
         'Keine besonderen Orte verpassen wollen',
