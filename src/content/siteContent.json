@@ -85,62 +85,89 @@
 
 "services": [
   {
-    "icon": "FiCompass",
-    "title": { "de": "Orientierung & Reiseplanung", "en": "Orientation & travel planning" },
-    "desc": { "de": "Perfekter Urlaub", "en": "Perfect vacation" },
-    "price": { "de": "99 $/einmalig", "en": "$99 (one-time)" },
-    "features": {
-      "de": [
-        "Detaillierte Gesamtplanung",
-        "Orientierung vor Ort",
-        "Insider-Tipps",
-        "Flexible Anpassungen"
-      ],
-      "en": [
-        "Comprehensive trip planning",
-        "On-site orientation",
-        "Insider tips",
-        "Flexible adjustments"
-      ]
-    }
-  },
-  {
     "icon": "FiUsers",
-    "title": { "de": "Concierge & Reiseführung", "en": "Concierge & guide" },
-    "desc": { "de": "Private Reiseführung", "en": "Personal guide & concierge" },
-    "price": { "de": "ab 299 $/Tag", "en": "from $299/day" },
+    "title": { 
+      "de": "Private Concierge & Reiseführung", 
+      "en": "Private Concierge & Guided Experience" 
+    },
+    "desc": { 
+      "de": "Individuell kuratierte Erlebnisse auf Oʻahu", 
+      "en": "Individually curated experiences on Oʻahu" 
+    },
+    "price": { 
+      "de": "ab 299 $/Tag", 
+      "en": "from $299/day" 
+    },
     "features": {
       "de": [
-        "Private Touren",
-        "Übersetzung",
-        "Aktivitätenbuchung",
-        "24/7 Betreuung"
+        "Private, maßgeschneiderte Touren",
+        "Persönliche Begleitung & Übersetzung",
+        "Exklusive Aktivitätenbuchung",
+        "Direkte Betreuung während Ihres Aufenthalts"
       ],
       "en": [
-        "Private tours",
-        "Translation",
-        "Activity bookings",
-        "24/7 support"
+        "Private, tailor-made tours",
+        "Personal guidance & translation",
+        "Exclusive activity bookings",
+        "Direct support throughout your stay"
       ]
     }
   },
   {
     "icon": "FiStar",
-    "title": { "de": "Luxus-VIP-Paket", "en": "Luxurious VIP Package" },
-    "desc": { "de": "Exklusives VIP-Erlebnis", "en": "Exclusive VIP experience" },
-    "price": { "de": "ab 499 $/Tag", "en": "from $499/day" },
+    "title": { 
+      "de": "VIP Private Experience", 
+      "en": "VIP Private Experience" 
+    },
+    "desc": { 
+      "de": "Exklusive Premium-Erlebnisse mit besonderem Zugang", 
+      "en": "Exclusive premium experiences with special access" 
+    },
+    "price": { 
+      "de": "ab 499 $/Tag", 
+      "en": "from $499/day" 
+    },
     "features": {
       "de": [
-        "Private Premium-Touren",
-        "Exklusive Spots",
-        "Fotoshootings",
-        "VIP-Zugang"
+        "Premium Private Touren",
+        "Zugang zu besonderen Locations",
+        "Professionelle Fotosessions",
+        "Individuelle VIP-Betreuung"
       ],
       "en": [
-        "Private premium tours",
-        "Exclusive locations",
-        "Photoshoots",
-        "VIP access"
+        "Premium private tours",
+        "Access to special locations",
+        "Professional photo sessions",
+        "Personalized VIP service"
+      ]
+    }
+  },
+  {
+    "icon": "FiCompass",
+    "title": { 
+      "de": "Selbstgeführter Reiseplan", 
+      "en": "Self-Guided Planning Blueprint" 
+    },
+    "desc": { 
+      "de": "Strukturierter Reiseplan für unabhängige Entdecker", 
+      "en": "Structured travel plan for independent explorers" 
+    },
+    "price": { 
+      "de": "99 $/einmalig", 
+      "en": "$99 (one-time)" 
+    },
+    "features": {
+      "de": [
+        "Individuell ausgearbeiteter Reiseplan",
+        "Empfohlene Aktivitäten & Spots",
+        "Lokale Insider-Empfehlungen",
+        "Flexible Anpassungen vor Reisebeginn"
+      ],
+      "en": [
+        "Customized travel outline",
+        "Recommended activities & spots",
+        "Local insider recommendations",
+        "Adjustments before your trip"
       ]
     }
   }
