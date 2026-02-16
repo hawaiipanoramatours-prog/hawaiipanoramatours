@@ -95,18 +95,18 @@
       "en": "Individually curated experiences on Oʻahu" 
     },
     "price": { 
-      "de": "ab 299 $/Tag", 
-      "en": "from $299/day" 
+      "de": "ab 299 $ p.P./Tag", 
+      "en": "from $299 p.p./day" 
     },
     "features": {
       "de": [
-        "Private, maßgeschneiderte Touren",
+        "Private, maßgeschneiderte Touren ab 2 Personen",
         "Persönliche Begleitung & Übersetzung",
         "Exklusive Aktivitätenbuchung",
         "Direkte Betreuung während Ihres Aufenthalts"
       ],
       "en": [
-        "Private, tailor-made tours",
+        "Private, tailor-made tours for minimum 2 people",
         "Personal guidance & translation",
         "Exclusive activity bookings",
         "Direct support throughout your stay"
@@ -124,8 +124,8 @@
       "en": "Exclusive premium experiences with special access" 
     },
     "price": { 
-      "de": "ab 499 $/Tag", 
-      "en": "from $499/day" 
+      "de": "ab 499 $ p.P./Tag", 
+      "en": "from $499 p.p./day" 
     },
     "features": {
       "de": [
