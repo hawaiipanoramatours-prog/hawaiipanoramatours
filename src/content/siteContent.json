@@ -96,7 +96,7 @@
     },
     "price": { 
       "de": "ab 299 $ p.P./Tag", 
-      "en": "from $299 p.p./day" 
+      "en": "from $299 per person/day" 
     },
     "features": {
       "de": [
@@ -106,7 +106,7 @@
         "Direkte Betreuung während Ihres Aufenthalts"
       ],
       "en": [
-        "Private, tailor-made tours for minimum 2 people",
+        "Private, tailor-made tours for 2 guests minimum",
         "Personal guidance & translation",
         "Exclusive activity bookings",
         "Direct support throughout your stay"
