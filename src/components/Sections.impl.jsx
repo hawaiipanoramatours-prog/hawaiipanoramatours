@@ -17,8 +17,8 @@ export function Hero({ content, lang = 'de' }) {
   const bg = h.bg
 
   const subtitleFallback = {
-    de: 'Individuelle Oʻahu-Reiseplanung (einmalig) – optional private Guiding-Tage & vertrauenswürdige lokale Partner. Auf Deutsch, Englisch & Spanisch.',
-    en: 'Custom Oʻahu trip planning (one-time) with optional private guided days and trusted local partners — in English, German & Spanish.',
+    de: 'Individuelle Oʻahu-Reiseplanung – optional private Guiding-Tage & vertrauenswürdige lokale Partner. Auf Deutsch, Englisch & Spanisch.',
+    en: 'Custom Oʻahu trip planning with optional private guided days and carefully selected trusted local partners — in English, German & Spanish.',
   }
 
   const trust = {
