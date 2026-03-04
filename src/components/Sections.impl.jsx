@@ -18,7 +18,7 @@ export function Hero({ content, lang = 'de' }) {
 
   const subtitleFallback = {
     de: 'Individuelle Oʻahu-Reiseplanung – optional private Guiding-Tage & vertrauenswürdige lokale Partner. Auf Deutsch, Englisch & Spanisch.',
-    en: 'Custom Oʻahu trip planning with optional private guided days and carefully selected trusted local partners — in English, German & Spanish.',
+    en: 'Fully customized island days designed around your pace, your interests, and your travel style — in English, German & Spanish.',
   }
 
   const trust = {
@@ -33,13 +33,13 @@ export function Hero({ content, lang = 'de' }) {
       ],
     },
     en: {
-      title: 'Ideal for you if you:',
+      title: 'This is perfect for you if you…',
       good: [
         'want stress-free planning without endless research',
-        'want to make the most of limited time on Oʻahu',
-        'want one clear custom trip blueprint (one-time)',
-        'may want an optional private orientation day',
-        'value trusted local partners & curated options',
+        'want to avoid crowded bus tours',
+        'prefer flexibility instead of fixed schedules',
+        'value personal attention and real local insight',
+        'want your time on Oʻahu to feel effortless and special',
       ],
     },
   }
