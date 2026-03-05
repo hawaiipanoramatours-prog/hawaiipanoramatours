@@ -41,11 +41,11 @@
 
   "hero": {
     "bg": "pexels-troy-squillaci-1303476-2521619-min.jpg",
-    "title": { "de": "Hawai‘i –", "en": "Explore Hawaiʻi–" },
+    "title": { "de": "Hawai‘i –", "en": "Explore O'ahu–" },
     "highlight": { "de": "ausgewählt wie von Insidern", "en": "with Your Private Local Guide" },
     "subtitle": {
       "de": "Individuell geplant oder privat geführt – auf Deutsch.",
-      "en": "Private guided experiences across Oʻahu — with optional travel planning and carefully selected local partners. Also available in Spanish and German!"
+      "en": "Personalized island experiences designed around your interests, pace, and travel style!"
     },
     "ctaPlan": {
       "label": { "de": "Ihre private O'ahu-Reise gestalten", "en": "Design Your Private O'ahu Experience" }
