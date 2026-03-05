@@ -125,7 +125,7 @@
     },
     "price": { 
       "de": "ab 499 $ p.P./Tag", 
-      "en": "from $499 p.p./day" 
+      "en": "from $499 per person/day" 
     },
     "features": {
       "de": [
@@ -146,15 +146,15 @@
     "icon": "FiCompass",
     "title": { 
       "de": "Selbstgeführter Reiseplan", 
-      "en": "Self-Guided Planning Blueprint" 
+      "en": "Self-Guided Travel Plan" 
     },
     "desc": { 
       "de": "Strukturierter Reiseplan für unabhängige Entdecker", 
       "en": "Structured travel plan for independent explorers" 
     },
     "price": { 
-      "de": "99 $/einmalig", 
-      "en": "$99 (one-time)" 
+      "de": "99$", 
+      "en": "$99" 
     },
     "features": {
       "de": [
