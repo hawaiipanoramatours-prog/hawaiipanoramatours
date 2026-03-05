@@ -13,7 +13,7 @@ const pick = (val, lang = 'de') => {
    HERO – Hybrid Positioning + Trusted Partners + 1 CTA
    ========================================================= */
 export function Hero({ content, lang = 'de' }) {
-  const h = content.hero || {}
+  const h = content?.hero || {}
   const bg = h.bg
 
   const subtitleFallback = {
@@ -99,7 +99,7 @@ export function Hero({ content, lang = 'de' }) {
             {/* Primary CTA */}
             <div className="flex flex-col items-center gap-3">
               <a
-                href={content?.brand?.cta?.booking}
+                href={content?.brand?.cta?.booking || '#'}
                 target="_blank"
                 rel="noreferrer"
                 className="border-2 border-white text-white px-8 py-4 rounded-full font-poppins font-semibold text-lg hover:bg-white hover:text-black transition"
@@ -115,7 +115,7 @@ export function Hero({ content, lang = 'de' }) {
 
               <div className="flex gap-4 mt-2">
                 <a
-                  href={content?.brand?.social?.instagram}
+                  href={content?.brand?.social?.instagram || '#'}
                   target="_blank"
                   rel="noreferrer"
                   className="w-10 h-10 bg-white/10 hover:bg-turquoise/30 rounded-lg grid place-items-center"
@@ -123,7 +123,7 @@ export function Hero({ content, lang = 'de' }) {
                   <Fi.FiInstagram className="w-5 h-5" />
                 </a>
                 <a
-                  href={content?.brand?.social?.facebook}
+                  href={content?.brand?.social?.facebook || '#'}
                   target="_blank"
                   rel="noreferrer"
                   className="w-10 h-10 bg-white/10 hover:bg-turquoise/30 rounded-lg grid place-items-center"
@@ -223,19 +223,23 @@ export function HowItWorks({ content, lang = 'de' }) {
 }
 
 /* =========================================================
-   SERVICES – Reframed as Step 1/2/3 (not 3 random products)
-   Uses your existing content.services array
+   SERVICES – Your current "Services" implementation
    ========================================================= */
 export function Services({ content, lang = 'de' }) {
   const services = content?.services || []
 
   const header = {
-    de: { title: 'Wählen Sie Ihre Betreuung', sub: 'Starten Sie mit Planung — und ergänzen Sie bei Bedarf persönliche Begleitung.' },
-    en: { title: 'Choose your level of support', sub: 'Start with planning — then add personal support if you want.' },
+    de: {
+      title: 'Wählen Sie Ihre Betreuung',
+      sub: 'Starten Sie mit Planung — und ergänzen Sie bei Bedarf persönliche Begleitung.',
+    },
+    en: {
+      title: 'Choose your level of support',
+      sub: 'Start with planning — then add personal support if you want.',
+    },
   }
   const h = header[lang] || header.de
 
-  // labels to make the flow obvious without changing layout
   const labels = {
     0: { de: 'Start here', en: 'Start here' },
     1: { de: 'Optional Add-on', en: 'Optional add-on' },
@@ -254,14 +258,15 @@ export function Services({ content, lang = 'de' }) {
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-900">
             {h.title}
           </h2>
-          <p className="font-poppins text-gray-600 mt-3">
-            {h.sub}
-          </p>
+          <p className="font-poppins text-gray-600 mt-3">{h.sub}</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
           {services.map((s, idx) => (
-            <div key={idx} className="rounded-2xl bg-white border border-gray-200 p-6 shadow-sm">
+            <div
+              key={idx}
+              className="rounded-2xl bg-white border border-gray-200 p-6 shadow-sm"
+            >
               <div className="flex items-start justify-between gap-4 mb-4">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-2xl bg-turquoise/15 grid place-items-center text-turquoise">
@@ -276,14 +281,13 @@ export function Services({ content, lang = 'de' }) {
                     </h3>
                   </div>
                 </div>
+
                 <div className="font-poppins font-semibold text-gray-900 whitespace-nowrap">
                   {pick(s.price, lang)}
                 </div>
               </div>
 
-              <p className="font-poppins text-gray-600 mb-5">
-                {pick(s.desc, lang)}
-              </p>
+              <p className="font-poppins text-gray-600 mb-5">{pick(s.desc, lang)}</p>
 
               <ul className="space-y-2">
                 {(s.features?.[lang] || s.features?.de || []).map((f, i) => (
@@ -295,15 +299,13 @@ export function Services({ content, lang = 'de' }) {
                   </li>
                 ))}
               </ul>
-
-              {/* Small clarifier for guided day: planning included (if you add it in JSON this will show) */}
             </div>
           ))}
         </div>
 
         <div className="text-center mt-10">
           <a
-            href={content?.brand?.cta?.booking}
+            href={content?.brand?.cta?.booking || '#'}
             target="_blank"
             rel="noreferrer"
             className="bg-turquoise text-white px-7 py-3 rounded-full font-poppins font-semibold hover:opacity-95 transition"
@@ -314,6 +316,14 @@ export function Services({ content, lang = 'de' }) {
       </div>
     </section>
   )
+}
+
+/* =========================================================
+   ✅ COMPAT EXPORT: Home.jsx expects ServicesSection
+   We keep your new Services() but also export ServicesSection safely.
+   ========================================================= */
+export function ServicesSection(props) {
+  return <Services {...props} />
 }
 
 /* =========================================================
@@ -346,7 +356,7 @@ export function Footer({ content, lang = 'de' }) {
 
             <div className="flex gap-4">
               <a
-                href={content?.brand?.social?.instagram}
+                href={content?.brand?.social?.instagram || '#'}
                 target="_blank"
                 rel="noreferrer"
                 className="w-10 h-10 bg-turquoise/20 hover:bg-turquoise rounded-lg grid place-items-center"
@@ -354,7 +364,7 @@ export function Footer({ content, lang = 'de' }) {
                 <Fi.FiInstagram className="w-5 h-5" />
               </a>
               <a
-                href={content?.brand?.social?.facebook}
+                href={content?.brand?.social?.facebook || '#'}
                 target="_blank"
                 rel="noreferrer"
                 className="w-10 h-10 bg-turquoise/20 hover:bg-turquoise rounded-lg grid place-items-center"
@@ -410,7 +420,7 @@ export function Footer({ content, lang = 'de' }) {
 
             <div className="mt-4">
               <a
-                href={content?.brand?.cta?.booking}
+                href={content?.brand?.cta?.booking || '#'}
                 target="_blank"
                 rel="noreferrer"
                 className="bg-turquoise text-white px-4 py-2 rounded-lg font-poppins text-sm"
@@ -423,10 +433,10 @@ export function Footer({ content, lang = 'de' }) {
 
         <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="flex gap-6 font-poppins text-sm text-gray-400 mb-4 md:mb-0">
-            <a href={content?.legal?.impressumPath} className="hover:text-turquoise">
+            <a href={content?.legal?.impressumPath || '#'} className="hover:text-turquoise">
               {lang === 'en' ? 'Imprint' : 'Impressum'}
             </a>
-            <a href={content?.legal?.privacyPath} className="hover:text-turquoise">
+            <a href={content?.legal?.privacyPath || '#'} className="hover:text-turquoise">
               {lang === 'en' ? 'Privacy policy' : 'Datenschutz'}
             </a>
           </div>
