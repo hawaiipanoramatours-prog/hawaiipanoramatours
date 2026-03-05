@@ -186,8 +186,8 @@
     },
     {
       "icon": "FiCar",
-      "title": { "de": "Mietwagen & Aktivitäten", "en": "Car rental & activities" },
-      "desc": { "de": "Alles aus einer Hand", "en": "All in one place" }
+      "title": { "de": "Mietwagen & Aktivitäten", "en": "Car rental & activity advice" },
+      "desc": { "de": "Alles aus einer Hand", "en": "Trusted local recommendations" }
     },
     {
       "icon": "FiEye",
