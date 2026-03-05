@@ -104,7 +104,7 @@ export function Hero({ content, lang = 'de' }) {
                 rel="noreferrer"
                 className="border-2 border-white text-white px-8 py-4 rounded-full font-poppins font-semibold text-lg hover:bg-white hover:text-black transition"
               >
-                {lang === 'en' ? 'Request Your Custom Plan' : 'Individuell anfragen'}
+                {lang === 'en' ? 'Plan Your Private Oʻahu Tour' : 'Individuell anfragen'}
               </a>
 
               <p className="font-poppins text-sm text-white/80">
