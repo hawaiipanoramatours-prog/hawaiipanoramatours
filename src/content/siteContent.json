@@ -176,12 +176,12 @@
   "offerings": [
     {
       "icon": "FiMapPin",
-      "title": { "de": "Tagesplanung & Orientierung", "en": "Planning & orientation" },
+      "title": { "de": "Tagesplanung & Orientierung", "en": "Planning & Orientation" },
       "desc": { "de": "Stressfrei erkunden", "en": "Explore stress-free" }
     },
     {
       "icon": "FiGlobe",
-      "title": { "de": "Übersetzung & Begleitung", "en": "Local assistance" },
+      "title": { "de": "Übersetzung & Begleitung", "en": "Local Assistance" },
       "desc": { "de": "Brücken bauen", "en": "Support when needed" }
     },
     {
