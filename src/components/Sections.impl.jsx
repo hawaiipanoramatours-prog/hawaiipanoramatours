@@ -39,7 +39,7 @@ export function Hero({ content, lang = 'de' }) {
         'want to avoid group or bus tours',
         'prefer flexibility instead of fixed schedules',
         'value personal attention and real local insight',
-        'prefer discovering O'ahu beyond the typical tourist stops',
+        'want to discover places most visitors miss',
       ],
     },
   }
