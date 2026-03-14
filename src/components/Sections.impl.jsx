@@ -109,7 +109,7 @@ export function Hero({ content, lang = 'de' }) {
 
               <p className="font-poppins text-sm text-white/80">
                 {lang === 'en'
-                  ? 'Share your dates + travel style — I’ll confirm fit and outline next steps.'
+                  ? 'Share a few details about your trip — I’ll personally review your request and suggest the best options for your stay.'
                   : 'Teilen Sie Reisedaten + Reisestil — ich prüfe den Fit und sende die nächsten Schritte.'}
               </p>
 
