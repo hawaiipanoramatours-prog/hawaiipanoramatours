@@ -37,7 +37,7 @@ export function Hero({ content, lang = 'de' }) {
       good: [
         'want stress-free planning without endless research',
         'want to avoid group or bus tours',
-        'prefer flexibility instead of fixed schedules',
+        'prefer flexibility instead of fixed schedules and stops',
         'value personal attention and real local insight',
         'want to discover places most visitors miss',
       ],
