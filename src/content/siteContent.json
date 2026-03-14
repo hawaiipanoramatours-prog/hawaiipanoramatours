@@ -181,13 +181,13 @@
     },
     {
       "icon": "FiGlobe",
-      "title": { "de": "Übersetzung & Begleitung", "en": "Translation & guide" },
-      "desc": { "de": "Brücken bauen", "en": "Bridge cultures" }
+      "title": { "de": "Übersetzung & Begleitung", "en": "Local assistance" },
+      "desc": { "de": "Brücken bauen", "en": "Support when needed" }
     },
     {
       "icon": "FiCar",
-      "title": { "de": "Mietwagen & Aktivitäten", "en": "Car rental & activity advice" },
-      "desc": { "de": "Alles aus einer Hand", "en": "Handpicked local partners" }
+      "title": { "de": "Mietwagen & Aktivitäten", "en": "Activities&Experiences " },
+      "desc": { "de": "Alles aus einer Hand", "en": "Handpicked options" }
     },
     {
       "icon": "FiEye",
