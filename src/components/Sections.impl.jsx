@@ -36,7 +36,7 @@ export function Hero({ content, lang = 'de' }) {
       title: 'This is perfect for you if you…',
       good: [
         'want stress-free planning without endless research',
-        'want to avoid crowded bus tours',
+        'want to avoid small group or bus tours',
         'prefer flexibility instead of fixed schedules',
         'value personal attention and real local insight',
         'want your time on Oʻahu to feel effortless and special',
