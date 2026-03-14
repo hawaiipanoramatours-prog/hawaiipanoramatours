@@ -107,9 +107,9 @@
       ],
       "en": [
         "Private, tailor-made tours for 2 guests minimum",
-        "Personal guidance & translation",
-        "Exclusive activity bookings",
-        "Direct support throughout your stay"
+        "Comfortable private transportation",
+        "Water and light snacks included",
+        "Hotel pickup and drop-off included"
       ]
     }
   },
@@ -121,7 +121,7 @@
     },
     "desc": { 
       "de": "Exklusive Premium-Erlebnisse mit besonderem Zugang", 
-      "en": "Exclusive premium experiences with special access" 
+      "en": "Exclusive premium experiences" 
     },
     "price": { 
       "de": "ab 399 $ p.P./Tag", 
@@ -136,9 +136,9 @@
       ],
       "en": [
         "Premium private tours",
-        "Access to special locations",
+        "Curated drinks and gourmet snack selection",
         "Professional photo sessions",
-        "Personalized VIP service"
+        "Extended private island experience"
       ]
     }
   },
