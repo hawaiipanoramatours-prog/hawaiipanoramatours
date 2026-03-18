@@ -19,8 +19,8 @@ export function Services() {
           </h1>
           <p className="font-poppins text-xl text-white/90 max-w-3xl mx-auto">
             {lang === 'en'
-              ? 'From first planning to support on-island'
-              : 'Von der ersten Planung bis zur Betreuung vor Ort'}
+              ? 'From first planning to support and guide on-island'
+              : 'Von der ersten Planung bis zur Betreuung und Guide vor Ort'}
           </p>
         </div>
       </motion.div>
