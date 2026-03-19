@@ -87,7 +87,7 @@
   {
     "icon": "FiUsers",
     "title": { 
-      "de": "Private Concierge & Reiseführung", 
+      "de": "Private Reiseführung", 
       "en": "Private Guided Experience" 
     },
     "desc": { 
@@ -95,8 +95,8 @@
       "en": "Individually curated experiences on Oʻahu" 
     },
     "price": { 
-      "de": "ab 199 $ p.P./Tag", 
-      "en": "from $199 per person/day" 
+      "de": "$399 für 2 Gäste", 
+      "en": "$399 for 2 guests" 
     },
     "features": {
       "de": [
@@ -106,39 +106,40 @@
         "Direkte Betreuung während Ihres Aufenthalts"
       ],
       "en": [
-        "Private, tailor-made tours for 2 guests minimum",
+        "Private, tailor-made tours",
         "Comfortable private transportation",
         "Water and light snacks included",
-        "Hotel pickup and drop-off included"
+        "Lei greeting included"
       ]
     }
   },
   {
     "icon": "FiStar",
     "title": { 
-      "de": "VIP Private Experience", 
-      "en": "VIP Private Experience" 
+      "de": "Private Experience", 
+      "en": "Private Guided Experience" 
     },
     "desc": { 
       "de": "Exklusive Premium-Erlebnisse mit besonderem Zugang", 
-      "en": "Exclusive premium experiences" 
+      "en": "Individually curated experiences up to 4 guest" 
     },
     "price": { 
-      "de": "ab 399 $ p.P./Tag", 
-      "en": "from $399 per person/day" 
+      "de": "699 $ bis zu 4 Gäste", 
+      "en": "$699 up to 4 guests" 
     },
     "features": {
       "de": [
-        "Premium Private Touren",
-        "Zugang zu besonderen Locations",
-        "Professionelle Fotosessions",
-        "Individuelle VIP-Betreuung"
+        "Private tour",
+        "Wasser und leichte snacks",
+        "Komfortable Transportation",
+        "Lei greeting"
       ],
       "en": [
-        "Premium private tours",
-        "Curated drinks and gourmet snack selection",
-        "Professional photo sessions",
-        "Extended private island experience"
+        "Fully personlized route",
+        "Water and light snacks inlcuded",
+        "Comfortable private transportation",
+        "Lei greeting inlcued"
+      ],
       ]
     }
   },
@@ -146,11 +147,11 @@
     "icon": "FiCompass",
     "title": { 
       "de": "Selbstgeführter Reiseplan", 
-      "en": "Self-Guided Travel Plan" 
+      "en": "Custom Travel Planning" 
     },
     "desc": { 
       "de": "Strukturierter Reiseplan für unabhängige Entdecker", 
-      "en": "Structured travel plan for independent explorers" 
+      "en": "For special occasions or multi-day trips" 
     },
     "price": { 
       "de": "29$", 
@@ -166,8 +167,8 @@
       "en": [
         "Customized travel outline",
         "Recommended activities & spots",
-        "Local insider recommendations",
-        "Support before and during your trip"
+        "Photoshootings",
+        "Event planning"
       ]
     }
   }
