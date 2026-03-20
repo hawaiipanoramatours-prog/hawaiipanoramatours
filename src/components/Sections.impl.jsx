@@ -109,8 +109,8 @@ export function Hero({ content, lang = 'de' }) {
 
               <p className="font-poppins text-sm text-white/80">
                 {lang === 'en'
-                  ? 'Share a few details about your trip — I’ll personally review your request and suggest the best options for your stay.'
-                  : 'Teilen Sie Reisedaten + Reisestil — ich prüfe den Fit und sende die nächsten Schritte.'}
+                  ? 'Pick your date and your perfect day starts here.'
+                  : 'Wählen Sie Ihren Tag aus, damit Ihre perfekte Traumreise beginnen kann.'}
               </p>
 
               <div className="flex gap-4 mt-2">
