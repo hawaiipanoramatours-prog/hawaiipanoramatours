@@ -110,7 +110,7 @@ export function Hero({ content, lang = 'de' }) {
               <p className="font-poppins text-sm text-white/80">
                 {lang === 'en'
                   ? 'Pick your date and your perfect day starts here.'
-                  : 'Wählen Sie Ihren Tag aus, damit Ihre perfekte Traumreise beginnen kann.'}
+                  : 'Wählen Sie Ihren Termin und Ihr perfekter Tag beginnt hier.'}
               </p>
 
               <div className="flex gap-4 mt-2">
