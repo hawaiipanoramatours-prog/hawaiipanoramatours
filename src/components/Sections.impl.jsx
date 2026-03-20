@@ -99,7 +99,7 @@ export function Hero({ content, lang = 'de' }) {
             {/* Primary CTA */}
             <div className="flex flex-col items-center gap-3">
               <a
-                href={content?.brand?.cta?.inquiry?.[lang] || content?.brand?.cta?.inquiry?.de || '#'}
+                href={content?.brand?.cta?.booking || '#'}
                 target="_blank"
                 rel="noreferrer"
                 className="border-2 border-white text-white px-8 py-4 rounded-full font-poppins font-semibold text-lg hover:bg-white hover:text-black transition"
