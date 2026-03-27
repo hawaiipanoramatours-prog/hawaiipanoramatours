@@ -150,7 +150,7 @@
     },
     "desc": { 
       "de": "Strukturierter Reiseplan für unabhängige Entdecker", 
-      "en": "Custom experiences for special occasions, honeymoons&group travel" 
+      "en": "Custom experiences for special occasions, honeymoons & group travel" 
     },
     "price": { 
       "de": "Anfragen", 
@@ -165,9 +165,9 @@
       ],
       "en": [
         "Customized travel outline",
-        "Birthdays&special occasions",
-        "Honeymoons&romantic experiences",
-        "Group travel&multi-day planning"
+        "Birthdays & special occasions",
+        "Honeymoons & romantic experiences",
+        "Group travel & multi-day planning"
       ]
     }
   }
