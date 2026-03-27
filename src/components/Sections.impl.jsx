@@ -33,13 +33,13 @@ export function Hero({ content, lang = 'de' }) {
       ],
     },
     en: {
-      title: 'This is perfect for you if you…',
+      title: 'This is perfect for you if you want…',
       good: [
-        'want stress-free planning without endless research',
-        'want to avoid group or bus tours',
-        'prefer flexibility instead of fixed schedules and stops',
-        'value personal attention and real local insight',
-        'want to discover places most visitors miss',
+        'stress-free planning without endless research',
+        'private experience tailored to what YOU actually want',
+        'someone who takes the time to understand your travel style',
+        'to avoid group tours, bus tours and generic routes',
+        'real local insight to discover places most visitors miss',
       ],
     },
   }
