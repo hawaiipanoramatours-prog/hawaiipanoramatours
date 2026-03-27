@@ -291,7 +291,7 @@ export function ServicesSection({ content, lang = 'de' }) {
         ? 'Book now'
         : 'Jetzt buchen'
       : lang === 'en'
-        ? 'Request your plan'
+        ? 'Plan your experience'
         : 'Plan anfragen'}
   </a>
 </div>
