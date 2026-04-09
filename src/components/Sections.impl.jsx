@@ -36,9 +36,9 @@ export function Hero({ content, lang = 'de' }) {
       title: 'This is perfect for you if you want…',
       good: [
         'stress-free planning without endless research',
-        'private experience tailored to what YOU actually want',
-        'someone who takes the time to understand your travel style',
-        'to avoid group tours, bus tours and generic routes',
+        'a private experience tailored to what you actually want',
+        'someone who truly takes the time to understand your travel style',
+        'no group tours, bus tours or generic routes',
         'real local insight to discover places most visitors miss',
       ],
     },
