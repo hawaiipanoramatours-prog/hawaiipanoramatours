@@ -8,6 +8,7 @@ import Home from './pages/Home'
 import { About } from './pages/About'
 import { Contact } from './pages/Contact'
 import { Services } from './pages/Services'
+import Booking from './pages/Booking'
 
 // ✨ Neu importieren:
 import Impressum from './pages/Impressum'
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
       { path: 'about', element: <About /> },
       { path: 'contact', element: <Contact /> },
       { path: 'services', element: <Services /> },
+      { path: 'book', element: <Booking /> },
 
       // ✨ Neu hinzugefügt:
       { path: 'impressum', element: <Impressum /> },
