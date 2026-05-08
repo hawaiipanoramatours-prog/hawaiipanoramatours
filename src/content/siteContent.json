@@ -32,7 +32,7 @@
   "header": {
     "nav": [
       { "name": { "de": "Home", "en": "Home" }, "path": "/" },
-      { "name": { "de": "Dienstleistungen", "en": "Services" }, "path": "/services" },
+      { "name": { "de": "Dienstleistungen", "en": "Services" }, "path": "/book" },
       { "name": { "de": "Über mich", "en": "About" }, "path": "/about" },
       { "name": { "de": "Kontakt", "en": "Contact" }, "path": "/contact" }
     ],
