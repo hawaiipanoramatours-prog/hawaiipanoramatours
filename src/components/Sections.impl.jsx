@@ -104,13 +104,13 @@ export function Hero({ content, lang = 'de' }) {
                 rel="noreferrer"
                 className="border-2 border-white text-white px-8 py-4 rounded-full font-poppins font-semibold text-lg hover:bg-white hover:text-black transition"
               >
-                {lang === 'en' ? 'Book Your Private Oʻahu Tour' : 'Individuell anfragen'}
+                {lang === 'en' ? 'Choose Your Private Oʻahu Package' : 'Buchen Sie Ihre Private O'ahu Tour'}
               </a>
 
               <p className="font-poppins text-sm text-white/80">
                 {lang === 'en'
-                  ? 'Pick your date and your perfect day starts here.'
-                  : 'Wählen Sie Ihren Termin und Ihr perfekter Tag beginnt hier.'}
+                  ? 'Pick your tour package and your perfect day starts here.'
+                  : 'Wählen Sie Ihr und Ihr perfekter Tag beginnt hier.'}
               </p>
 
               <div className="flex gap-4 mt-2">
