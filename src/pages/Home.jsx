@@ -16,7 +16,6 @@ export default function Home() {
     <>
       <Hero content={content} lang={lang} />
       {/* <HowItWorks content={content} lang={lang} /> */}
-      <ServicesSection content={content} lang={lang} />
       <Offerings content={content} lang={lang} />
 
      <Gallery lang={lang} />
