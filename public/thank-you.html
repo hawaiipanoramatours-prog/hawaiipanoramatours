@@ -3,36 +3,203 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Thank you — Hawaii Panorama Tours</title>
   <meta name="robots" content="noindex,nofollow" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <style>
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#0b1b1f;color:#fff;}
-    .wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px;}
-    .card{max-width:720px;width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:28px;}
-    h1{margin:0 0 10px;font-size:34px;line-height:1.15;}
-    p{margin:10px 0;color:rgba(255,255,255,.85);font-size:16px;line-height:1.6;}
-    .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-    a.btn{display:inline-block;padding:12px 16px;border-radius:12px;text-decoration:none;color:#0b1b1f;background:#64d6d0;font-weight:600}
-    a.link{color:#64d6d0}
-    small{display:block;margin-top:14px;color:rgba(255,255,255,.65)}
+    :root{
+      --turquoise:#11b8c9;
+      --light-blue:#8edcf6;
+      --sand:#f6ead2;
+      --dark:#16313d;
+      --white:#ffffff;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+
+      background:
+        radial-gradient(circle at top, #ffffff 0%, #e9f9ff 35%, #d8f3fb 100%);
+      
+      color:var(--dark);
+    }
+
+    .wrap{
+      width:100%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .card{
+      width:100%;
+      max-width:760px;
+
+      background:linear-gradient(
+        135deg,
+        rgba(246,234,210,.92),
+        rgba(255,255,255,.92)
+      );
+
+      border-radius:28px;
+
+      padding:48px;
+
+      box-shadow:
+        0 20px 40px rgba(17,184,201,.15);
+
+      border:1px solid rgba(17,184,201,.12);
+
+      text-align:center;
+
+      animation:fadeUp .6s ease;
+    }
+
+    .flower{
+      font-size:54px;
+      margin-bottom:10px;
+    }
+
+    h1{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(2rem,4vw,3rem);
+      line-height:1.15;
+      margin-bottom:18px;
+      color:var(--dark);
+    }
+
+    p{
+      font-size:17px;
+      line-height:1.7;
+      color:#35515d;
+      max-width:600px;
+      margin:0 auto;
+    }
+
+    .btns{
+      margin-top:30px;
+      display:flex;
+      justify-content:center;
+    }
+
+    a.btn{
+      display:inline-block;
+
+      background:linear-gradient(
+        135deg,
+        var(--turquoise),
+        #0fa8bb
+      );
+
+      color:white;
+      text-decoration:none;
+
+      padding:14px 26px;
+
+      border-radius:999px;
+
+      font-weight:600;
+
+      transition:.25s ease;
+
+      box-shadow:
+        0 10px 25px rgba(17,184,201,.28);
+    }
+
+    a.btn:hover{
+      transform:translateY(-2px);
+      box-shadow:
+        0 14px 30px rgba(17,184,201,.35);
+    }
+
+    small{
+      display:block;
+      margin-top:28px;
+      color:#5c7b87;
+      font-size:14px;
+      line-height:1.5;
+    }
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(18px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @media(max-width:768px){
+
+      body{
+        padding:20px;
+      }
+
+      .card{
+        padding:34px 26px;
+      }
+
+      h1{
+        font-size:2rem;
+      }
+
+      p{
+        font-size:15px;
+      }
+    }
   </style>
 </head>
+
 <body>
+
   <div class="wrap">
+
     <div class="card">
-      <h1>Thank you — your private Oahu tour is booked 🌺</h1>
+
+      <div class="flower">🌺</div>
+
+      <h1>
+        Thank you — your private Oʻahu experience is confirmed
+      </h1>
+
       <p>
-        Your booking and payment have been received successfully. 
-        I will personally contact you shortly to confirm the details and help plan your perfect day.
-      
+        Your booking and payment have been received successfully.
+        <br><br>
+        I will personally reach out shortly to confirm the details and help create a smooth and memorable Hawaiʻi experience tailored to you.
       </p>
+
       <div class="btns">
-        <a class="btn" href="/#contact">Back to the website</a>
-        <!-- Optional: replace with your Calendly link if you have one -->
-        <!-- <a class="btn" href="https://calendly.com/DEIN-LINK" target="_blank" rel="noopener">Schedule a call</a> -->
+        <a class="btn" href="/">
+          Back to the website
+        </a>
       </div>
-      <small>Mahalo for choosing Hawaii Panorama Tours — personal planning & local guidance.</small>
+
+      <small>
+        Mahalo for choosing Hawaii Panorama Tours —<br>
+        personal planning & local island guidance.
+      </small>
+
     </div>
+
   </div>
+
 </body>
 </html>
