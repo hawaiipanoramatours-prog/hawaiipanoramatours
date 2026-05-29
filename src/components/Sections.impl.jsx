@@ -27,9 +27,9 @@ export function Hero({ content, lang = 'de' }) {
       good: [
         'Stressfrei planen möchten – ohne stundenlange Recherche',
         'Ihre begrenzte Zeit auf Oʻahu optimal nutzen wollen',
-        'Einen klaren Reise-Blueprint (einmalig) möchten',
-        'Optional privat begleitet starten möchten (Orientierungstag)',
-        'Zugang zu passenden, geprüften lokalen Partnern schätzen',
+        'jemand möchten, der sich wirklich die Zeit nimmt, Ihren Reisestil zu verstehen',
+        'keine Gruppentouren, Bustouren oder generische Routen möchten',
+        'echtes Insiderwissen möchten, um Orte zu entdecken, die die meisten Besucher verpassen',
       ],
     },
     en: {
@@ -104,13 +104,13 @@ export function Hero({ content, lang = 'de' }) {
                 rel="noreferrer"
                 className="border-2 border-white text-white px-8 py-4 rounded-full font-poppins font-semibold text-lg hover:bg-white hover:text-black transition"
               >
-                {lang === 'en' ? 'Choose Your Private Oʻahu Package' : "Buchen Sie Ihr O'ahu Paket"}
+                {lang === 'en' ? 'Choose Your Private Oʻahu Package' : "Wählen Sie Ihr O'ahu Paket"}
               </a>
 
               <p className="font-poppins text-sm text-white/80">
                 {lang === 'en'
                   ? 'Pick your tour package and your perfect day starts here.'
-                  : 'Wählen Sie Ihr und Ihr perfekter Tag beginnt hier.'}
+                  : 'Wählen Sie Ihr Tour Paket und Ihr perfekter Tag beginnt hier.'}
               </p>
 
               <div className="flex gap-4 mt-2">
