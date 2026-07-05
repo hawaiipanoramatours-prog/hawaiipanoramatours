@@ -1,4 +1,7 @@
 {
+  "redirects": [
+    { "source": "/book", "destination": "https://booking.hawaiipanoramatours.com/", "permanent": false }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/" }
   ]
