@@ -491,7 +491,7 @@ export function MalamaAina({ lang = 'de' }) {
     en: {
       eyebrow: 'Mālama ʻĀina',
       title: 'Giving back to the ʻāina',
-      text: "We believe visiting Hawaiʻi comes with the chance to give something back. On request, we're happy to spend a few quiet minutes together caring for a beach or lookout along the way — no detour, no obligation, just a small mahalo to the island that hosts us.",
+      text: "We believe visiting Hawaiʻi comes with the chance to give something back. On request, we're happy to spend a few minutes together caring for a beach or lookout along the way — no detour, no obligation, just a small mahalo to the island that hosts us.",
       badge: 'Always optional · never changes your price',
       tagline: 'Travel with Aloha. Travel with Purpose.',
     },
