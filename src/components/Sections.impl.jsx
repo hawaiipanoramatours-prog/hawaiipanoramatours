@@ -484,15 +484,15 @@ export function MalamaAina({ lang = 'de' }) {
     de: {
       eyebrow: 'Mālama ʻĀina',
       title: 'Der Insel etwas zurückgeben',
-      text: 'Wir glauben, dass ein Besuch auf Hawaiʻi auch die Chance ist, etwas zurückzugeben. Auf Wunsch verbringen wir gemeinsam ein paar ruhige Minuten damit, einen Strand oder Aussichtspunkt entlang der Route zu pflegen – kein Umweg, keine Verpflichtung, einfach ein kleines Mahalo an die Insel, die uns beherbergt.',
-      badge: 'Immer freiwillig · ändert nichts am Preis',
+      text: 'Wir glauben, dass ein Besuch auf Hawaiʻi auch die Chance ist, etwas zurückzugeben. Auf Wunsch verbringen wir gemeinsam ein paar Minuten damit, einen Strand oder Aussichtspunkt entlang der Route zu pflegen – kein Umweg, keine Verpflichtung, einfach ein kleines Mahalo an die Insel, die uns beherbergt.',
+      badge: 'Immer freiwillig · Keine Änderung am Preis oder Verlust an Tourzeit',
       tagline: 'Travel with Aloha. Travel with Purpose.',
     },
     en: {
       eyebrow: 'Mālama ʻĀina',
       title: 'Giving back to the ʻāina',
       text: "We believe visiting Hawaiʻi comes with the chance to give something back. On request, we're happy to spend a few minutes together caring for a beach or lookout along the way — no detour, no obligation, just a small mahalo to the island that hosts us.",
-      badge: 'Always optional · never changes your price',
+      badge: 'Always optional · no changes in price or loss of tour time',
       tagline: 'Travel with Aloha. Travel with Purpose.',
     },
   }
