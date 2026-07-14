@@ -474,6 +474,88 @@ export function Testimonials({ content, lang = 'de' }) {
 }
 
 /* =========================================================
+   MALAMA ʻĀINA (Home.jsx expects this export)
+   Self-contained bilingual section — no content JSON needed.
+   ========================================================= */
+export function MalamaAina({ lang = 'de' }) {
+  const L = lang || 'de'
+
+  const copy = {
+    de: {
+      eyebrow: 'Mālama ʻĀina',
+      title: 'Der Insel etwas zurückgeben',
+      text: 'Wir glauben, dass ein Besuch auf Hawaiʻi auch die Chance ist, etwas zurückzugeben. Auf Wunsch verbringen wir gemeinsam ein paar ruhige Minuten damit, einen Strand oder Aussichtspunkt entlang der Route zu pflegen – kein Umweg, keine Verpflichtung, einfach ein kleines Mahalo an die Insel, die uns beherbergt.',
+      badge: 'Immer freiwillig · ändert nichts am Preis',
+      tagline: 'Travel with Aloha. Travel with Purpose.',
+    },
+    en: {
+      eyebrow: 'Mālama ʻĀina',
+      title: 'Giving back to the ʻāina',
+      text: "We believe visiting Hawaiʻi comes with the chance to give something back. On request, we're happy to spend a few quiet minutes together caring for a beach or lookout along the way — no detour, no obligation, just a small mahalo to the island that hosts us.",
+      badge: 'Always optional · never changes your price',
+      tagline: 'Travel with Aloha. Travel with Purpose.',
+    },
+  }
+
+  const t = copy[L] || copy.de
+
+  return (
+    <section className="py-20 bg-gradient-to-b from-white to-sand/30">
+      <div className="container mx-auto px-6">
+        <motion.div
+          className="max-w-5xl mx-auto grid md:grid-cols-[1.1fr_0.9fr] gap-12 items-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <div>
+            <div className="flex items-center gap-2 mb-4">
+              <Fi.FiFeather className="w-4 h-4 text-turquoise" />
+              <span className="font-poppins text-xs font-semibold uppercase tracking-[0.2em] text-turquoise">
+                {t.eyebrow}
+              </span>
+            </div>
+
+            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
+              {t.title}
+            </h2>
+
+            <p className="font-poppins text-gray-600 text-lg leading-relaxed mb-6 max-w-md">
+              {t.text}
+            </p>
+
+            <div className="inline-flex items-center gap-2 bg-sand/40 rounded-full px-4 py-2 mb-6">
+              <Fi.FiHeart className="w-3.5 h-3.5 text-turquoise" />
+              <span className="font-poppins text-xs font-medium text-gray-700">
+                {t.badge}
+              </span>
+            </div>
+
+            <p className="font-playfair italic text-turquoise text-base">
+              {t.tagline}
+            </p>
+          </div>
+
+          <div className="relative flex items-center justify-center">
+            <div
+              className="absolute inset-0 bg-gradient-to-br from-turquoise/15 to-sand"
+              style={{ borderRadius: '42% 58% 53% 47% / 45% 40% 60% 55%' }}
+            />
+            <div
+              className="relative w-full aspect-square max-w-xs flex items-center justify-center border border-turquoise/30"
+              style={{ borderRadius: '42% 58% 53% 47% / 45% 40% 60% 55%' }}
+            >
+              <Fi.FiFeather className="w-16 h-16 text-turquoise" strokeWidth={1.25} />
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+/* =========================================================
    CONTACT CTA (Home.jsx expects this export)
    Uses your JSON: content.cta + brand.cta.booking + brand.social.email
    ========================================================= */
