@@ -1,11 +1,10 @@
 import { useOutletContext } from 'react-router-dom'
 import { motion } from 'framer-motion'
-
+import * as Fi from 'react-icons/fi'
 export function About() {
   const { content, lang } = useOutletContext()
   const a = content.about
   const L = lang || 'de'
-
   return (
     <div className="min-h-screen pt-20">
       <motion.div
@@ -18,7 +17,6 @@ export function About() {
           <h1 className="font-playfair text-4xl md:text-6xl font-bold text-white mb-6">
             {L === 'en' ? 'About me' : 'Über mich'}
           </h1>
-
           <p className="font-poppins text-xl text-white/90 max-w-3xl mx-auto">
             {L === 'en'
               ? 'Get to know the person behind Hawaii Panorama Tours'
@@ -26,29 +24,24 @@ export function About() {
           </p>
         </div>
       </motion.div>
-
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-
             {/* ✅ Dein eigenes Bild */}
             <img
               src="/About%20me%20pic.jpg"
               alt="Nazia – Hawaii Panorama Tours"
               className="w-full h-96 object-cover rounded-2xl shadow-lg"
             />
-
             <div>
               <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-800 mb-6">
                 {L === 'en' ? a.headline.en : a.headline.de}
               </h2>
-
               {a.paras.map((p, i) => (
                 <p key={i} className="font-poppins text-gray-600 mb-4">
                   {L === 'en' ? p.en : p.de}
                 </p>
               ))}
-
               <a
                 href={content.brand.cta.booking}
                 target="_blank"
@@ -58,10 +51,25 @@ export function About() {
                 {L === 'en' ? "Let's connect!" : 'Lernen wir uns kennen!'}
               </a>
             </div>
+          </div>
 
+          {/* Mālama ʻĀina value note */}
+          <div className="mt-16 pt-10 border-t border-sand/60 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+            <div className="w-12 h-12 rounded-full bg-sand/50 grid place-items-center shrink-0">
+              <Fi.FiFeather className="w-5 h-5 text-turquoise" />
+            </div>
+            <p className="font-poppins text-gray-600">
+              <span className="font-playfair italic text-turquoise mr-1">
+                Travel with Aloha. Travel with Purpose.
+              </span>
+              {L === 'en'
+                ? ' — on request, we spend a few quiet minutes giving back to the ʻāina during your tour, as part of our Mālama ʻĀina initiative.'
+                : ' — auf Wunsch nehmen wir uns während Ihrer Tour ein paar ruhige Minuten Zeit, um im Rahmen unserer Mālama-ʻĀina-Initiative der Insel etwas zurückzugeben.'}
+            </p>
           </div>
         </div>
       </section>
     </div>
   )
 }
+
