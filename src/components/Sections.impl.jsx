@@ -484,16 +484,18 @@ export function MalamaAina({ lang = 'de' }) {
     de: {
       eyebrow: 'Mālama ʻĀina',
       title: 'Der Insel etwas zurückgeben',
-      text: 'Wir glauben, dass ein Besuch auf Hawaiʻi auch die Chance ist, etwas zurückzugeben. Auf Wunsch verbringen wir gemeinsam ein paar Minuten damit, einen Strand oder Aussichtspunkt entlang der Route zu pflegen – kein Umweg, keine Verpflichtung, einfach ein kleines Mahalo an die Insel, die uns beherbergt.',
-      badge: 'Immer freiwillig · Keine Änderung am Preis oder Verlust an Tourzeit',
+      text: 'Wir glauben, dass ein Besuch auf Hawaiʻi auch die Chance ist, etwas zurückzugeben. Auf Wunsch packen wir gemeinsam ein paar Minuten mit an – am Strand oder Aussichtspunkt entlang der Route – einfach als kleines Mahalo an die Insel, die uns beherbergt.',
+      badge: 'Immer freiwillig · geht nicht von eurer Tourzeit ab',
       tagline: 'Travel with Aloha. Travel with Purpose.',
+      imgAlt: 'Der Insel etwas zurückgeben',
     },
     en: {
       eyebrow: 'Mālama ʻĀina',
       title: 'Giving back to the ʻāina',
-      text: "We believe visiting Hawaiʻi comes with the chance to give something back. On request, we're happy to spend a few minutes together caring for a beach or lookout along the way — no detour, no obligation, just a small mahalo to the island that hosts us.",
-      badge: 'Always optional · no changes in price or loss of tour time',
+      text: "We believe visiting Hawaiʻi comes with the chance to give something back. On request, we're happy to spend a few minutes lending a hand at a beach or lookout along the way — just a small mahalo to the island that hosts us.",
+      badge: "Always optional · won't cut into your tour time",
       tagline: 'Travel with Aloha. Travel with Purpose.',
+      imgAlt: 'Caring for the ʻāina',
     },
   }
 
@@ -542,12 +544,13 @@ export function MalamaAina({ lang = 'de' }) {
               className="absolute inset-0 bg-gradient-to-br from-turquoise/15 to-sand"
               style={{ borderRadius: '42% 58% 53% 47% / 45% 40% 60% 55%' }}
             />
-            <div
-              className="relative w-full aspect-square max-w-xs flex items-center justify-center border border-turquoise/30"
+            {/* Uses Beachpic.jpg from /public */}
+            <img
+              src="/Beachpic.jpg"
+              alt={t.imgAlt}
+              className="relative w-full aspect-square max-w-xs object-cover border border-turquoise/30"
               style={{ borderRadius: '42% 58% 53% 47% / 45% 40% 60% 55%' }}
-            >
-              <Fi.FiFeather className="w-16 h-16 text-turquoise" strokeWidth={1.25} />
-            </div>
+            />
           </div>
         </motion.div>
       </div>
