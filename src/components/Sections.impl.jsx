@@ -593,7 +593,7 @@ export function ContactCTA({ content, lang = 'de' }) {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href={content?.brand?.cta?.booking}
+              href="https://calendly.com/hawaiipanoramatours/1"
               target="_blank"
               rel="noreferrer"
               className="bg-white text-turquoise px-8 py-4 rounded-full font-poppins font-semibold text-lg"
