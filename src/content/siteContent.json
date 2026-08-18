@@ -95,12 +95,12 @@
       "en": "Individually curated experiences on Oʻahu" 
     },
     "price": { 
-      "de": "$399 bis zu 2 Gäste", 
+      "de": "$449 bis zu 2 Gäste", 
       "en": "$449 up to 2 guests" 
     },
     "features": {
       "de": [
-        "Private, maßgeschneiderte Touren ab 2 Personen",
+        "Private, maßgeschneiderte Touren",
         "Persönliche Begleitung & Übersetzung",
         "Exklusive Aktivitätenbuchung",
         "Direkte Betreuung während Ihres Aufenthalts"
@@ -116,7 +116,7 @@
   {
     "icon": "FiStar",
     "title": { 
-      "de": "Private Experience", 
+      "de": "Privates Tourerlebnis", 
       "en": "Private Guided Experience" 
     },
     "desc": { 
@@ -124,7 +124,7 @@
       "en": "Individually curated experiences up to 4 guests" 
     },
     "price": { 
-      "de": "699 $ bis zu 4 Gäste", 
+      "de": "749$ bis zu 4 Gäste", 
       "en": "$749 up to 4 guests" 
     },
     "features": {
