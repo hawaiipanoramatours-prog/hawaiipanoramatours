@@ -367,7 +367,7 @@ export function Gallery({ lang = 'de' }) {
   const images = [
     { src: '/Gallery1.JPG', alt: { de: 'Kunden auf Hawaii Tour 1', en: 'Guests on Hawai‘i tour 1' } },
     { src: '/Gallery2.jpg', alt: { de: 'Kunden auf Hawaii Tour 2', en: 'Guests on Hawai‘i tour 2' } },
-    { src: '/Gallery3.jpg', alt: { de: 'Kunden auf Hawaii Tour 3', en: 'Guests on Hawai‘i tour 3' } },
+    { src: '/image000000.jpg', alt: { de: 'Kunden auf Hawaii Tour 3', en: 'Guests on Hawai‘i tour 3' } },
     { src: '/Gallery4.jpg', alt: { de: 'Kunden auf Hawaii Tour 4', en: 'Guests on Hawai‘i tour 4' } },
     { src: '/Gallery5.jpg', alt: { de: 'Kunden auf Hawaii Tour 5', en: 'Guests on Hawai‘i tour 5' } },
     { src: '/Gallery6.JPG', alt: { de: 'Kunden auf Hawaii Tour 6', en: 'Guests on Hawai‘i tour 6' } },
